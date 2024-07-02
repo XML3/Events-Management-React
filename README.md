@@ -1,4 +1,4 @@
-# Events React Project
+# Events Management React APP
 
 Front-end React.js project, designed to simulate the enhancement of an Event experience.
 Users can search events by location or name of events, dive into articles, and connect via contact form directly with the application managers.  
