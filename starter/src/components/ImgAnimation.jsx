@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Box } from "@chakra-ui/react";
+import { DataContext } from "./Root";
 
 import { useInView } from "react-intersection-observer";
 
-const ImgAnimation = ({ imgAnimation }) => {
+const ImgAnimation = () => {
+  const { imgAnimation } = useContext(DataContext);
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const [isAnimating, setIsAnimating] = useState(false);
