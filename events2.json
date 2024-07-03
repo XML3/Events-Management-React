@@ -42,9 +42,7 @@
       "categoryIds": ["1"],
       "location": "Miami, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
-      "endTime": "2023-04-10T12:00:00.000Z",
-      "userName": "Luka Montilva",
-      "userImage": "https://i.ibb.co/YNP3pBc/Luka-Montilva.png"
+      "endTime": "2023-04-10T12:00:00.000Z"
     },
     {
       "id": "2",
@@ -56,9 +54,7 @@
       "categoryIds": ["1"],
       "location": "New York City, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
-      "endTime": "2023-03-15T13:30:00.000Z",
-      "userName": "Clarisa Smith",
-      "userImage": "https://i.ibb.co/wRyWMwM/sideeye.jpg"
+      "endTime": "2023-03-15T13:30:00.000Z"
     },
     {
       "id": "3",
@@ -118,9 +114,7 @@
       "categoryIds": ["2"],
       "location": "San Francisco, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
-      "endTime": "2023-04-10T12:00:00.000Z",
-      "userName": "Luka Montilva",
-      "userImage": "https://i.ibb.co/YNP3pBc/Luka-Montilva.png"
+      "endTime": "2023-04-10T12:00:00.000Z"
     },
     {
       "id": "8",
@@ -132,9 +126,7 @@
       "categoryIds": ["2"],
       "location": "New York City, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
-      "endTime": "2023-03-15T13:30:00.000Z",
-      "userName": "Clare Smith",
-      "userImage": "https://i.ibb.co/wRyWMwM/sideeye.jpg"
+      "endTime": "2023-03-15T13:30:00.000Z"
     },
     {
       "id": "9",
@@ -194,9 +186,7 @@
       "categoryIds": ["3"],
       "location": "New York City, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
-      "endTime": "2023-04-10T12:00:00.000Z",
-      "userName": "Luka Montilva",
-      "userImage": "https://i.ibb.co/YNP3pBc/Luka-Montilva.png"
+      "endTime": "2023-04-10T12:00:00.000Z"
     },
     {
       "id": "14",
@@ -208,9 +198,7 @@
       "categoryIds": ["3"],
       "location": "Amsterdam, The Netherlands",
       "startTime": "2023-03-15T12:00:00.000Z",
-      "endTime": "2023-03-15T13:30:00.000Z",
-      "userName": "Clare Smith",
-      "userImage": "https://i.ibb.co/wRyWMwM/sideeye.jpg"
+      "endTime": "2023-03-15T13:30:00.000Z"
     },
     {
       "id": "15",
