@@ -22,7 +22,7 @@ export const Root = ({ initialEvents, children }) => {
   const [description, setDescription] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [articles, setArticles] = useState([]);
-  const [imgAnimation, setImgAnimation] = useState(null);
+  const [imgAnimation, setImgAnimation] = useState([]);
   const [header, setHeader] = useState("Events Management");
   const [subHeader, setSubHeader] = useState(subHeaderText);
 
@@ -48,8 +48,6 @@ export const Root = ({ initialEvents, children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const imgAnimationId = "1";
-
         //Fetch events
         const eventsResponse = await fetch(`${API_URL}/events`);
         const eventsData = await eventsResponse.json();
@@ -75,11 +73,9 @@ export const Root = ({ initialEvents, children }) => {
         setArticles(articleData);
 
         //fetch imageAnimation
-        const animatedImgResponse = await fetch(
-          `${API_URL}/imgAnimation/${imgAnimationId}`
-        );
+        const animatedImgResponse = await fetch(`${API_URL}/imgAnimation`);
         const animateData = await animatedImgResponse.json();
-        setImgAnimation(animateData);
+        setImgAnimation(animateData[0]);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
