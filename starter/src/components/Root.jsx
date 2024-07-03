@@ -48,6 +48,8 @@ export const Root = ({ initialEvents, children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const imgAnimationId = 1;
+
         //Fetch events
         const eventsResponse = await fetch(`${API_URL}/events`);
         const eventsData = await eventsResponse.json();
@@ -73,9 +75,11 @@ export const Root = ({ initialEvents, children }) => {
         setArticles(articleData);
 
         //fetch imageAnimation
-        const animatedImgResponse = await fetch(`${API_URL}/imgAnimation/:id`);
+        const animatedImgResponse = await fetch(
+          `${API_URL}/imgAnimation/${imgAnimationId}`
+        );
         const animateData = await animatedImgResponse.json();
-        setImgAnimation(animateData[0]);
+        setImgAnimation(animateData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
