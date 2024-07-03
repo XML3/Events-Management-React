@@ -73,7 +73,7 @@ export const Root = ({ initialEvents, children }) => {
         setArticles(articleData);
 
         //fetch imageAnimation
-        const animatedImgResponse = await fetch(`${API_URL}/imgAnimation`);
+        const animatedImgResponse = await fetch(`${API_URL}/imgAnimation/:id`);
         const animateData = await animatedImgResponse.json();
         setImgAnimation(animateData[0]);
       } catch (error) {
