@@ -221,9 +221,9 @@ export const EventPage = () => {
             _hover={{
               bgColor: "green.200",
               color: " #ff005f ",
-              boxShadow: "0 0 7px whitesmoke",
+              // boxShadow: "0 0 7px whitesmoke",
             }}
-            _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
+            // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.medium}
           >
@@ -269,9 +269,9 @@ export const EventPage = () => {
             _hover={{
               bgColor: "pink.500",
               color: "gray.900",
-              boxShadow: "0 0 7px whitesmoke",
+              // boxShadow: "0 0 7px whitesmoke",
             }}
-            _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
+            // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.medium}
           >

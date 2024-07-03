@@ -79,7 +79,7 @@ export const EventsPage = () => {
       <Box
         bgColor="gray.900"
         color="whitesmoke"
-        minH={{ base: "520vh", sm: "480vh", md: "570vh" }}
+        minH={{ base: "520vh", sm: "480vh", md: "400vh" }}
         minW={"100%"}
       >
         <Flex
@@ -196,9 +196,9 @@ export const EventsPage = () => {
                   _hover={{
                     bgColor: "green.200",
                     color: " #ff005f ",
-                    boxShadow: "0 0 7px whitesmoke",
+                    // boxShadow: "0 0 7px whitesmoke",
                   }}
-                  _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
+                  // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
                 >
                   {" "}
                   Create Event

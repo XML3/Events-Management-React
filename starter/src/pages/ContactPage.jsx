@@ -300,6 +300,7 @@ const ContactForm = () => {
               <Button
                 type="submit"
                 bgGradient="linear(to-br, #00ffbc, #0ee399)"
+                color={"gray.900"}
                 fontFamily={orbitronFontFamily}
                 fontWeight={orbitronWeight.medium}
                 mt={"2rem"}
@@ -309,10 +310,10 @@ const ContactForm = () => {
                 left={{ base: "20%", sm: "25%", md: "25%" }}
                 _hover={{
                   bgColor: "green.200",
-                  color: "gray.900",
-                  boxShadow: "0 0 7px whitesmoke",
+                  color: "#ff005f",
+                  // boxShadow: "0 0 7px whitesmoke",
                 }}
-                _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
+                // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
               >
                 Submit
               </Button>
