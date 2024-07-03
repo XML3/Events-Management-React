@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"  # This triggers Vite to build your project
+  publish = "build"  # Change this to 'build' or 'dist' based on where Vite outputs the build artifacts
+
+[build.environment]
+  NODE_VERSION = "14"  # Optional: Specify Node.js version if needed
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
