@@ -48,7 +48,7 @@ export const Root = ({ initialEvents, children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const imgAnimationId = 1;
+        const imgAnimationId = "1";
 
         //Fetch events
         const eventsResponse = await fetch(`${API_URL}/events`);
