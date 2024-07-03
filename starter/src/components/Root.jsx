@@ -22,7 +22,7 @@ export const Root = ({ initialEvents, children }) => {
   const [description, setDescription] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [articles, setArticles] = useState([]);
-  const [imgAnimation, setImgAnimation] = useState([]);
+  const [imgAnimation, setImgAnimation] = useState(null);
   const [header, setHeader] = useState("Events Management");
   const [subHeader, setSubHeader] = useState(subHeaderText);
 
