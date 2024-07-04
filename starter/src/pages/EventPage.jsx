@@ -61,7 +61,7 @@ export const EventPage = () => {
 
         //Fetch creator's data by createdBy
         const userResponse = await fetch(
-          `${API_URL}/users/${eventData.createdBy}`
+          `${API_URL}/users/${eventData.userId}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch created data");
