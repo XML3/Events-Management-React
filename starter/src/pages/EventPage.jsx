@@ -57,7 +57,7 @@ export const EventPage = () => {
       try {
         const response = await fetch(`${API_URL}/users`);
         const userData = await response.json();
-        setUsers(userData);
+        setUsers(userData.users);
       } catch (error) {
         console.error("Error fetching data from user:", error);
       }

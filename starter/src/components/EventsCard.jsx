@@ -147,7 +147,7 @@ export const EventsCard = ({ event }) => {
                     );
                   })
                 ) : (
-                  <Text>No categories available</Text>
+                  <Text color={"gray.200"}>No categories available</Text>
                 )}
               </Stack>
             </Center>
