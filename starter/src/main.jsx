@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         element: <EventPage />,
       },
       {
-        path: "/user/:userId",
+        path: "/users/:userId",
         element: <UserPage />,
       },
       {
