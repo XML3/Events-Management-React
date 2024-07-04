@@ -53,19 +53,6 @@ export const EventPage = () => {
   };
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch(`${API_URL}/users`);
-        const userData = await response.json();
-        setUsers(userData.users);
-      } catch (error) {
-        console.error("Error fetching data from user:", error);
-      }
-    };
-    fetchUsers();
-  }, []);
-
-  useEffect(() => {
     const fetchEventData = async () => {
       try {
         const response = await fetch(`${API_URL}/events/${eventId}`);
@@ -85,6 +72,19 @@ export const EventPage = () => {
         console.error("Error fetching data from event:", error);
       }
     };
+
+    useEffect(() => {
+      const fetchUsers = async () => {
+        try {
+          const response = await fetch(`${API_URL}/users`);
+          const userData = await response.json();
+          setUsers(userData.users);
+        } catch (error) {
+          console.error("Error fetching data from user:", error);
+        }
+      };
+      fetchUsers();
+    }, []);
 
     //Fetch categories data
     const fetchCategories = async () => {
