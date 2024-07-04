@@ -76,6 +76,9 @@ export const EventPage = () => {
         const userResponse = await fetch(
           `${API_URL}/users/${eventData.createdBy}`
         );
+        if (!response.ok) {
+          throw new Error("Failed to fetch created data");
+        }
         const creatorData = await userResponse.json();
         setCreator(creatorData);
       } catch (error) {
@@ -87,6 +90,9 @@ export const EventPage = () => {
     const fetchCategories = async () => {
       try {
         const response = await fetch(`${API_URL}/categories`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch categories data");
+        }
         const data = await response.json();
         setCategories(data);
       } catch (error) {
