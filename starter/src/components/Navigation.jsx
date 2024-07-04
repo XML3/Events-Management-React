@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { Box, Text, Flex, Image, Stack } from "@chakra-ui/react";
-import logo from "../assets/img/red_log_smaller2.png";
 
+const logo = "/img/red_logo_smaller2.png";
 export const Navigation = () => {
-  const logo = "../assets/img/red_log_smaller2.png";
   //FONT ORBITRON
   const orbitronFontFamily = "Orbitron, sans-serif";
   const orbitronWeight = {
