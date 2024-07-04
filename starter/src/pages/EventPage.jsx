@@ -53,6 +53,19 @@ export const EventPage = () => {
   };
 
   useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch(`${API_URL}/users`);
+        const userData = await response.json();
+        setUsers(userData);
+      } catch (error) {
+        console.error("Error fetching data from user:", error);
+      }
+    };
+    fetchUsers();
+  }, []);
+
+  useEffect(() => {
     const fetchEventData = async () => {
       try {
         const response = await fetch(`${API_URL}/events/${eventId}`);
@@ -63,9 +76,6 @@ export const EventPage = () => {
         const userResponse = await fetch(
           `${API_URL}/users/${eventData.createdBy}`
         );
-        if (!response.ok) {
-          throw new Error("Failed to fetch created data");
-        }
         const creatorData = await userResponse.json();
         setCreator(creatorData);
       } catch (error) {
@@ -73,26 +83,10 @@ export const EventPage = () => {
       }
     };
 
-    useEffect(() => {
-      const fetchUsers = async () => {
-        try {
-          const response = await fetch(`${API_URL}/users`);
-          const userData = await response.json();
-          setUsers(userData.users);
-        } catch (error) {
-          console.error("Error fetching data from user:", error);
-        }
-      };
-      fetchUsers();
-    }, []);
-
     //Fetch categories data
     const fetchCategories = async () => {
       try {
         const response = await fetch(`${API_URL}/categories`);
-        if (!response.ok) {
-          throw new Error("Failed to fetch categories data");
-        }
         const data = await response.json();
         setCategories(data);
       } catch (error) {
@@ -226,10 +220,8 @@ export const EventPage = () => {
             fontSize={{ base: "0.6rem", sm: "0.8rem", md: "0.7rem" }}
             _hover={{
               bgColor: "green.200",
-              color: " #ff005f ",
-              // boxShadow: "0 0 7px whitesmoke",
+              color: "#ff005f",
             }}
-            // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.medium}
           >
@@ -275,9 +267,7 @@ export const EventPage = () => {
             _hover={{
               bgColor: "pink.500",
               color: "gray.900",
-              // boxShadow: "0 0 7px whitesmoke",
             }}
-            // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.medium}
           >
