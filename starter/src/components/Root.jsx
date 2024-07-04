@@ -1,5 +1,5 @@
 import React from "react";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Navigation } from "./Navigation";
 import { NavigationFooter } from "./NavigationFooter";
@@ -62,7 +62,7 @@ export const Root = ({ initialEvents, children }) => {
 
         // //Fetch users
         if (users) {
-          const userResponse = await fetch(`${API_URL}/users/${users}`);
+          const userResponse = await fetch(`${API_URL}/users`);
           const userData = await userResponse.json();
           setUsers(userData);
         }
