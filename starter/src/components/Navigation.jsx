@@ -49,7 +49,7 @@ export const Navigation = () => {
             right={{ base: 0, sm: 10, md: 460 }}
           >
             <Image
-              src="./src/img/xagly_logo_nobg.png"
+              src="./src/assets/img/red_log_smaller2.png"
               boxSize="40px"
               objectFit="scale-down"
               alt="logo"
