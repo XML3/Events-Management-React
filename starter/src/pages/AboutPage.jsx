@@ -3,6 +3,8 @@ import { Image, Center, Box, Flex, Heading, Text } from "@chakra-ui/react";
 import DataContext from "../components/Root";
 import Typewriter from "../components/Typewriter";
 
+const aboutImg = "/img/about.jpg";
+
 export const AboutPage = () => {
   const { header } = useContext(DataContext);
 
@@ -144,7 +146,7 @@ export const AboutPage = () => {
                 pulvinar, hendrerit id, lorem.
               </Text>
               <Image
-                src="./src/img/about.jpg"
+                src={aboutImg}
                 w={{ base: "100%", md: "50%" }}
                 h={{ base: "auto", md: "auto" }}
                 padding={{ base: "0.5rem", sm: "1rem", md: 0 }}

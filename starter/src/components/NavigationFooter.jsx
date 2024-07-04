@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { Box, Text, Flex, Image, Grid, Stack } from "@chakra-ui/react";
 import { wrap } from "framer-motion";
 
+const meatIcon = "/icons/meta_pink_icon3.png";
+const instaIcon = "/icons/pink_instagram3_icon.png";
+const threadsIcon = "/icons/threads_pink_icon.png";
+const tiktokIcon = "/icons/tiktok_pink_icon.png";
+const xIcons = "/icons/x_social_media_pink_icon3.png";
+const logo = "/img/red_logo_smaller2.png";
+
 export const NavigationFooter = () => {
   //FONT ORBITRON
   const orbitronFontFamily = "Orbitron, sans-serif";
@@ -99,35 +106,35 @@ export const NavigationFooter = () => {
       >
         <Stack direction={{ base: "row", sm: "row", md: "row" }} spacing="24px">
           <Image
-            src="../src/icons/x_social_media_pink_icon3.png"
+            src={xIcons}
             alt="social media X icon"
             objectFit="scale-down"
             boxSize={{ base: "20px", md: "30px" }}
           />
 
           <Image
-            src="../src/icons/meta_pink_icon3.png"
+            src={meatIcon}
             alt="social media X icon"
             objectFit="scale-down"
             boxSize={{ base: "20px", md: "30px" }}
           />
 
           <Image
-            src="../src/icons/pink_instagram3_icon.png"
+            src={instaIcon}
             alt="social media X icon"
             objectFit="scale-down"
             boxSize={{ base: "20px", md: "30px" }}
           />
 
           <Image
-            src="../src/icons/threads_pink_icon.png"
+            src={threadsIcon}
             alt="social media X icon"
             objectFit="scale-down"
             boxSize={{ base: "20px", md: "30px" }}
           />
 
           <Image
-            src="../src/icons/tiktok_pink_icon.png"
+            src={tiktokIcon}
             alt="social media X icon"
             objectFit="scale-down"
             boxSize={{ base: "20px", md: "30px" }}
@@ -150,7 +157,7 @@ export const NavigationFooter = () => {
       >
         <Box>
           <Image
-            src="../src/img/xagly_logo_nobg.png"
+            src={logo}
             boxSize={{ base: "40px", sm: "50px", md: "30px" }}
             objectFit="scale-down"
             borderRadius="full"
