@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Box, Text, Flex, Image, Stack } from "@chakra-ui/react";
+import logo from "../assets/img/red_log_smaller2.png";
 
 export const Navigation = () => {
   //FONT ORBITRON
@@ -49,7 +50,7 @@ export const Navigation = () => {
             right={{ base: 0, sm: 10, md: 460 }}
           >
             <Image
-              src="./src/assets/img/red_log_smaller2.png"
+              src={logo}
               boxSize="40px"
               objectFit="scale-down"
               alt="logo"
