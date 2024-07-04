@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { Flex, Image, Text } from "@chakra-ui/react";
 import { API_URL } from "../components/UI/constants";
-import { useParams } from "react-router-dom";
 
-export const UserPage = () => {
-  const { userId } = useParams();
+export const UserPage = ({ userId }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -12,18 +10,14 @@ export const UserPage = () => {
     const fetchUser = async () => {
       try {
         const response = await fetch(`${API_URL}/users/` + userId);
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status}`);
-        }
         const userData = await response.json();
         setUser(userData);
       } catch (error) {
         console.error("Error fetching data from user:", error);
       }
     };
-    if (userId) {
-      fetchUser();
-    }
+
+    fetchUser();
   }, [userId]);
 
   if (!user) {
