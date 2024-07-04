@@ -1,7 +1,6 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
 import { Box, Text, Flex, Image, Grid, Stack } from "@chakra-ui/react";
-import { wrap } from "framer-motion";
 
 const meatIcon = "/icons/meta_pink_icon3.png";
 const instaIcon = "/icons/pink_instagram3_icon.png";
