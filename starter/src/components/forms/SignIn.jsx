@@ -114,7 +114,7 @@ export const SignIn = () => {
               }}
             >
               <FormControl id="email" isRequired>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>User Name</FormLabel>
                 <Input
                   type="text"
                   value={username}
