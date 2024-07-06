@@ -22,7 +22,7 @@ export const SignIn = () => {
     navigate(API_ROUTES.DASHBOARD);
   }
 
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,7 +33,7 @@ export const SignIn = () => {
         method: "POST",
         url: API_ROUTES.SIGN_IN,
         data: {
-          email,
+          username,
           password,
         },
       });
@@ -116,9 +116,9 @@ export const SignIn = () => {
               <FormControl id="email" isRequired>
                 <FormLabel>Email</FormLabel>
                 <Input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </FormControl>
 
