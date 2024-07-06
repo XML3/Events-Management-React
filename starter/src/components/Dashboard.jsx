@@ -26,14 +26,12 @@ const Dashboard = () => {
             User Details{" "}
           </Text>
           <Box w={"24px"} fontSize={"16px"}>
-            <Text> Email : </Text>
-            <Text> Firstname : </Text>
-            <Text> Lastname : </Text>
+            <Text> Username : </Text>
+            <Text> FullName: </Text>
 
             <Box>
-              <Text> {user.email} </Text>
-              <Text> {user.firstname} </Text>
-              <Text> {user.lastname} </Text>
+              <Text> {user.username} </Text>
+              <Text> {user.name} </Text>
             </Box>
           </Box>
         </Flex>
