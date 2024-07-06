@@ -113,7 +113,7 @@ export const SignIn = () => {
                 signIn();
               }}
             >
-              <FormControl id="email" isRequired>
+              <FormControl id="text" isRequired>
                 <FormLabel>User Name</FormLabel>
                 <Input
                   type="text"
