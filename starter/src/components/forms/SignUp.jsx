@@ -15,25 +15,34 @@ import {
 
 export const SignUp = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
-  const [firstname, serFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
+  const [image, setImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleImageChange = (event) => {
+    const imageFile = event.target.files[0];
+    setImage(imageFile);
+  };
 
   const signUp = async () => {
     try {
       setIsLoading(true);
+      const formData = new FormData();
+      formData.append("password", password);
+      formData.append("username", username);
+      formData.append("name", name);
+      formData.append("userImage", image);
+
       const response = await axios({
         method: "POST",
         url: API_ROUTES.SIGN_UP,
-        data: {
-          email,
-          password,
-          firstname,
-          lastname,
-        },
+        data: formData,
+        headers: { "Content-Type": "multipart/form-data" },
       });
+
       if (!response?.data?.token) {
         console.log("Something went wrong during signing up: ", response);
         return;
@@ -110,30 +119,21 @@ export const SignUp = () => {
                 signUp();
               }}
             >
-              <FormControl id="firstname" isRequired>
-                <FormLabel>First Name</FormLabel>
+              <FormControl id="fullname" isRequired>
+                <FormLabel>Full Name</FormLabel>
                 <Input
                   type="text"
-                  value={firstname}
-                  onChange={(e) => serFirstname(e.target.value)}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </FormControl>
 
-              <FormControl id="lastname" isRequired mt={4}>
-                <FormLabel>Last Name</FormLabel>
+              <FormControl id="username" isRequired mt={4}>
+                <FormLabel>User Name</FormLabel>
                 <Input
                   type="text"
-                  value={lastname}
-                  onChange={(e) => setLastname(e.target.value)}
-                />
-              </FormControl>
-
-              <FormControl id="email" isRequired mt={4}>
-                <FormLabel>Email</FormLabel>
-                <Input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </FormControl>
 
@@ -143,6 +143,15 @@ export const SignUp = () => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                />
+              </FormControl>
+
+              <FormControl id="userImage" isRequired mt={4}>
+                <FormLabel>User Image</FormLabel>
+                <Input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
                 />
               </FormControl>
 
