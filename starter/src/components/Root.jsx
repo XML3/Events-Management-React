@@ -59,27 +59,28 @@ export const Root = ({ initialEvents, children }) => {
         //for filtering events - user input- search functionality
         setFilteredEvents(events);
 
-        //Fetch categories
-        const categoriesResponse = await fetch(`${API_URL}/categories`);
-        const categoriesData = await categoriesResponse.json();
-        setCategories(categoriesData);
+        // const categoriesResponse = await fetch(`${API_URL}/categories`);
+        // const categoriesData = await categoriesResponse.json();
+        // setCategories(categoriesData);
 
-        // //Fetch users
-        if (users) {
-          const userResponse = await fetch(`${API_URL}/users`);
-          const userData = await userResponse.json();
-          setUsers(userData);
-        }
+        // if (users) {
+        //   const userResponse = await fetch(`${API_URL}/users`);
+        //   const userData = await userResponse.json();
+        //   setUsers(userData);
+        // }
 
-        //fetch Articles (mid section in EventsPage)
-        const articleResponse = await fetch(`${API_URL}/articles`);
-        const articleData = await articleResponse.json();
-        setArticles(articleData);
+        // const articleResponse = await fetch(`${API_URL}/articles`);
+        // const articleData = await articleResponse.json();
+        // setArticles(articleData);
 
-        //fetch imageAnimation
-        const animatedImgResponse = await fetch(`${API_URL}/imgAnimation`);
-        const animateData = await animatedImgResponse.json();
-        setImgAnimation(animateData[0]);
+        // const animatedImgResponse = await fetch(`${API_URL}/imgAnimation`);
+        // const animateData = await animatedImgResponse.json();
+        // setImgAnimation(animateData[0]);
+
+        setCategories(eventData.categories || []);
+        setUsers(eventData.users || []);
+        setArticles(eventData.articles || []);
+        setImgAnimation(eventData.imgAnimation[0] || []);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
