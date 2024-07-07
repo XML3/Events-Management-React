@@ -39,7 +39,9 @@
       "image": "https://i.ibb.co/5KJxPdJ/glitch-Fm-scaled22.png",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9",
       "description": "Glitch, Electro Music Festival",
-      "categoryIds": ["1"],
+      "categoryIds": [
+        "1"
+      ],
       "location": "Miami, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-04-10T12:00:00.000Z"
@@ -51,7 +53,9 @@
       "image": "https://i.ibb.co/PghBpCS/electro-cassette.png",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9",
       "description": "Electro Music Festival",
-      "categoryIds": ["1"],
+      "categoryIds": [
+        "1"
+      ],
       "location": "New York City, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-03-15T13:30:00.000Z"
@@ -62,7 +66,9 @@
       "title": "EBM Solstice",
       "description": "Industrial - EBM Music Festival",
       "image": "https://i.ibb.co/W60SdSS/pexels-apasaric-1820770.jpg",
-      "categoryIds": ["1"],
+      "categoryIds": [
+        "1"
+      ],
       "location": "Hamburg, Germany",
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-03-15T13:30:00.000Z",
@@ -74,7 +80,9 @@
       "title": "Beyond",
       "description": "Techno Music Festival",
       "image": "https://i.ibb.co/cgjYkRd/pexels-jonastogo-3392640.jpg",
-      "categoryIds": ["1"],
+      "categoryIds": [
+        "1"
+      ],
       "location": "Berlin, Germany",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z",
@@ -86,7 +94,9 @@
       "title": "The Mission",
       "description": "Electronica Music Festival",
       "image": "https://i.ibb.co/nk6tGTx/pexels-joshsorenson-154147.jpg",
-      "categoryIds": ["1"],
+      "categoryIds": [
+        "1"
+      ],
       "location": "Barcelona, Spain",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z",
@@ -98,7 +108,9 @@
       "title": "God's House",
       "description": "Detroit House Music Festival",
       "image": "https://i.ibb.co/v1ybYrc/pexels-didsss-1300578.jpg",
-      "categoryIds": ["1"],
+      "categoryIds": [
+        "1"
+      ],
       "location": "Detroit, Michigan",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z",
@@ -111,7 +123,9 @@
       "image": "https://i.ibb.co/0yc7707/dale-de-vera-t9-BEidmh-G9-I-unsplash.jpg",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9",
       "description": "Alternative/Indie Festival",
-      "categoryIds": ["2"],
+      "categoryIds": [
+        "2"
+      ],
       "location": "San Francisco, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-04-10T12:00:00.000Z"
@@ -123,7 +137,9 @@
       "image": "https://i.ibb.co/khxbRmF/joshua-coleman-Cj8h7-b47ko-unsplash.jpg",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9",
       "description": "80's Music Night ",
-      "categoryIds": ["2"],
+      "categoryIds": [
+        "2"
+      ],
       "location": "New York City, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-03-15T13:30:00.000Z"
@@ -134,7 +150,9 @@
       "title": "242",
       "description": "Industrial - EBM Night",
       "image": "https://i.ibb.co/zGP7NvF/ferran-fusalba-rosello-f75w4vv0-J7s-unsplash.jpg",
-      "categoryIds": ["2"],
+      "categoryIds": [
+        "2"
+      ],
       "location": "Berlin, Germany",
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-03-15T13:30:00.000Z",
@@ -146,7 +164,9 @@
       "title": "Glam",
       "description": "Glamrock Festival",
       "image": "https://i.ibb.co/60Xm4Dq/cherries.png",
-      "categoryIds": ["2"],
+      "categoryIds": [
+        "2"
+      ],
       "location": "Los Angeles, USA",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z",
@@ -158,7 +178,9 @@
       "title": "Surfside",
       "description": "Surf Rock & Punk Night",
       "image": "https://i.ibb.co/PwD68xS/brian-lundquist-2-O0b-ZCba-OO4-unsplash.jpg",
-      "categoryIds": ["2"],
+      "categoryIds": [
+        "2"
+      ],
       "location": "Miami, USA",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z",
@@ -170,7 +192,9 @@
       "title": "Cured",
       "description": "Synth-pop Post-punk Gothic-rock Festival",
       "image": "https://i.ibb.co/HHr0p73/bee-felten-leidel-QQQyx-EV9-DBY-unsplash.jpg",
-      "categoryIds": ["2"],
+      "categoryIds": [
+        "2"
+      ],
       "location": "West Sussex, England",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z",
@@ -183,7 +207,9 @@
       "image": "https://i.ibb.co/C9RPYQX/ronan-dorard-3-Ko-Hm-LJGNa-U-unsplash.jpg",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9",
       "description": "A night of cinematic music pieces",
-      "categoryIds": ["3"],
+      "categoryIds": [
+        "3"
+      ],
       "location": "New York City, USA",
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-04-10T12:00:00.000Z"
@@ -195,7 +221,9 @@
       "image": "https://i.ibb.co/QnXzxcW/manuel-nageli-7-Cc-PLtyw-Rso-unsplash.jpg",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9",
       "description": "International Conducting Competion",
-      "categoryIds": ["3"],
+      "categoryIds": [
+        "3"
+      ],
       "location": "Amsterdam, The Netherlands",
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-03-15T13:30:00.000Z"
@@ -206,7 +234,9 @@
       "title": "A Tribute to",
       "description": "A Tribute to Mozart",
       "image": "https://i.ibb.co/nP3JgPK/gianluca-carenza-Yxju8-Uua-Re-I-unsplash.jpg",
-      "categoryIds": ["3"],
+      "categoryIds": [
+        "3"
+      ],
       "location": "Vienna, Austria",
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-03-15T13:30:00.000Z",
@@ -218,7 +248,9 @@
       "title": "A Night With",
       "description": "Piano Concerto",
       "image": "https://i.ibb.co/bBc2CNs/piano.png",
-      "categoryIds": ["3"],
+      "categoryIds": [
+        "3"
+      ],
       "location": "Essen, Germany",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z",
@@ -230,7 +262,9 @@
       "title": "Under the Stars",
       "description": "The Philharmonic Orchestra",
       "image": "https://i.ibb.co/frKWCFN/alexis-subias-8-YT-UVLp-FYc-unsplash.jpg",
-      "categoryIds": ["3"],
+      "categoryIds": [
+        "3"
+      ],
       "location": "The Greco-Roman Theather, Sicily",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z",
@@ -242,7 +276,9 @@
       "title": "Cello Concerto",
       "description": "Biggest Cello Festival in the World",
       "image": "https://i.ibb.co/jGV6DV7/cello.png",
-      "categoryIds": ["3"],
+      "categoryIds": [
+        "3"
+      ],
       "location": "Amsterdam, The Netherlands",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z",
