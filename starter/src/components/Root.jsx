@@ -50,11 +50,14 @@ export const Root = ({ initialEvents, children }) => {
     const fetchData = async () => {
       try {
         //Fetch events
-        const eventsResponse = await fetch(`${API_URL}/events`);
-        const eventsData = await eventsResponse.json();
-        setEventsData(eventsData);
+        const eventsResponse = await fetch(API_URL); // Fetch events2.json
+        const eventData = await eventsResponse.json(); //Parse JSON
+
+        const events = eventData.events;
+
+        setEventsData(events);
         //for filtering events - user input- search functionality
-        setFilteredEvents(eventsData);
+        setFilteredEvents(events);
 
         //Fetch categories
         const categoriesResponse = await fetch(`${API_URL}/categories`);
