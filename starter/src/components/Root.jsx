@@ -1,6 +1,6 @@
 import React from "react";
 import { createContext, useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Navigation } from "./Navigation";
 import { NavigationFooter } from "./NavigationFooter";
 import NewEvent from "./forms/NewEvent";
@@ -27,6 +27,7 @@ export const Root = ({ initialEvents, children }) => {
   const [subHeader, setSubHeader] = useState(subHeaderText);
 
   const toast = useToast();
+  const location = useLocation();
 
   //filters events data based on search - to be called in SearchItem/EventsPage.
   const handleFilteredEvents = (searchValue) => {
