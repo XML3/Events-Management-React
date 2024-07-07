@@ -28,7 +28,7 @@ import {
 import DataContext from "../components/Root";
 
 export const EventPage = () => {
-  const { deleteEvent, header } = useContext(DataContext);
+  const { deleteEvent, header, categories, users } = useContext(DataContext);
 
   const { eventId } = useParams();
   const navigate = useNavigate();
@@ -37,8 +37,8 @@ export const EventPage = () => {
 
   const [event, setEvent] = useState(null);
   const [creator, setCreator] = useState(null);
-  const [categories, setCategories] = useState([]);
-  const [users, setUsers] = useState([]);
+  // const [categories, setCategories] = useState([]);
+  // const [users, setUsers] = useState([]);
 
   // Modal pop-up
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,24 +52,25 @@ export const EventPage = () => {
     setIsModalOpen(false);
   };
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch(`${API_URL}/users`);
-        const userData = await response.json();
-        setUsers(userData);
-      } catch (error) {
-        console.error("Error fetching data from user:", error);
-      }
-    };
-    fetchUsers();
-  }, []);
+  // useEffect(() => {
+  //   const fetchUsers = async () => {
+  //     try {
+  //       const response = await fetch(`${API_URL}/users`);
+  //       const userData = await response.json();
+  //       setUsers(userData);
+  //     } catch (error) {
+  //       console.error("Error fetching data from user:", error);
+  //     }
+  //   };
+  //   fetchUsers();
+  // }, []);
 
   useEffect(() => {
     const fetchEventData = async () => {
       try {
         const response = await fetch(`${API_URL}/events/${eventId}`);
         const eventData = await response.json();
+
         setEvent(eventData);
 
         //Fetch creator's data by createdBy
@@ -77,6 +78,7 @@ export const EventPage = () => {
           `${API_URL}/users/${eventData.createdBy}`
         );
         const creatorData = await userResponse.json();
+
         setCreator(creatorData);
       } catch (error) {
         console.error("Error fetching data from event:", error);
@@ -84,18 +86,18 @@ export const EventPage = () => {
     };
 
     //Fetch categories data
-    const fetchCategories = async () => {
-      try {
-        const response = await fetch(`${API_URL}/categories`);
-        const data = await response.json();
-        setCategories(data);
-      } catch (error) {
-        console.log("Error fetching data from categories:", error);
-      }
-    };
+    // const fetchCategories = async () => {
+    //   try {
+    //     const response = await fetch(`${API_URL}/categories`);
+    //     const data = await response.json();
+    //     setCategories(data);
+    //   } catch (error) {
+    //     console.log("Error fetching data from categories:", error);
+    //   }
+    // };
 
     fetchEventData();
-    fetchCategories();
+    // fetchCategories();
   }, [eventId]);
 
   if (!event || !creator) {
