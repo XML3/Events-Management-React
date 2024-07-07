@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { API_ROUTES, APP_ROUTES } from "../UI/constants";
 import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../lib/customHooks";
@@ -18,9 +18,12 @@ import {
 export const SignIn = () => {
   const navigate = useNavigate();
   const { user, authenticated } = useUser();
-  if (user || authenticated) {
-    navigate(API_ROUTES.DASHBOARD);
-  }
+
+  useEffect(() => {
+    if (user || authenticated) {
+      navigate(API_ROUTES.DASHBOARD);
+    }
+  }, [user, authenticated, navigate]);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
