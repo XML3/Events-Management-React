@@ -9,7 +9,7 @@ export const API_ROUTES = {
 
 export const APP_ROUTES = {
   SIGN_UP: "/auth/signup",
-  SIGN_IN: "/auth/signin",
+  SIGN_IN: "/login",
   DASHBOARD: "/dashboard",
 };
 
