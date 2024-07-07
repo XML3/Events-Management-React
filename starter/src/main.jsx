@@ -9,10 +9,6 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { SignIn } from "./components/forms/SignIn";
-import { SignUp } from "./components/forms/SignUp";
-import { APP_ROUTES } from "./components/UI/constants";
-import Dashboard from "./components/Dashboard";
 import { Root } from "./components/Root";
 import UserPage from "./pages/UserPage";
 import AboutPage from "./pages/AboutPage";
@@ -29,23 +25,6 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate to={APP_ROUTES.SIGN_IN} replace />,
-      },
-      {
-        path: APP_ROUTES.SIGN_UP,
-        element: <SignUp />,
-      },
-      {
-        path: APP_ROUTES.SIGN_IN,
-        element: <SignIn />,
-      },
-
-      {
-        path: APP_ROUTES.DASHBOARD,
-        element: <Dashboard />,
-      },
-      {
-        path: "/events",
         element: <EventsPage />,
       },
       {
@@ -63,11 +42,6 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactForm />,
-      },
-
-      {
-        path: "*",
-        element: <Navigate to={APP_ROUTES.SIGN_IN} replace />,
       },
     ],
   },
