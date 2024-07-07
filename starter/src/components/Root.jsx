@@ -5,7 +5,7 @@ import { Navigation } from "./Navigation";
 import { NavigationFooter } from "./NavigationFooter";
 import NewEvent from "./forms/NewEvent";
 import { useToast } from "@chakra-ui/react";
-import { APP_ROUTES } from "./UI/constants.js";
+
 import { API_URL } from "./UI/constants.js";
 
 //creating context for data
@@ -158,15 +158,13 @@ export const Root = ({ initialEvents, children }) => {
     subHeader,
   };
 
-  const hideNavigationRoutes = [APP_ROUTES.SIGN_IN, APP_ROUTES.SIGN_UP];
   return (
     <DataContext.Provider value={contextValue}>
-      {!hideNavigationRoutes.includes(location.pathname) && <Navigation />}
+      <Navigation />
       {/* {children} */}
       <Outlet />
-      {!hideNavigationRoutes.includes(location.pathname) && (
-        <NavigationFooter />
-      )}
+
+      <NavigationFooter />
     </DataContext.Provider>
   );
 };
