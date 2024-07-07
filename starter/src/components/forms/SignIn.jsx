@@ -21,7 +21,6 @@ export const SignIn = () => {
 
   useEffect(() => {
     if (user || authenticated) {
-      console.log("User is authenticated, navigating to dashboard");
       navigate(API_ROUTES.DASHBOARD);
     }
   }, [user, authenticated, navigate]);
@@ -33,7 +32,7 @@ export const SignIn = () => {
   const signIn = async () => {
     try {
       setIsLoading(true);
-      console.log("Attempting to sign in...");
+
       const response = await axios({
         method: "POST",
         url: API_ROUTES.SIGN_IN,
@@ -43,7 +42,6 @@ export const SignIn = () => {
         },
       });
       if (response?.data?.token) {
-        console.log("Sign in successful, storing token and navigation");
         storeTokenInLocalStorage(response.data.token);
         navigate(APP_ROUTES.DASHBOARD);
       } else {
