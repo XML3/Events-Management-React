@@ -68,7 +68,7 @@ export const Navigation = () => {
             fontWeight={orbitronWeight.semibold}
             letterSpacing={{ base: "0.1rem", md: "0.1rem" }}
           >
-            <Link to="/events">Home</Link>
+            <Link to="/">Home</Link>
           </Text>
 
           <Link to="/event/1">
