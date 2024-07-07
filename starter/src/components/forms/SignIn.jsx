@@ -21,6 +21,7 @@ export const SignIn = () => {
 
   useEffect(() => {
     if (user || authenticated) {
+      console.log("User is authenticated, navigating to dashboard");
       navigate(API_ROUTES.DASHBOARD);
     }
   }, [user, authenticated, navigate]);
@@ -32,6 +33,7 @@ export const SignIn = () => {
   const signIn = async () => {
     try {
       setIsLoading(true);
+      console.log("Attempting to sign in...");
       const response = await axios({
         method: "POST",
         url: API_ROUTES.SIGN_IN,
@@ -40,17 +42,26 @@ export const SignIn = () => {
           password,
         },
       });
-      if (!response?.data?.token) {
-        console.log("Something went wrong during signing in: ", response);
-        return;
+      if (response?.data?.token) {
+        console.log("Sign in successful, storing token and navigation");
+        storeTokenInLocalStorage(response.data.token);
+        navigate(APP_ROUTES.DASHBOARD);
+      } else {
+        console.error(
+          "No Token received. Something went wrong during signing in: ",
+          response
+        );
       }
-      storeTokenInLocalStorage(response.data.token);
-      navigate(APP_ROUTES.DASHBOARD);
     } catch (err) {
-      console.log("Some error occured during signin in: ", err);
+      console.log("An error occured during signin in: ", err);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    signIn();
   };
 
   const header = "Events Management";
@@ -110,12 +121,7 @@ export const SignIn = () => {
             borderRadius={"lg"}
             color={"gray.200"}
           >
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                signIn();
-              }}
-            >
+            <form onSubmit={handleSubmit}>
               <FormControl id="text" isRequired>
                 <FormLabel>User Name</FormLabel>
                 <Input
