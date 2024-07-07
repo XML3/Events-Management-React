@@ -3,7 +3,7 @@ const API_URL = "https://bed-express-event-api.onrender.com";
 
 export const API_ROUTES = {
   SIGN_UP: `${API_URL}/auth/signup`,
-  SIGN_IN: `${API_URL}/auth/signin`,
+  SIGN_IN: `${API_URL}/login`,
   GET_USER: `${API_URL}/auth/me`,
 };
 
