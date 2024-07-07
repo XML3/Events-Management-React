@@ -1,3 +1,3 @@
-const API_URL = " http://localhost:3000";
+const API_URL = "events2.json";
 
 export { API_URL };
