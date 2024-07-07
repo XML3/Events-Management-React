@@ -80,7 +80,7 @@ export const EditEvent = ({
       //   formDataObject[key] = value;
       // }
       // const requestBody = JSON.stringify(formDataObject);
-      const response = await fetch(`${API_URL}/${initialData.eventId}`, {
+      const response = await fetch(`${API_URL}/events/${initialData.eventId}`, {
         method: "PUT",
         body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
@@ -230,15 +230,15 @@ export const EditEvent = ({
                 </Box>
               )}
             </FormControl>
-            <FormControl>
-              {/* /User Image upload */}
+            {/* <FormControl>
+         
               <FormLabel>User Image</FormLabel>
               <Input
                 name="userImage"
                 type="file"
                 onChange={handleImageEditChange}
               />
-            </FormControl>
+            </FormControl> */}
           </Form>
         </ModalBody>
 
