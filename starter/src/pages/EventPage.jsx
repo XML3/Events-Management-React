@@ -430,27 +430,30 @@ export const EventPage = () => {
               <Center>
                 <Stack direction={"row"} mt={2}>
                   {/* checks  if it is indeed an array */}
-                  {Array.isArray(event.categoryIds) ? (
+                  {Array.isArray(event.categoryIds) &&
+                  event.categoryId.length > 0 ? (
                     event.categoryIds.map((categoryId) => {
                       const category = categories.find(
                         (category) => category.id === categoryId
                       );
 
-                      if (!category) return null;
-
-                      return (
-                        <Text
-                          key={category.id}
-                          color="#ff005f"
-                          fontSize={{ base: "0.8rem", md: "1rem" }}
-                          letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                          mr={2}
-                          fontFamily={orbitronFontFamily}
-                          fontWeight={orbitronWeight.light}
-                        >
-                          {category.name}
-                        </Text>
-                      );
+                      if (category) {
+                        return (
+                          <Text
+                            key={category.id}
+                            color="#ff005f"
+                            fontSize={{ base: "0.8rem", md: "1rem" }}
+                            letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                            mr={2}
+                            fontFamily={orbitronFontFamily}
+                            fontWeight={orbitronWeight.light}
+                          >
+                            {category.name}
+                          </Text>
+                        );
+                      } else {
+                        return null;
+                      }
                     })
                   ) : (
                     <Text>No categories available</Text>
