@@ -28,7 +28,7 @@ import {
 import DataContext from "../components/Root";
 
 export const EventPage = () => {
-  const { deleteEvent, header } = useContext(DataContext);
+  const { deleteEvent, header, categories } = useContext(DataContext);
 
   const { eventId } = useParams();
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ export const EventPage = () => {
 
   const [event, setEvent] = useState(null);
   const [creator, setCreator] = useState(null);
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
   const [users, setUsers] = useState([]);
 
   // Modal pop-up
@@ -84,18 +84,18 @@ export const EventPage = () => {
     };
 
     //Fetch categories data
-    const fetchCategories = async () => {
-      try {
-        const response = await fetch(`${API_URL}/categories`);
-        const categoriesData = await response.json();
-        setCategories(categoriesData);
-      } catch (error) {
-        console.log("Error fetching data from categories:", error);
-      }
-    };
+    // const fetchCategories = async () => {
+    //   try {
+    //     const response = await fetch(`${API_URL}/categories`);
+    //     const categoriesData = await response.json();
+    //     setCategories(categoriesData);
+    //   } catch (error) {
+    //     console.log("Error fetching data from categories:", error);
+    //   }
+    // };
 
     fetchEventData();
-    fetchCategories();
+    // fetchCategories();
   }, [eventId]);
 
   if (!event || !creator) {
