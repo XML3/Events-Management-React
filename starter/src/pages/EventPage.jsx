@@ -27,7 +27,7 @@ import {
 } from "@chakra-ui/react";
 import DataContext from "../components/Root";
 
-export const EventPage = () => {
+export const EventPage = ({ event }) => {
   const { deleteEvent, header } = useContext(DataContext);
 
   const { eventId } = useParams();
