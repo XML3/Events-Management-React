@@ -87,8 +87,8 @@ export const EventPage = () => {
     const fetchCategories = async () => {
       try {
         const response = await fetch(`${API_URL}/categories`);
-        const data = await response.json();
-        setCategories(data);
+        const categoriesData = await response.json();
+        setCategories(categoriesData);
       } catch (error) {
         console.log("Error fetching data from categories:", error);
       }
