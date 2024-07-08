@@ -28,7 +28,7 @@ import {
 import DataContext from "../components/Root";
 
 export const EventPage = () => {
-  const { deleteEvent, header, categories } = useContext(DataContext);
+  const { deleteEvent, header, users, categories } = useContext(DataContext);
 
   const { eventId } = useParams();
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ export const EventPage = () => {
   const [event, setEvent] = useState(null);
   const [creator, setCreator] = useState(null);
   // const [categories, setCategories] = useState([]);
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
 
   // Modal pop-up
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,18 +52,18 @@ export const EventPage = () => {
     setIsModalOpen(false);
   };
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch(`${API_URL}/users`);
-        const userData = await response.json();
-        setUsers(userData);
-      } catch (error) {
-        console.error("Error fetching data from user:", error);
-      }
-    };
-    fetchUsers();
-  }, []);
+  // useEffect(() => {
+  //   const fetchUsers = async () => {
+  //     try {
+  //       const response = await fetch(`${API_URL}/users`);
+  //       const userData = await response.json();
+  //       setUsers(userData);
+  //     } catch (error) {
+  //       console.error("Error fetching data from user:", error);
+  //     }
+  //   };
+  //   fetchUsers();
+  // }, []);
 
   useEffect(() => {
     const fetchEventData = async () => {
