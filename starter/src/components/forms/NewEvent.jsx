@@ -248,7 +248,7 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
               </Select>
             </FormControl>
             <FormControl>
-              {/* /User Image upload */}
+              {/* /User Image */}
               <FormLabel>User Image</FormLabel>
               <Input
                 name="userImage"
