@@ -9,7 +9,7 @@ export const UserPage = ({ userId }) => {
     //Fetching user info based on userId
     const fetchUser = async () => {
       try {
-        const response = await fetch(`${API_URL}/users/userId`);
+        const response = await fetch(`${API_URL}/users/${userId}`);
         const userData = await response.json();
         setUser(userData);
       } catch (error) {
