@@ -238,7 +238,7 @@ export const EventsPage = () => {
                       <EventsCard
                         key={event.id}
                         event={event}
-                        categories={categories.id}
+                        categories={categories}
                       />
                     </Link>
                   ))}
