@@ -101,11 +101,7 @@ export const EventPage = () => {
   if (!event || !creator) {
     return <div> Loading event data...</div>;
   }
-  // categories
-  const eventCategories = event.categoryIds.map(
-    (categoryId) =>
-      categories.find((category) => category.id === categoryId)?.name
-  );
+
   //Delete handler and redirect to EventsPage after deleting
   const handleDeleteClick = async (eventId) => {
     const confirmed = window.confirm(
@@ -432,20 +428,8 @@ export const EventPage = () => {
 
               {/* //categories */}
               <Center>
-                <Box
-                  color="#ff005f"
-                  fontSize={{ base: "0.8rem", md: "1rem" }}
-                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                  mr={2}
-                  fontFamily={orbitronFontFamily}
-                  fontWeight={orbitronWeight.light}
-                >
-                  {eventCategories((category, index) => (
-                    <Box key={index}> {category}</Box>
-                  ))}
-                </Box>
-                {/* <Stack direction={"row"} mt={2}>
-                
+                <Stack direction={"row"} mt={2}>
+                  {/* checks  if it is indeed an array */}
                   {Array.isArray(event.categoryIds) ? (
                     event.categoryIds.map((categoryId) => {
                       const category = categories.find(
@@ -471,7 +455,7 @@ export const EventPage = () => {
                   ) : (
                     <Text>No categories available</Text>
                   )}
-                </Stack> */}
+                </Stack>
               </Center>
             </Box>
           </Box>
