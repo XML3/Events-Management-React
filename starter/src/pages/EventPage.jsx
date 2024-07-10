@@ -408,7 +408,21 @@ export const EventPage = () => {
                   fontSize={{ base: "0.9rem", md: "0.8rem" }}
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 >
-                  <UserPage userId={creator.id} />
+                  {/* <UserPage userId={creator.id} /> */}
+                  <Box>
+                    {event.createdBy.map((creatorId) => {
+                      const creator = users.find(
+                        (creator) => creator.id === creatorId
+                      );
+                      if (!creator) return null;
+
+                      return (
+                        <Text key={creator.id}>
+                          {creator.name && creator.image}
+                        </Text>
+                      );
+                    })}
+                  </Box>
                 </Box>
               </Grid>
 
