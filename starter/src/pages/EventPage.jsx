@@ -75,7 +75,7 @@ export const EventPage = () => {
 
         //Fetch creator's data by createdBy
         const userResponse = await fetch(
-          `${API_URL}/users/${eventData.createdBy}`
+          `${API_URL}/users/${eventData.createdBy.id}`
         );
         const creatorData = await userResponse.json();
         setCreator(creatorData);
