@@ -73,19 +73,15 @@ export const EventPage = () => {
         setEvent(eventData);
 
         //Fetch creator's data by createdBy
-    //     const userResponse = await fetch(
-    //       `${API_URL}/users/${eventData.createdBy}`
-    //     );
-    //     const creatorData = await userResponse.json();
-    //     setCreator(creatorData);
-    //   } catch (error) {
-    //     console.error("Error fetching data from event:", error);
-    //   }
-    // };
-    if(eventData) {
-      const eventCreator = users.find((user) => user.id === eventData.createdBy);
-      setCreator(eventCreator)
-    }
+        const userResponse = await fetch(
+          `${API_URL}/users/${eventData.createdBy}`
+        );
+        const creatorData = await userResponse.json();
+        setCreator(creatorData);
+      } catch (error) {
+        console.error("Error fetching data from event:", error);
+      }
+    };
 
     //Fetch categories data
     // const fetchCategories = async () => {
@@ -100,7 +96,7 @@ export const EventPage = () => {
 
     fetchEventData();
     // fetchCategories();
-  }, [eventId, users, event]);
+  }, [eventId]);
 
   if (!event || !creator) {
     return <div> Loading event data...</div>;
