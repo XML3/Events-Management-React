@@ -74,11 +74,11 @@ export const EventPage = () => {
         setEvent(eventData);
 
         //Fetch creator's data by createdBy
-        const userResponse = await fetch(
-          `${API_URL}/users/${eventData.userId}`
-        );
-        const creatorData = await userResponse.json();
-        setCreator(creatorData);
+        // const userResponse = await fetch(
+        //   `${API_URL}/users/${eventData.userId}`
+        // );
+        // const creatorData = await userResponse.json();
+        // setCreator(creatorData);
       } catch (error) {
         console.error("Error fetching data from event:", error);
       }
@@ -409,7 +409,7 @@ export const EventPage = () => {
                   fontSize={{ base: "0.9rem", md: "0.8rem" }}
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 >
-                  <UserPage userId={creator.id} />
+                  <UserPage userId={event.userId} />
                 </Box>
               </Grid>
 
