@@ -409,11 +409,7 @@ export const EventPage = () => {
                   fontSize={{ base: "0.9rem", md: "0.8rem" }}
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 >
-                  {creator && (
-                    <Box>
-                      <UserPage userId={creator} />
-                    </Box>
-                  )}
+                  <UserPage userId={creator.id} />
                 </Box>
               </Grid>
 
