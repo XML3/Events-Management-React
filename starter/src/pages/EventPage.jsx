@@ -31,6 +31,7 @@ export const EventPage = () => {
   const { deleteEvent, header, users, categories } = useContext(DataContext);
 
   const { eventId } = useParams();
+  const { userId } = useParams();
   const navigate = useNavigate();
 
   const toast = useToast();
@@ -74,7 +75,7 @@ export const EventPage = () => {
 
         //Fetch creator's data by createdBy
         const userResponse = await fetch(
-          `${API_URL}/users/${eventData.createdBy}`
+          `${API_URL}/users/${userId}/${eventData.createdBy}`
         );
         const creatorData = await userResponse.json();
         setCreator(creatorData);
