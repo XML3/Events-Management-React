@@ -410,6 +410,7 @@ export const EventPage = () => {
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 >
                   {/* <UserPage userId={event.userId} /> */}
+                  {/* testing */}
                   <Image
                     src={event.createdBy.image}
                     alt={event.createdBy.name}
