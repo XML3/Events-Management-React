@@ -409,8 +409,8 @@ export const EventPage = () => {
                   fontSize={{ base: "0.9rem", md: "0.8rem" }}
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 >
-                  {/* <UserPage userId={creator.id} /> */}
-                  <Box>
+                  <UserPage userId={creator.id} />
+                  {/* <Box>
                     {event.createdBy.map((creatorId) => {
                       const creator = users.find(
                         (creator) => creator.id === creatorId
@@ -423,7 +423,7 @@ export const EventPage = () => {
                         </Text>
                       );
                     })}
-                  </Box>
+                  </Box> */}
                 </Box>
               </Grid>
 
