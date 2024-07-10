@@ -409,16 +409,16 @@ export const EventPage = () => {
                   fontSize={{ base: "0.9rem", md: "0.8rem" }}
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 >
-                  <UserPage userId={event.createdBy} />
+                  {/* <UserPage userId={event.createdBy} /> */}
                   {/* testing */}
-                  {/* <Image
+                  <Image
                     src={event.createdBy.image}
                     alt={event.createdBy.name}
                     borderRadius={"full"}
                     boxSize={"100px"}
                     mt={4}
                   />
-                  <Text>{event.createdBy.name}</Text> */}
+                  <Text>{event.createdBy.name}</Text>
                 </Box>
               </Grid>
 
