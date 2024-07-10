@@ -28,7 +28,7 @@ import {
 import DataContext from "../components/Root";
 
 export const EventPage = () => {
-  const { deleteEvent, header, users, categories } = useContext(DataContext);
+  const { deleteEvent, header, categories } = useContext(DataContext);
 
   const { eventId } = useParams();
 
