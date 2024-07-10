@@ -411,14 +411,31 @@ export const EventPage = () => {
                 >
                   {/* <UserPage userId={event.createdBy} /> */}
                   {/* testing */}
-                  <Image
+                  {/* <Image
                     src={event.createdBy.image}
                     alt={event.createdBy.name}
                     borderRadius={"full"}
                     boxSize={"100px"}
                     mt={4}
                   />
-                  <Text>{event.createdBy.name}</Text>
+                  <Text>{event.createdBy.name}</Text> */}
+                  {creator && (
+                    <Box
+                      fontFamily={orbitronFontFamily}
+                      fontWeight={"medium"}
+                      fontSize={{ base: "0.9rem", md: "0.8rem" }}
+                      letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                    >
+                      <Image
+                        src={creator.image}
+                        alt={creator.name}
+                        borderRadius={"full"}
+                        boxSize={"100px"}
+                        mt={4}
+                      />
+                      <Text>{creator.name}</Text>
+                    </Box>
+                  )}
                 </Box>
               </Grid>
 
