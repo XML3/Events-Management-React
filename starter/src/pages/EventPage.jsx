@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import React from "react";
-import { UserPage } from "./UserPage";
+// import { UserPage } from "./UserPage";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Typewriter from "../components/Typewriter";
@@ -28,7 +28,7 @@ import {
 import DataContext from "../components/Root";
 
 export const EventPage = () => {
-  const { deleteEvent, header, categories } = useContext(DataContext);
+  const { deleteEvent, header, users, categories } = useContext(DataContext);
 
   const { eventId } = useParams();
 
