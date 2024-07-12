@@ -16,7 +16,7 @@ import Dashboard from "./components/Dashboard";
 import { Root } from "./components/Root";
 import UserPage from "./pages/UserPage";
 import AboutPage from "./pages/AboutPage";
-import ContactForm from "./pages/ContactPage";
+// import ContactForm from "./pages/ContactPage";
 
 const router = createBrowserRouter([
   {
@@ -29,23 +29,6 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate to={APP_ROUTES.SIGN_IN} replace />,
-      },
-      {
-        path: APP_ROUTES.SIGN_UP,
-        element: <SignUp />,
-      },
-      {
-        path: APP_ROUTES.SIGN_IN,
-        element: <SignIn />,
-      },
-
-      {
-        path: APP_ROUTES.DASHBOARD,
-        element: <Dashboard />,
-      },
-      {
-        path: "/events",
         element: <EventsPage />,
       },
       {
@@ -60,15 +43,12 @@ const router = createBrowserRouter([
         path: "/about",
         element: <AboutPage />,
       },
-      {
-        path: "/contact",
-        element: <ContactForm />,
-      },
-
-      {
-        path: "*",
-        element: <Navigate to={APP_ROUTES.SIGN_IN} replace />,
-      },
+      //*****
+      //This section is removed in order to not receive emails from users, code will remain as reference
+      // {
+      //   path: "/contact",
+      //   element: <ContactForm />,
+      // },
     ],
   },
 ]);
