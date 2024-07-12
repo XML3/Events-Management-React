@@ -38,6 +38,7 @@ export const EventPage = () => {
 
   const [event, setEvent] = useState(null);
   const [creator, setCreator] = useState(null);
+  const [loading, setLoading] = useState(true);
   // const [categories, setCategories] = useState([]);
   // const [users, setUsers] = useState([]);
 
@@ -70,17 +71,35 @@ export const EventPage = () => {
     const fetchEventData = async () => {
       try {
         const response = await fetch(`${API_URL}/events/${eventId}`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch event data: ${response.statusText}`);
+        }
         const eventData = await response.json();
+        console.log("Fetched evetn data:", eventData);
         setEvent(eventData);
 
         //Fetch creator's data by createdBy
-        const userResponse = await fetch(
-          `${API_URL}/users/${eventData.userId}`
-        );
+        const createdById =
+          typeof eventData.createdBy === "object"
+            ? eventData.createdBy.id
+            : eventData.createdBy;
+
+        console.log("Created by ID:", createdById);
+
+        const userResponse = await fetch(`${API_URL}/users/${createdById}`);
+        if (!userResponse) {
+          throw new Error(
+            `Failed to fetch creator data: ${userResponse.statusText}`
+          );
+        }
         const creatorData = await userResponse.json();
+        console.log("Fetched creator data:", creatorData);
         setCreator(creatorData);
+
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching data from event:", error);
+        setLoading(false);
       }
     };
 
@@ -403,12 +422,22 @@ export const EventPage = () => {
                 </Box>
 
                 {/* Render UserPage/creator */}
-                <Box
-                  fontFamily={orbitronFontFamily}
-                  fontWeight={orbitronWeight.medium}
-                  fontSize={{ base: "0.9rem", md: "0.8rem" }}
-                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                <Flex
+                  direction={"column"}
+                  alignItems={"center"}
+                  position={"relative"}
+                  right={"3rem"}
+                  mb={{ base: "1rem", md: "1rem" }}
                 >
+                  <Text
+                    color={"gray.200"}
+                    fontWeight={"bold"}
+                    marginBottom={2}
+                    marginLeft={"5rem"}
+                    fontFamily={orbitronFontFamily}
+                  >
+                    Event Creator
+                  </Text>
                   {/* <UserPage userId={event.createdBy} /> */}
                   {/* testing */}
                   {/* <Image
@@ -429,14 +458,22 @@ export const EventPage = () => {
                       <Image
                         src={creator.image}
                         alt={creator.name}
+                        w={{ base: "3rem", md: "5rem" }}
+                        h={{ base: "3rem", md: "5rem" }}
                         borderRadius={"full"}
                         boxSize={"100px"}
                         mt={4}
+                        marginLeft={"5.5rem"}
                       />
-                      <Text>{creator.name}</Text>
+                      <Text
+                        fontSize={{ base: "0.7rem", md: "0.8rem" }}
+                        marginLeft={"5rem"}
+                      >
+                        {creator.name}
+                      </Text>
                     </Box>
                   )}
-                </Box>
+                </Flex>
               </Grid>
 
               {/* Description */}
