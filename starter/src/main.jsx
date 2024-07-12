@@ -14,7 +14,7 @@ import { SignUp } from "./components/forms/SignUp";
 import { APP_ROUTES } from "./components/UI/constants";
 import Dashboard from "./components/Dashboard";
 import { Root } from "./components/Root";
-import UserPage from "./pages/UserPage";
+// import UserPage from "./pages/UserPage";
 import AboutPage from "./pages/AboutPage";
 // import ContactForm from "./pages/ContactPage";
 
@@ -35,10 +35,10 @@ const router = createBrowserRouter([
         path: "/event/:eventId",
         element: <EventPage />,
       },
-      {
-        path: "/users/:userId",
-        element: <UserPage />,
-      },
+      // {
+      //   path: "/users/:userId",
+      //   element: <UserPage />,
+      // },
       {
         path: "/about",
         element: <AboutPage />,
