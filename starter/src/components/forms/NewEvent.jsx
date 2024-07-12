@@ -51,9 +51,11 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
         categoryIds: [value],
       }));
     } else if (name === "createdBy") {
+      const selectedUser = users.find((user) => user.id === value);
       setFormData((previousData) => ({
         ...previousData,
         createdBy: value,
+        userImage: selectedUser.image,
       }));
     } else {
       setFormData((previousData) => ({
@@ -63,30 +65,40 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
     }
   };
 
+  // ********************************
+
   //image upload handler-change (updates state when selected in the form)
+  //This function is only available when the image upload option is set in the return, this has been removed, but kept in the code for reference, so users do not overload my free image hosting site
   const handleImageChange = (event) => {
     const imageFile = event.target.files[0]; //retrieves first file selected by user. [0] for single file
     setFormData((previousData) => ({
       ...previousData,
       image: imageFile,
-      userImage: imageFile,
+      // userImage: imageFile,
     }));
   };
+  //********************************
 
   //action - POST / handle form Submit-Save /success-error message to user
   const takeAction = async () => {
     try {
       //const formData = new FormData(formRef.current);
+      const formDataToSend = new FormData();
+      for (let key in formData) {
+        formDataToSend.append(key, formData[key]);
+      }
 
       const response = await fetch(`${API_URL}/events`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        // headers: { "Content-Type": "application/json" },
+        // body: JSON.stringify(formData),
+        body: formDataToSend,
       });
 
-      const data = await response.json();
       if (response.ok) {
+        const data = await response.json();
         addEvent({ ...formData, id: data.id });
+
         //notify the user
         toast({
           title: "Event Created",
@@ -159,13 +171,20 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
               />
             </FormControl>
             <FormControl>
-              <FormLabel>Image</FormLabel>
-              {/* /Event Image upload */}
-              <Input
+              <FormLabel>Image URL</FormLabel>
+              {/* /Event Image upload / this section is commented out to avoid overloading my hosting site*/}
+              {/* <Input
                 name="image"
                 type="file"
                 accept="image/*"
                 onChange={handleImageChange}
+              /> */}
+
+              {/* Image by URL / to avoid uploads to my hosting site from users */}
+              <Input
+                name="image"
+                value={formData.image}
+                onChange={handleInputChange}
               />
             </FormControl>
             <FormControl>
@@ -247,16 +266,16 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
                 ))}
               </Select>
             </FormControl>
-            <FormControl>
-              {/* /User Image */}
-              <FormLabel>User Image</FormLabel>
+            {/* <FormControl> */}
+            {/* /User Image */}
+            {/* <FormLabel>User Image</FormLabel>
               <Input
                 name="userImage"
                 type="file"
                 accept="image/*"
                 onChange={handleImageChange}
               />
-            </FormControl>
+            </FormControl> */}
           </form>
         </ModalBody>
 
