@@ -55,7 +55,7 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
       setFormData((previousData) => ({
         ...previousData,
         createdBy: value,
-        userImage: selectedUser.image,
+        userImage: selectedUser ? selectedUser.image : "",
       }));
     } else {
       setFormData((previousData) => ({
