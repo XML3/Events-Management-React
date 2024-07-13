@@ -84,8 +84,6 @@ export const EventPage = () => {
             ? eventData.createdBy.id
             : eventData.createdBy;
 
-        console.log("Created by ID:", createdById);
-
         const userResponse = await fetch(`${API_URL}/users/${createdById}`);
         if (!userResponse) {
           throw new Error(
@@ -93,7 +91,7 @@ export const EventPage = () => {
           );
         }
         const creatorData = await userResponse.json();
-        console.log("Fetched creator data:", creatorData);
+
         setCreator(creatorData);
 
         setLoading(false);
