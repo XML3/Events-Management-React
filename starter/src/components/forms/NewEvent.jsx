@@ -1,6 +1,6 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { Form } from "react-router-dom";
-import DataContext, { Root } from "../Root";
+import DataContext from "../Root";
 import { API_URL } from "../UI/constants.js";
 import {
   Modal,
@@ -18,27 +18,60 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
+const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
   const formRef = useRef(null);
-
   const toast = useToast();
 
-  const { addEvent } = useContext(DataContext);
+  const { addEvent, users } = useContext(DataContext);
 
   const [formData, setFormData] = useState({
     title: "",
     image: "",
     lineup: "",
     description: "",
-    //category modified to "categoryIds"
     categoryIds: "",
     startTime: "",
     endTime: "",
     location: "",
-    //modifed userName to createdBy
     createdBy: "",
-    userImage: "",
   });
+
+  useEffect(() => {
+    if (!isOpen) {
+      resetForm();
+    }
+  }, [isOpen]);
+
+  const fetchUserId = async (userId) => {
+    try {
+      const response = await fetch(`${API_URL}/users/${userId}`);
+      if (response.ok) {
+        const userData = await response.json();
+        //Update formData with user's image
+        setFormData((previousData) => ({
+          ...previousData,
+          image: userData.image,
+        }));
+      } else {
+        console.error("Failed to fetch user details");
+      }
+    } catch (error) {
+      console.error("Error fetching user details:", error);
+    }
+  };
+  // ********************************
+
+  //image upload handler-change (updates state when selected in the form)
+  //This function is only available when the image upload option is set in the return, this has been removed, but kept in the code for reference, so users do not overload my free image hosting site
+  // const handleImageChange = (event) => {
+  //   const imageFile = event.target.files[0]; //retrieves first file selected by user. [0] for single file
+  //   setFormData((previousData) => ({
+  //     ...previousData,
+  //     image: imageFile,
+  //     // userImage: imageFile,
+  //   }));
+  // };
+  //********************************
 
   //input handler
   const handleInputChange = (event) => {
@@ -48,14 +81,12 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
       setFormData((previousData) => ({
         ...previousData,
         // categoryIds: [parseInt(value)],
-        categoryIds: [value],
+        categoryIds: value ? [value] : [],
       }));
     } else if (name === "createdBy") {
-      const selectedUser = users.find((user) => user.id === value);
       setFormData((previousData) => ({
         ...previousData,
         createdBy: value,
-        userImage: selectedUser ? selectedUser.image : "",
       }));
     } else {
       setFormData((previousData) => ({
@@ -65,34 +96,13 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
     }
   };
 
-  // ********************************
-
-  //image upload handler-change (updates state when selected in the form)
-  //This function is only available when the image upload option is set in the return, this has been removed, but kept in the code for reference, so users do not overload my free image hosting site
-  const handleImageChange = (event) => {
-    const imageFile = event.target.files[0]; //retrieves first file selected by user. [0] for single file
-    setFormData((previousData) => ({
-      ...previousData,
-      image: imageFile,
-      // userImage: imageFile,
-    }));
-  };
-  //********************************
-
   //action - POST / handle form Submit-Save /success-error message to user
   const takeAction = async () => {
     try {
-      //const formData = new FormData(formRef.current);
-      const formDataToSend = new FormData();
-      for (let key in formData) {
-        formDataToSend.append(key, formData[key]);
-      }
-
       const response = await fetch(`${API_URL}/events`, {
         method: "POST",
-        // headers: { "Content-Type": "application/json" },
-        // body: JSON.stringify(formData),
-        body: formDataToSend,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -117,11 +127,23 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
           duration: 5000,
           isClosable: true,
         });
-        const errorMessage = await response.text();
-        return { status: response.status, json: { error: errorMessage } };
       }
     } catch (error) {
       return { status: 500, json: { error: "Internal Server Error" } };
+    }
+  };
+
+  //handle Save - takeAction - reset data
+  const handleSaveClick = async () => {
+    //call takeAction to perform the POST request when Save is clicked
+    const result = await takeAction();
+
+    if (result.json.success) {
+      onEventAdded();
+      resetForm(); //clear form fields
+      onClose();
+    } else {
+      console.error("Error submitting form:", result.json.error);
     }
   };
 
@@ -137,21 +159,8 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
       endTime: "",
       location: "",
       createdBy: "",
-      userImage: "",
+      // userImage: "",
     });
-  };
-
-  //handle Save - takeAction - reset data
-  const handleSaveClick = async () => {
-    //call takeAction to perform the POST request when Save is clicked
-    const result = await takeAction();
-
-    if (result.json.success) {
-      resetForm(); //clear form fields
-      onClose();
-    } else {
-      console.error("Error submitting form:", result.json.error);
-    }
   };
 
   return (
