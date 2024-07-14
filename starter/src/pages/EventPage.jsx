@@ -75,7 +75,6 @@ export const EventPage = () => {
           throw new Error(`Failed to fetch event data: ${response.statusText}`);
         }
         const eventData = await response.json();
-        console.log("Fetched evetn data:", eventData);
         setEvent(eventData);
 
         //Fetch creator's data by createdBy
