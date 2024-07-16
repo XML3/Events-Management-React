@@ -1,4 +1,4 @@
-# Events Management React 
+# Events Management with React.js
 
 Front-end React.js project, designed to simulate an event's management system.
 
