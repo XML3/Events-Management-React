@@ -19,7 +19,7 @@ export const SignUp = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleImageChange = (event) => {
@@ -149,9 +149,9 @@ export const SignUp = () => {
               <FormControl id="userImage" isRequired mt={4}>
                 <FormLabel>User Image</FormLabel>
                 <Input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
+                  type="userImage"
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
                 />
               </FormControl>
 
