@@ -48,7 +48,7 @@ export const Navigation = () => {
           <Box
             mb={{ base: 1, sm: 0, md: 0 }}
             position={"relative"}
-            right={{ base: 0, sm: 10, md: 460 }}
+            right={{ base: 0, sm: 10, md: 560 }}
           >
             <Image
               src={logo}
