@@ -141,7 +141,7 @@ export const NavigationFooter = () => {
         </Stack>
       </Flex>
 
-      {/* MY LOGO + COPYRIGHT */}
+      {/* LOGO + COPYRIGHT */}
       <Flex
         direction={{ base: "column", sm: "row", md: "row" }}
         justify={{ base: "center", md: "center" }}
@@ -161,7 +161,7 @@ export const NavigationFooter = () => {
             objectFit="scale-down"
             borderRadius="full"
             position={"relative"}
-            right={{ base: 0, sm: "80%", md: 0 }}
+            right={{ base: 0, sm: "80%", md: "10%" }}
             mb={{ base: "20px", sm: 0, md: 0 }}
           />
         </Box>
