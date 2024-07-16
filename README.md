@@ -1,9 +1,14 @@
 # Events Management React APP
 
-Front-end React.js project, designed to simulate the enhancement of an Event experience.
-Users can search events by location or name of events, dive into articles, and connect via contact form directly with the application managers.  
-It allows event creators with intuitive tools to manage their events. From creating, editing, to deleting events including image uploads for events as well as organizers.
-This App is meant to provide convenience for event exploration and organization.
+Front-end React.js project, designed to simulate an event's management system.
 
-This App is part of a Full-Stack project. The Back-end Development was created using Node.js/Express, Prisma[ORM], Sentry[Performance monitoring & error tracking], AuthO[Authentication and authorization services].
+Users can search events by location or name of events, dive into articles, and connect via contact form directly with the application managers.  
+It allows event creators with tools to manage their events. From creating, editing, to deleting events with the inclusion of image uploads for events as well as organizers.
+
+
+This App is part of a Full-Stack project. The Back-end Development has been created using Node.js/Express, Prisma[ORM], Sentry[Performance monitoring & error tracking], AuthO[Authentication and authorization services].
+
+NOTE:
+*This app has been deployed for porfolio viewing, however its features to create, edit, delete, and contact have been disable to avoid changes to the intial database and spam.  The deployment has been set up to view as current user.*
+
 https://github.com/XML3/BED-Express-Event-API
