@@ -9,6 +9,6 @@ It allows event creators with tools to manage their events. From creating, editi
 This App is part of a Full-Stack project. The Back-end Development has been created using Node.js/Express, Prisma[ORM], Sentry[Performance monitoring & error tracking], AuthO[Authentication and authorization services].
 
 NOTE:
-*This app has been deployed for portfolio viewing, however its features to create, edit, delete, and contact have been disable to avoid changes to the intial database and spam.  The deployment has been set up to view as current user.*
+*This app has been deployed for portfolio viewing, however its features to create, edit, delete, and contact have been disable to avoid spam and changes to the intial database [these are set to be used with authorization token].  The deployment has been modified and set up to view as `current user`.*
 
 https://github.com/XML3/BED-Express-Event-API
