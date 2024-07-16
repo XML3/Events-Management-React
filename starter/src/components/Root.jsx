@@ -3,9 +3,7 @@ import { createContext, useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Navigation } from "./Navigation";
 import { NavigationFooter } from "./NavigationFooter";
-import NewEvent from "./forms/NewEvent";
 import { useToast } from "@chakra-ui/react";
-import { APP_ROUTES } from "./UI/constants.js";
 import { API_URL } from "./UI/constants.js";
 
 //creating context for data
@@ -23,6 +21,7 @@ export const Root = ({ initialEvents, children }) => {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [articles, setArticles] = useState([]);
   const [imgAnimation, setImgAnimation] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
   const [header, setHeader] = useState("Events Management");
   const [subHeader, setSubHeader] = useState(subHeaderText);
 
@@ -66,6 +65,7 @@ export const Root = ({ initialEvents, children }) => {
           const userResponse = await fetch(`${API_URL}/users`);
           const userData = await userResponse.json();
           setUsers(userData);
+          setCurrentUser(userData[0]);
         }
 
         //fetch Articles (mid section in EventsPage)
@@ -145,6 +145,8 @@ export const Root = ({ initialEvents, children }) => {
     events: eventsData,
     categories,
     users,
+    currentUser,
+    setCurrentUser,
     description,
     showToast: toast,
     handleFilteredEvents,
