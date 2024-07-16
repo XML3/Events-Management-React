@@ -9,14 +9,8 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { SignIn } from "./components/forms/SignIn";
-import { SignUp } from "./components/forms/SignUp";
-import { APP_ROUTES } from "./components/UI/constants";
-import Dashboard from "./components/Dashboard";
 import { Root } from "./components/Root";
-// import UserPage from "./pages/UserPage";
 import AboutPage from "./pages/AboutPage";
-// import ContactForm from "./pages/ContactPage";
 
 const router = createBrowserRouter([
   {
@@ -35,20 +29,11 @@ const router = createBrowserRouter([
         path: "/event/:eventId",
         element: <EventPage />,
       },
-      // {
-      //   path: "/users/:userId",
-      //   element: <UserPage />,
-      // },
+
       {
         path: "/about",
         element: <AboutPage />,
       },
-      //*****
-      //This section is removed in order to not receive emails from users, code will remain as reference
-      // {
-      //   path: "/contact",
-      //   element: <ContactForm />,
-      // },
     ],
   },
 ]);
