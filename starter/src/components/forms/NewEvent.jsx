@@ -22,7 +22,7 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
   const formRef = useRef(null);
   const toast = useToast();
 
-  const { addEvent, users } = useContext(DataContext);
+  const { addEvent, CurrentUser } = useContext(DataContext);
 
   const [formData, setFormData] = useState({
     title: "",
@@ -33,32 +33,20 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
     startTime: "",
     endTime: "",
     location: "",
-    createdBy: "",
+    createdBy: CurrentUser?.id || "",
   });
 
   useEffect(() => {
     if (!isOpen) {
       resetForm();
+    } else if (CurrentUser) {
+      setFormData((previousData) => ({
+        ...previousData,
+        createdBy: CurrentUser.id,
+      }));
     }
-  }, [isOpen]);
+  }, [isOpen, CurrentUser]);
 
-  const fetchUserId = async (userId) => {
-    try {
-      const response = await fetch(`${API_URL}/users/${userId}`);
-      if (response.ok) {
-        const userData = await response.json();
-        //Update formData with user's image
-        setFormData((previousData) => ({
-          ...previousData,
-          image: userData.image,
-        }));
-      } else {
-        console.error("Failed to fetch user details");
-      }
-    } catch (error) {
-      console.error("Error fetching user details:", error);
-    }
-  };
   // ********************************
 
   //image upload handler-change (updates state when selected in the form)
@@ -86,7 +74,7 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
     } else if (name === "createdBy") {
       setFormData((previousData) => ({
         ...previousData,
-        createdBy: value,
+        createdBy: CurrentUser.id,
       }));
     } else {
       setFormData((previousData) => ({
@@ -129,6 +117,14 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
         });
       }
     } catch (error) {
+      console.error("Error creating event:".error);
+      toast({
+        title: "Error",
+        description: "An error occurred while creating the event",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
       return { status: 500, json: { error: "Internal Server Error" } };
     }
   };
@@ -158,7 +154,7 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
       startTime: "",
       endTime: "",
       location: "",
-      createdBy: "",
+      createdBy: CurrentUser?.id || "",
       // userImage: "",
     });
   };
@@ -257,34 +253,14 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
               </Select>
             </FormControl>
             <FormControl>
-              {/* User information */}
-              <FormLabel>User Name</FormLabel>
-              {/* modified to map through users in a dropdown menu */}
-              <Select
+              <FormLabel>Created By</FormLabel>
+              <Input
                 name="createdBy"
-                type="text"
-                placeholder="User Name"
                 value={formData.createdBy}
                 onChange={handleInputChange}
-              >
-                <option value="">Select a user</option>
-                {users.map((user) => (
-                  <option key={user.id} value={user.id}>
-                    {user.name}
-                  </option>
-                ))}
-              </Select>
-            </FormControl>
-            {/* <FormControl> */}
-            {/* /User Image */}
-            {/* <FormLabel>User Image</FormLabel>
-              <Input
-                name="userImage"
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
+                readOnly
               />
-            </FormControl> */}
+            </FormControl>
           </form>
         </ModalBody>
 
