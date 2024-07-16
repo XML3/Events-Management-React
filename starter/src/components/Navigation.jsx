@@ -97,7 +97,7 @@ export const Navigation = () => {
               About
             </Text>
           </Link>
-          {/* 
+
           <Link to="/contact">
             <Text
               color={"gray.200"}
@@ -109,7 +109,7 @@ export const Navigation = () => {
             >
               Contact
             </Text>
-          </Link> */}
+          </Link>
 
           <Box
             position={"relative"}

@@ -201,7 +201,8 @@ const ContactForm = () => {
                 fontSize={{ base: "16px", sm: "22px", md: "34px" }}
                 color={"gray.200"}
               >
-                Have any questions? Shoot us an email.
+                Have any questions? Shoot us an email. * Contact form is
+                disabled to avoid spam emails through porfolio *
               </Text>
             </Flex>
 
