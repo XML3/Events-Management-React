@@ -91,7 +91,7 @@ const ContactForm = () => {
     }
 
     try {
-      const response = await axios.post(`${API_URL}/send`, {
+      const response = await axios.post(`${API_URL}/contact`, {
         name,
         email,
         message,
