@@ -12,7 +12,7 @@ const DataContext = createContext();
 //manage and provide data
 export const Root = ({ initialEvents, children }) => {
   const subHeaderText =
-    " This is a mock site that aims to mimic an event management system, it provide mock information on electronic music events in any given area by offering management service to all promoters for different types of venues and size events in all corners of the world to enrich human lives through movement and sound.";
+    "Full-stack project which mocks an events management application, where users can sign_up to create, edit or delete music events with their respective authentication and authorization. The project is set only for view. Events can not be modified or deleted.  Lastly, please keep in mind the items will take a couple of minutes to fully load from the server";
 
   const [eventsData, setEventsData] = useState([]);
   const [categories, setCategories] = useState([]);
