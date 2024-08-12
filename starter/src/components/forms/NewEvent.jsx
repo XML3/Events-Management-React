@@ -1,4 +1,4 @@
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useRef, useContext } from "react";
 import { Form } from "react-router-dom";
 import DataContext from "../Root";
 import { API_URL } from "../UI/constants.js";
@@ -18,11 +18,12 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
+const NewEvent = ({ isOpen, onClose, onEventAdded, categories, users }) => {
   const formRef = useRef(null);
+
   const toast = useToast();
 
-  const { addEvent, CurrentUser } = useContext(DataContext);
+  const { addEvent } = useContext(DataContext);
 
   const [formData, setFormData] = useState({
     title: "",
@@ -33,19 +34,8 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
     startTime: "",
     endTime: "",
     location: "",
-    createdBy: CurrentUser?.id || "",
+    createdBy: "",
   });
-
-  useEffect(() => {
-    if (!isOpen) {
-      resetForm();
-    } else if (CurrentUser) {
-      setFormData((previousData) => ({
-        ...previousData,
-        createdBy: CurrentUser.id,
-      }));
-    }
-  }, [isOpen, CurrentUser]);
 
   // ********************************
 
@@ -72,9 +62,11 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
         categoryIds: value ? [value] : [],
       }));
     } else if (name === "createdBy") {
+      const selectedUser = users.find((user) => user.id === value);
       setFormData((previousData) => ({
         ...previousData,
-        createdBy: CurrentUser.id,
+        createdBy: { id: value },
+        userImage: selectedUser ? selectedUser.image : "",
       }));
     } else {
       setFormData((previousData) => ({
@@ -154,7 +146,7 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
       startTime: "",
       endTime: "",
       location: "",
-      createdBy: CurrentUser?.id || "",
+      createdBy: "",
       // userImage: "",
     });
   };
@@ -253,13 +245,23 @@ const NewEvent = ({ isOpen, onClose, onEventAdded, categories }) => {
               </Select>
             </FormControl>
             <FormControl>
-              <FormLabel>Created By</FormLabel>
-              <Input
+              {/* User information */}
+              <FormLabel>User Name</FormLabel>
+              {/* modified to map through users in a dropdown menu */}
+              <Select
                 name="createdBy"
+                type="text"
+                placeholder="User Name"
                 value={formData.createdBy}
                 onChange={handleInputChange}
-                readOnly
-              />
+              >
+                <option value="">Select a user</option>
+                {users.map((user) => (
+                  <option key={user.id} value={user.id}>
+                    {user.name}
+                  </option>
+                ))}
+              </Select>
             </FormControl>
           </form>
         </ModalBody>

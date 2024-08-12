@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Box, Text, Flex, Image, Stack } from "@chakra-ui/react";
-import { CurrentUser } from "./CurrentUser";
+// import { CurrentUser } from "./CurrentUser";
 
 const logo = "/img/red_logo_smaller2.png";
 export const Navigation = () => {
@@ -48,7 +48,7 @@ export const Navigation = () => {
           <Box
             mb={{ base: 1, sm: 0, md: 0 }}
             position={"relative"}
-            right={{ base: 0, sm: 10, md: 560 }}
+            right={{ base: 0, sm: 10, md: 460 }}
           >
             <Image
               src={logo}
@@ -111,7 +111,7 @@ export const Navigation = () => {
             </Text>
           </Link>
 
-          <Box
+          {/* <Box
             position={"relative"}
             left={{ base: 0, sm: 10, md: 400 }}
             mb={{ base: 1, sm: 0, md: 0 }}
@@ -121,7 +121,7 @@ export const Navigation = () => {
             objectFit={"cover"}
           >
             <CurrentUser />
-          </Box>
+          </Box> */}
         </Stack>
       </Flex>
     </Box>

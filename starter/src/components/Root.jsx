@@ -12,7 +12,7 @@ const DataContext = createContext();
 //manage and provide data
 export const Root = ({ initialEvents, children }) => {
   const subHeaderText =
-    "Full-stack project which mocks an events management application, where users can sign_up to create, edit or delete music events with their respective authentication and authorization. The project is set only for view. Events can not be modified or deleted.  Lastly, please keep in mind the items will take a couple of minutes to fully load from the server";
+    "Full-stack project that mocks an events management application, where users can sign_up to create, edit or delete music events with their respective authentication and authorization. The project is deployed with limitations, new events can be created without the need of user's authorization token to view its functionality however, in order to avoid existing data modification existing events can not be modified or deleted.  Lastly, please keep in mind the server will take a couple of minutes to fully load all items on the page.";
 
   const [eventsData, setEventsData] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -21,7 +21,7 @@ export const Root = ({ initialEvents, children }) => {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [articles, setArticles] = useState([]);
   const [imgAnimation, setImgAnimation] = useState([]);
-  const [currentUser, setCurrentUser] = useState(null);
+  // const [currentUser, setCurrentUser] = useState(null);
   const [header, setHeader] = useState("Events Management");
   const [subHeader, setSubHeader] = useState(subHeaderText);
 
@@ -65,7 +65,7 @@ export const Root = ({ initialEvents, children }) => {
           const userResponse = await fetch(`${API_URL}/users`);
           const userData = await userResponse.json();
           setUsers(userData);
-          setCurrentUser(userData[0]);
+          // setCurrentUser(userData[0]);
         }
 
         //fetch Articles (mid section in EventsPage)
@@ -145,8 +145,8 @@ export const Root = ({ initialEvents, children }) => {
     events: eventsData,
     categories,
     users,
-    currentUser,
-    setCurrentUser,
+    // currentUser,
+    // setCurrentUser,
     description,
     showToast: toast,
     handleFilteredEvents,
