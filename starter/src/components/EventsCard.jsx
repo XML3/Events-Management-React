@@ -40,6 +40,20 @@ export const EventsCard = ({ event }) => {
     },
   };
 
+  // this funtion assigns a uinique color to each category by their ID.
+  const categoryColor = (categoryId) => {
+    switch (categoryId) {
+      case "1":
+        return "#ff005f";
+      case "2":
+        return "#fff176";
+      case "3":
+        return "#4db6ac";
+      default:
+        return "#ff005f";
+    }
+  };
+
   return (
     <div className="event-card">
       <Card
@@ -127,7 +141,8 @@ export const EventsCard = ({ event }) => {
                     return (
                       <Text
                         key={category.id}
-                        color="#ff005f "
+                        // color="#ff005f "
+                        color={categoryColor(categoryId)}
                         mt={{ base: "30px", sm: "20px", md: "30px" }}
                         fontSize={{
                           base: "0.7rem",
