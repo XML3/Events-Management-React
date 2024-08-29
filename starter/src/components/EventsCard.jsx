@@ -48,7 +48,7 @@ export const EventsCard = ({ event }) => {
       case "2":
         return "#fff176";
       case "3":
-        return "#4db6ac";
+        return "#9F7AEA";
       default:
         return "#ff005f";
     }
