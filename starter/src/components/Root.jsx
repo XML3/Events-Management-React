@@ -34,11 +34,25 @@ export const Root = ({ initialEvents, children }) => {
       setFilteredEvents(eventsData);
     } else {
       const matchedEvents = eventsData.filter((event) => {
-        const { location, title } = event;
-        return (
+        const { location, title, categoryIds } = event;
+
+        //Check if search value includes/matches loacation or title
+        const matchesLocationOrTitle =
           location.toLowerCase().includes(searchValue.toLowerCase()) ||
-          title.toLowerCase().includes(searchValue.toLowerCase())
-        );
+          title.toLowerCase().includes(searchValue.toLowerCase());
+
+        //Finds from categories and checks if search value includes/matches any category name
+        const matchesCategory = categoryIds.some((categoryId) => {
+          const category = categories.find(
+            (category) => category.id === categoryId
+          );
+          return (
+            category &&
+            category.name.toLowerCase().includes(searchValue.toLowerCase())
+          );
+        });
+
+        return matchesLocationOrTitle || matchesCategory;
       });
       setFilteredEvents(matchedEvents);
     }
