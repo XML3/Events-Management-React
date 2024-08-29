@@ -54,19 +54,6 @@ export const EventPage = () => {
     setIsModalOpen(false);
   };
 
-  // useEffect(() => {
-  //   const fetchUsers = async () => {
-  //     try {
-  //       const response = await fetch(`${API_URL}/users`);
-  //       const userData = await response.json();
-  //       setUsers(userData);
-  //     } catch (error) {
-  //       console.error("Error fetching data from user:", error);
-  //     }
-  //   };
-  //   fetchUsers();
-  // }, []);
-
   useEffect(() => {
     const fetchEventData = async () => {
       try {
@@ -100,19 +87,7 @@ export const EventPage = () => {
       }
     };
 
-    //Fetch categories data
-    // const fetchCategories = async () => {
-    //   try {
-    //     const response = await fetch(`${API_URL}/categories`);
-    //     const categoriesData = await response.json();
-    //     setCategories(categoriesData);
-    //   } catch (error) {
-    //     console.log("Error fetching data from categories:", error);
-    //   }
-    // };
-
     fetchEventData();
-    // fetchCategories();
   }, [eventId]);
 
   if (!event || !creator) {
@@ -192,7 +167,7 @@ export const EventPage = () => {
         mt={{ base: "3rem", md: "0" }}
         mb={{ base: 0, sm: "2rem", md: 0 }}
         position={"relative"}
-        left={{ base: "0.9rem", sm: "5rem", md: "10rem" }}
+        left={{ base: "0.9rem", sm: "5rem", md: "1.5rem" }}
         fontFamily={orbitronFontFamily}
         fontWeight={orbitronWeight.semibold}
         maxW={{ base: "100%", sm: "100%", md: "900px" }}
@@ -302,7 +277,7 @@ export const EventPage = () => {
           <Box
             p={4}
             bgGradient="linear(to-b, #ff005f 0%, #610979 70%)"
-            w={{ base: "95%", sm: "100%", md: "35rem" }}
+            w={{ base: "95%", sm: "100%", md: "50%" }}
             h={"auto"}
             borderRadius={"md"}
             position={"relative"}
@@ -323,14 +298,14 @@ export const EventPage = () => {
                   alt={event.title}
                   borderRadius={"full"}
                   mb={4}
-                  w={{ base: "100%", sm: "80%", md: "75%" }}
-                  h={{ base: "15%", sm: "20%", md: "15rem" }}
+                  w={{ base: "100%", sm: "80%", md: "50%" }}
+                  h={{ base: "15%", sm: "20%", md: "10rem" }}
                 />
               </Center>
 
               {/* Artist Lineup */}
               <Text
-                fontSize={"1rem"}
+                fontSize={"16px"}
                 color={"teal.300"}
                 paddingBottom={"0.8rem"}
                 fontFamily={orbitronFontFamily}
@@ -340,7 +315,7 @@ export const EventPage = () => {
                 Artists:
               </Text>
               <Text
-                fontSize={{ base: "0.7rem", md: "0.8rem" }}
+                fontSize={{ base: "0.7rem", md: "0.6rem" }}
                 letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 fontFamily={robotoSlabFont}
                 fontWeight={robotoSlabWeight.thin}
@@ -353,7 +328,7 @@ export const EventPage = () => {
 
               {/* Location */}
               <Text
-                fontSize={"1rem"}
+                fontSize={"16px"}
                 fontFamily={orbitronFontFamily}
                 fontWeight={orbitronWeight.medium}
                 color={"teal.300"}
@@ -363,7 +338,7 @@ export const EventPage = () => {
                 Location
               </Text>
               <Text
-                fontSize={{ base: "0.7rem", md: "0.8rem" }}
+                fontSize={{ base: "0.7rem", md: "0.6rem" }}
                 letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 fontFamily={robotoSlabFont}
                 fontWeight={robotoSlabWeight.thin}
@@ -380,7 +355,7 @@ export const EventPage = () => {
               >
                 <Box>
                   <Text
-                    fontSize={"1rem"}
+                    fontSize={"16px"}
                     fontFamily={orbitronFontFamily}
                     fontWeight={orbitronWeight.medium}
                     color={"#ff005f"}
@@ -389,7 +364,7 @@ export const EventPage = () => {
                     Start Time:
                   </Text>
                   <Text
-                    fontSize={{ base: "0.7rem", md: "0.8rem" }}
+                    fontSize={{ base: "0.7rem", md: "0.6rem" }}
                     letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                     fontFamily={robotoSlabFont}
                     fontWeight={robotoSlabWeight.thin}
@@ -398,7 +373,7 @@ export const EventPage = () => {
                   </Text>
 
                   <Text
-                    fontSize={"1rem"}
+                    fontSize={"16px"}
                     // paddingTop={"0.5rem"}
                     fontFamily={orbitronFontFamily}
                     fontWeight={orbitronWeight.medium}
@@ -409,7 +384,7 @@ export const EventPage = () => {
                     End Time:
                   </Text>
                   <Text
-                    fontSize={{ base: "0.7rem", md: "0.8rem" }}
+                    fontSize={{ base: "0.7rem", md: "0.6rem" }}
                     letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                     fontFamily={robotoSlabFont}
                     fontWeight={robotoSlabWeight.thin}
@@ -429,9 +404,11 @@ export const EventPage = () => {
                   <Text
                     color={"gray.200"}
                     fontWeight={"bold"}
+                    fontSize={"16px"}
                     marginBottom={2}
                     marginLeft={"5rem"}
                     fontFamily={orbitronFontFamily}
+                    letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                   >
                     Event Creator
                   </Text>
@@ -449,7 +426,7 @@ export const EventPage = () => {
                     <Box
                       fontFamily={orbitronFontFamily}
                       fontWeight={"medium"}
-                      fontSize={{ base: "0.9rem", md: "0.8rem" }}
+                      fontSize={{ base: "0.9rem", md: "0.6rem" }}
                       letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                     >
                       <Image
@@ -463,8 +440,10 @@ export const EventPage = () => {
                         marginLeft={"5.5rem"}
                       />
                       <Text
-                        fontSize={{ base: "0.7rem", md: "0.8rem" }}
+                        fontSize={{ base: "0.7rem", md: "0.6rem" }}
                         marginLeft={"5rem"}
+                        mt={2}
+                        mb={4}
                       >
                         {creator.name}
                       </Text>
@@ -476,7 +455,7 @@ export const EventPage = () => {
               {/* Description */}
               <Center>
                 <Text
-                  fontSize={{ base: "0.7rem", md: "0.8rem" }}
+                  fontSize={{ base: "0.7rem", md: "0.6rem" }}
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                   color={"yellow.300"}
                   mb={"0.5rem"}
@@ -503,7 +482,7 @@ export const EventPage = () => {
                         <Text
                           key={category.id}
                           color="#ff005f"
-                          fontSize={{ base: "0.8rem", md: "1rem" }}
+                          fontSize={{ base: "0.8rem", md: "14px" }}
                           letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                           mr={2}
                           fontFamily={orbitronFontFamily}
