@@ -128,7 +128,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Box bgColor="gray.900" minH="100vh" paddingTop={"100px"}>
+    <Box bgColor="gray.900" minH="130vh" paddingTop={"100px"}>
       <Flex
         align={{ base: "center", md: "flex-start" }}
         minH={"20vh"}
@@ -149,7 +149,7 @@ const ContactForm = () => {
             }}
             lineHeight={"1.2"}
             mt={{ base: "3rem", md: "0" }}
-            mb={{ base: "4rem", sm: "5rem", md: 0 }}
+            mb={{ base: "4rem", sm: "1rem", md: 0 }}
             ml={{ base: "0.5rem", sm: "2rem", md: "8.5rem" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.semibold}
@@ -162,164 +162,207 @@ const ContactForm = () => {
 
       <Center>
         <Box
-          bgColor="gray.900"
-          color="whitesmoke"
-          border="1px solid"
-          borderColor={"gray.700"}
-          w={{ base: "90%", md: "80%" }}
-          h={"50%"}
-          padding={{ base: "1rem", md: "2rem" }}
-          mb={"5rem"}
+          bgGradient="linear(to-r, #ff005f 0%, #610979 70%)"
+          w={{ base: "100%", sm: "90%", md: "70%" }}
+          h={"auto"}
+          padding={{ base: "0.05rem", sm: "0.05rem", md: "0.05rem" }}
+          position={"relative"}
+          top={{ base: 10, sm: "2rem", md: 0 }}
+          borderRadius={"10px"}
         >
-          <Flex
-            direction={{ base: "column", sm: "column", md: "row" }}
-            align={{ base: "center", md: "flex-start" }}
-            justifyContent={"space-around"}
-            wrap={"wrap"}
+          <Box
+            bgColor="gray.900"
+            color="whitesmoke"
+            border="1px solid"
+            borderColor={"gray.700"}
+            w={{ base: "100%", sm: "100%", md: "100%" }}
+            h={"auto"}
+            padding={{ base: "1rem", md: "2rem" }}
           >
             <Flex
-              direction={"column"}
-              align={"center"}
-              justifyContent={"center"}
-              h={{ base: "10vh", sm: "7vh", md: "50vh" }}
-              mb={{ base: "1rem", sm: "1.5rem", md: 0 }}
+              direction={{ base: "column", sm: "column", md: "row" }}
+              align={{ base: "center", md: "flex-start" }}
+              justifyContent={"space-around"}
+              wrap={"wrap"}
             >
-              <Text
-                fontFamily={robotoSlabFont}
-                fontWeight={robotoSlabWeight.regular}
-                fontSize={{ base: "22px", sm: "30px", md: "45px" }}
-                color={"gray.200"}
-                mb={{ base: "5%", sm: "2%", md: "5%" }}
-                mt={{ base: "20%", sm: "15%", md: 0 }}
+              <Flex
+                direction={"column"}
+                align={"center"}
+                justifyContent={"center"}
+                h={{ base: "10vh", sm: "7vh", md: "50vh" }}
+                mb={{ base: "1rem", sm: "1.5rem", md: 0 }}
               >
-                Get in Touch
-              </Text>
+                <Text
+                  fontFamily={robotoSlabFont}
+                  fontWeight={robotoSlabWeight.regular}
+                  fontSize={{ base: "22px", sm: "20px", md: "30px" }}
+                  color={"gray.200"}
+                  mb={{ base: "5%", sm: "2%", md: "5%" }}
+                  mt={{ base: "20%", sm: "15%", md: 0 }}
+                >
+                  Get in Touch
+                </Text>
 
-              <Text
-                fontFamily={robotoSlabFont}
-                fontWeight={robotoSlabWeight.regular}
-                fontSize={{ base: "16px", sm: "22px", md: "34px" }}
-                color={"gray.200"}
-              >
-                Have any questions? Shoot us an email. * Contact form is
-                disabled to avoid spam emails through porfolio *
-              </Text>
+                <Text
+                  fontFamily={robotoSlabFont}
+                  fontWeight={robotoSlabWeight.regular}
+                  fontSize={{ base: "14px", sm: "16px", md: "16px" }}
+                  color={"gray.200"}
+                >
+                  Have any questions? Shoot us an email.
+                </Text>
+                <Text
+                  fontFamily={robotoSlabFont}
+                  fontWeight={robotoSlabWeight.regular}
+                  fontSize={{ base: "14px", sm: "16px", md: "16px" }}
+                  color={"gray.200"}
+                >
+                  * Contact form is disabled to avoid spam emails through
+                  porfolio *{" "}
+                </Text>
+              </Flex>
+
+              {/* FORM */}
+              <form onSubmit={handleSubmit}>
+                {/* NAME */}
+                <FormControl
+                  id="name"
+                  mt={"4rem"}
+                  w={{ base: "12rem", md: "20rem" }}
+                  isRequired
+                >
+                  <FormLabel
+                    fontFamily={robotoSlabFont}
+                    fontWeight={robotoSlabWeight.regular}
+                    fontSize={{
+                      base: "16px",
+                      sm: "18px",
+                      md: "16px",
+                    }}
+                  >
+                    Name
+                  </FormLabel>
+                  <Input
+                    placeholder="Full Name"
+                    fontSize={{
+                      base: "16px",
+                      sm: "18px",
+                      md: "16px",
+                    }}
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    focusBorderColor="pink.500"
+                    style={{ borderColor: isNameError ? "red.500" : "inherit" }}
+                  />
+                  {isNameError && (
+                    <FormErrorMessage>Name is required</FormErrorMessage>
+                  )}
+                </FormControl>
+
+                {/* EMAIL */}
+                <FormControl
+                  id="email"
+                  isInvalid={isEmailError}
+                  isRequired
+                  w={{ base: "12rem", md: "20rem" }}
+                >
+                  <FormLabel
+                    fontFamily={robotoSlabFont}
+                    fontWeight={robotoSlabWeight.regular}
+                    fontSize={{
+                      base: "16px",
+                      sm: "18px",
+                      md: "16px",
+                    }}
+                    mt={"1rem"}
+                  >
+                    Email
+                  </FormLabel>
+                  <Input
+                    placeholder="Email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    focusBorderColor="pink.500"
+                    fontSize={{
+                      base: "16px",
+                      sm: "18px",
+                      md: "16px",
+                    }}
+                    style={{
+                      borderColor: isEmailError ? "red.500" : "inherit",
+                    }}
+                  />
+                  {isEmailError && (
+                    <FormErrorMessage>Email is required</FormErrorMessage>
+                  )}
+                </FormControl>
+
+                {/* MESSAGE */}
+                <FormControl
+                  id="message"
+                  isRequired
+                  w={{ base: "12rem", md: "20rem" }}
+                >
+                  <FormLabel
+                    fontFamily={robotoSlabFont}
+                    fontWeight={robotoSlabWeight.regular}
+                    fontSize={{
+                      base: "16px",
+                      sm: "18px",
+                      md: "16px",
+                    }}
+                    mt={"1rem"}
+                  >
+                    Message
+                  </FormLabel>
+                  <Textarea
+                    placeholder="Write us a message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    focusBorderColor="pink.500"
+                    fontSize={{
+                      base: "16px",
+                      sm: "18px",
+                      md: "16px",
+                    }}
+                    style={{
+                      borderColor: isMessageError ? "red.500" : "inherit",
+                    }}
+                  />
+                  {isMessageError && (
+                    <FormErrorMessage>Message is required</FormErrorMessage>
+                  )}
+                </FormControl>
+
+                {/* reCaptcha */}
+                <Box className="g-recaptcha" data-sitekey></Box>
+
+                {/* BUTTON */}
+                <Button
+                  type="submit"
+                  bgGradient="linear(to-br, #00ffbc, #0ee399)"
+                  color={"gray.900"}
+                  fontFamily={orbitronFontFamily}
+                  fontWeight={orbitronWeight.medium}
+                  mt={"2rem"}
+                  fontSize={{ base: "0.7rem", md: "0.7rem" }}
+                  w={"50%"}
+                  position={"relative"}
+                  left={{ base: "20%", sm: "25%", md: "25%" }}
+                  _hover={{
+                    bgColor: "green.200",
+                    color: "#ff005f",
+                    // boxShadow: "0 0 7px whitesmoke",
+                  }}
+                  // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
+                >
+                  Submit
+                </Button>
+              </form>
             </Flex>
-
-            {/* FORM */}
-            <form onSubmit={handleSubmit}>
-              {/* NAME */}
-              <FormControl
-                id="name"
-                mt={"4rem"}
-                w={{ base: "12rem", md: "20rem" }}
-                isRequired
-              >
-                <FormLabel
-                  fontFamily={robotoSlabFont}
-                  fontWeight={robotoSlabWeight.regular}
-                  fontSize={{
-                    base: "16px",
-                    sm: "18px",
-                    md: "24px",
-                  }}
-                >
-                  Name
-                </FormLabel>
-                <Input
-                  placeholder="Full Name"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  focusBorderColor="pink.500"
-                  style={{ borderColor: isNameError ? "red.500" : "inherit" }}
-                />
-                {isNameError && (
-                  <FormErrorMessage>Name is required</FormErrorMessage>
-                )}
-              </FormControl>
-
-              {/* EMAIL */}
-              <FormControl id="email" isInvalid={isEmailError} isRequired>
-                <FormLabel
-                  fontFamily={robotoSlabFont}
-                  fontWeight={robotoSlabWeight.regular}
-                  fontSize={{
-                    base: "16px",
-                    sm: "18px",
-                    md: "24px",
-                  }}
-                  mt={"1rem"}
-                >
-                  Email
-                </FormLabel>
-                <Input
-                  placeholder="Email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  focusBorderColor="pink.500"
-                  style={{ borderColor: isEmailError ? "red.500" : "inherit" }}
-                />
-                {isEmailError && (
-                  <FormErrorMessage>Email is required</FormErrorMessage>
-                )}
-              </FormControl>
-
-              {/* MESSAGE */}
-              <FormControl id="message" isRequired>
-                <FormLabel
-                  fontFamily={robotoSlabFont}
-                  fontWeight={robotoSlabWeight.regular}
-                  fontSize={{
-                    base: "16px",
-                    sm: "18px",
-                    md: "24px",
-                  }}
-                  mt={"1rem"}
-                >
-                  Message
-                </FormLabel>
-                <Textarea
-                  placeholder="Write us a message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  focusBorderColor="pink.500"
-                  style={{
-                    borderColor: isMessageError ? "red.500" : "inherit",
-                  }}
-                />
-                {isMessageError && (
-                  <FormErrorMessage>Message is required</FormErrorMessage>
-                )}
-              </FormControl>
-
-              {/* reCaptcha */}
-              <Box className="g-recaptcha" data-sitekey></Box>
-
-              {/* BUTTON */}
-              <Button
-                type="submit"
-                bgGradient="linear(to-br, #00ffbc, #0ee399)"
-                color={"gray.900"}
-                fontFamily={orbitronFontFamily}
-                fontWeight={orbitronWeight.medium}
-                mt={"2rem"}
-                fontSize={{ base: "0.7rem", md: "0.8rem" }}
-                w={"50%"}
-                position={"relative"}
-                left={{ base: "20%", sm: "25%", md: "25%" }}
-                _hover={{
-                  bgColor: "green.200",
-                  color: "#ff005f",
-                  // boxShadow: "0 0 7px whitesmoke",
-                }}
-                // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
-              >
-                Submit
-              </Button>
-            </form>
-          </Flex>
+          </Box>
         </Box>
       </Center>
     </Box>
