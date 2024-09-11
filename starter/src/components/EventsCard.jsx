@@ -70,7 +70,7 @@ export const EventsCard = ({ event }) => {
         _hover={{ transform: "scale(1.08)" }}
       >
         <Box
-          bgColor={"gray.900"}
+          bgColor={"#051622"}
           borderRadius="md"
           w={{ base: "13.9rem", sm: "100%", md: "100%" }}
           h={{ base: "25rem", sm: "100%", md: "100%" }}
@@ -79,7 +79,7 @@ export const EventsCard = ({ event }) => {
             <Center>
               <Heading
                 as="h2"
-                size={{ base: "md", sm: "lg", md: "md" }}
+                size={{ base: "md", sm: "sm", md: "sm" }}
                 color={"green.200"}
                 mb={"1rem"}
                 fontFamily={orbitronFontFamily}
@@ -96,7 +96,7 @@ export const EventsCard = ({ event }) => {
 
             <Image src={image} borderRadius={"full"} mb={"1rem"} w={"100%"} />
             <Text
-              fontSize={{ base: "sm", sm: "16px", md: "sm" }}
+              fontSize={{ base: "sm", sm: "12px", md: "14px" }}
               letterSpacing={{ base: "0.07rem", sm: "0.05rem", md: "0.07rem" }}
               color={"green.200"}
               mb={"1rem"}
@@ -108,7 +108,7 @@ export const EventsCard = ({ event }) => {
 
             <Text
               color={"whitesmoke"}
-              fontSize={{ base: "2xs", sm: "14px", md: "2xs" }}
+              fontSize={{ base: "2xs", sm: "11px", md: "2xs" }}
               letterSpacing={{ base: "0.1rem", sm: "0.05rem", md: "0.05rem" }}
               fontFamily={robotoSlabFont}
               fontWeight={robotoSlabWeight.thin}
@@ -119,7 +119,7 @@ export const EventsCard = ({ event }) => {
             </Text>
             <Text
               color={"gray.200"}
-              fontSize={{ base: "2xs", sm: "14px", md: "2xs" }}
+              fontSize={{ base: "2xs", sm: "11px", md: "2xs" }}
               letterSpacing={{ base: "0.1rem", sm: "0.05rem", md: "0.05rem" }}
               mb={"0.5rem"}
               fontFamily={robotoSlabFont}
@@ -146,8 +146,8 @@ export const EventsCard = ({ event }) => {
                         mt={{ base: "30px", sm: "20px", md: "30px" }}
                         fontSize={{
                           base: "0.7rem",
-                          sm: "0.9rem",
-                          md: "0.8rem",
+                          sm: "0.6rem",
+                          md: "0.7rem",
                         }}
                         letterSpacing={{
                           base: "0.05rem",

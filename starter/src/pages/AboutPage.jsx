@@ -33,9 +33,9 @@ export const AboutPage = () => {
 
   return (
     <Box
-      bgColor="gray.900"
-      color="whitesmoke"
-      minH={{ base: "210vh", sm: "175vh", md: "150vh" }}
+      bgColor="#FFFDE1"
+      color="#051622"
+      minH={{ base: "150vh", sm: "175vh", md: "150vh" }}
       width={"100%"}
       paddingTop={"100px"}
     >
@@ -61,7 +61,7 @@ export const AboutPage = () => {
             lineHeight={"1.2"}
             mt={{ base: "2rem", md: "0" }}
             position={"relative"}
-            left={{ base: "0.5rem", sm: "1.5rem", md: "11rem" }}
+            left={{ base: "0.5rem", sm: "1.5rem", md: "7rem" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.semibold}
             maxW={{ base: "100%", md: "900px" }}
@@ -77,7 +77,7 @@ export const AboutPage = () => {
         mb={{ base: "0", sm: "2rem", md: "2rem" }}
       >
         <Text
-          color={"gray.200"}
+          color={"#051622"}
           w={"30%"}
           fontSize={{
             base: "16px",
@@ -85,7 +85,7 @@ export const AboutPage = () => {
             md: "25px",
           }}
           position={"relative"}
-          left={{ base: "0.5rem", sm: "2.5rem", md: "12rem" }}
+          left={{ base: "0.5rem", sm: "2.5rem", md: "15rem" }}
           top={{ base: 5, sm: 20, md: 0 }}
           fontFamily={orbitronFontFamily}
           fontWeight={orbitronWeight.semibold}
@@ -96,17 +96,16 @@ export const AboutPage = () => {
       <Center>
         <Box
           bgGradient="linear(to-r, #ff005f 0%, #610979 70%)"
-          w={{ base: "90%", sm: "90%", md: "75%" }}
-          padding={{ base: "0.05rem", sm: "0.05rem", md: "0.05rem" }}
+          w={{ base: "95%", sm: "90%", md: "75%" }}
+          padding={{ base: "0.2rem", sm: "0.2rem", md: "0.2rem" }}
           position={"relative"}
-          top={{ base: 10, sm: "7rem", md: 0 }}
-          borderRadius={"10px"}
+          top={{ base: 10, sm: "5rem", md: 0 }}
         >
           <Box
-            backgroundColor={"gray.900"}
+            backgroundColor={"#051622"}
             w={{ base: "100%", sm: "100%", md: "100%" }}
             padding={{ base: "0.6rem", md: "2rem" }}
-            color={"gray.300"}
+            color={"#FFFDE1"}
           >
             <Flex
               direction={{ base: "column", md: "row" }}
@@ -115,12 +114,12 @@ export const AboutPage = () => {
               wrap={"wrap"}
             >
               <Text
-                fontSize={{ base: "0.8rem", sm: "22px", md: "sm" }}
+                fontSize={{ base: "0.6rem", sm: "16px", md: "sm" }}
                 padding={{ base: "0.5rem", sm: "1rem", md: "1rem" }}
                 flex="1"
                 fontFamily={robotoSlabFont}
                 fontWeight={robotoSlabWeight.light}
-                lineHeight={{ base: "1.2", sm: "1.2", md: "1.7" }}
+                lineHeight={{ base: "1.7", sm: "1.7", md: "1.7" }}
                 mb={{ base: "1rem", sm: "1rem", md: 0 }}
               >
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

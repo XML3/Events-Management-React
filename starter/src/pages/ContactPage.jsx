@@ -128,7 +128,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Box bgColor="gray.900" minH="130vh" paddingTop={"100px"}>
+    <Box bgColor="#FFFDE1" minH="130vh" paddingTop={"100px"}>
       <Flex
         align={{ base: "center", md: "flex-start" }}
         minH={"20vh"}
@@ -148,7 +148,7 @@ const ContactForm = () => {
               md: "100px",
             }}
             lineHeight={"1.2"}
-            mt={{ base: "3rem", md: "0" }}
+            mt={{ base: "1rem", md: "0" }}
             mb={{ base: "4rem", sm: "1rem", md: 0 }}
             ml={{ base: "0.5rem", sm: "2rem", md: "8.5rem" }}
             fontFamily={orbitronFontFamily}
@@ -163,21 +163,19 @@ const ContactForm = () => {
       <Center>
         <Box
           bgGradient="linear(to-r, #ff005f 0%, #610979 70%)"
-          w={{ base: "100%", sm: "90%", md: "70%" }}
+          w={{ base: "95%", sm: "90%", md: "70%" }}
           h={"auto"}
-          padding={{ base: "0.05rem", sm: "0.05rem", md: "0.05rem" }}
+          padding={{ base: "0.05rem", sm: "0.05rem", md: "0.2rem" }}
           position={"relative"}
-          top={{ base: 10, sm: "2rem", md: 0 }}
-          borderRadius={"10px"}
+          top={{ base: 0, sm: "2rem", md: 0 }}
         >
           <Box
-            bgColor="gray.900"
-            color="whitesmoke"
-            border="1px solid"
-            borderColor={"gray.700"}
+            bgColor={"#051622"}
+            color="#FFFDE1"
             w={{ base: "100%", sm: "100%", md: "100%" }}
             h={"auto"}
             padding={{ base: "1rem", md: "2rem" }}
+            paddingBottom={{ base: "80px", sm: "70px", md: "100px" }}
           >
             <Flex
               direction={{ base: "column", sm: "column", md: "row" }}
@@ -196,7 +194,7 @@ const ContactForm = () => {
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.regular}
                   fontSize={{ base: "22px", sm: "20px", md: "30px" }}
-                  color={"gray.200"}
+                  color={"#FFFDE1"}
                   mb={{ base: "5%", sm: "2%", md: "5%" }}
                   mt={{ base: "20%", sm: "15%", md: 0 }}
                 >
@@ -207,7 +205,7 @@ const ContactForm = () => {
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.regular}
                   fontSize={{ base: "14px", sm: "16px", md: "16px" }}
-                  color={"gray.200"}
+                  color={"#FFFDE1"}
                 >
                   Have any questions? Shoot us an email.
                 </Text>
@@ -215,7 +213,7 @@ const ContactForm = () => {
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.regular}
                   fontSize={{ base: "14px", sm: "16px", md: "16px" }}
-                  color={"gray.200"}
+                  color={"#FFFDE1"}
                 >
                   * Contact form is disabled to avoid spam emails through
                   porfolio *{" "}

@@ -77,9 +77,9 @@ export const EventsPage = () => {
   return (
     <>
       <Box
-        bgColor="gray.900"
+        bgColor="#FFFDE1"
         color="whitesmoke"
-        minH={{ base: "520vh", sm: "480vh", md: "400vh" }}
+        minH={{ base: "540vh", sm: "460vh", md: "380vh" }}
         minW={"100%"}
       >
         <Flex
@@ -96,9 +96,9 @@ export const EventsPage = () => {
           >
             <Heading
               position={"relative"}
-              left={{ base: "5%", sm: "15%", md: "-12%" }}
+              left={{ base: "2%", sm: "15%", md: "-22%" }}
               fontFamily={orbitronFontFamily}
-              fontWeight={orbitronWeight.semibold}
+              fontWeight={orbitronWeight.bold}
               bgGradient="linear(to-r, #ff005f 0%, #610979 70%, #020024 100%)"
               bgClip="text"
               fontSize={{
@@ -107,7 +107,7 @@ export const EventsPage = () => {
                 md: "100px",
               }}
               lineHeight={"1.2"}
-              mt={{ base: "15%", sm: "10%", md: "10%" }}
+              top={{ base: "15%", sm: "10%", md: "5%" }}
               maxW={{ base: "100%", md: "900px" }}
             >
               {/* Main-Header */}
@@ -117,12 +117,13 @@ export const EventsPage = () => {
             {/* Sub-Header */}
             <Text
               position={"relative"}
-              left={{ base: "0.5rem", sm: "20%", md: "-12%" }}
-              color={"gray.300"}
+              left={{ base: "0.5rem", sm: "20%", md: "-22%" }}
+              color={"#051622"}
               pr={{ base: "0.9rem", sm: 0, md: 0 }}
-              fontSize={{ base: "16px", sm: "20px", md: "22px" }}
-              letterSpacing={{ base: "0.09rem", sm: "0.08rem", md: "0.02rem" }}
-              mt={{ base: "15%", sm: "7%", md: "5%" }}
+              fontSize={"16px"}
+              letterSpacing={"0.02rem"}
+              lineHeight={{ base: 5, sm: 5, md: 5 }}
+              top={{ base: "20px", sm: "50px", md: "100px" }}
               maxW={{ base: "100%", sm: "25rem", md: "45rem" }}
               marginBottom={{ base: "1rem", md: "2rem" }}
               fontFamily={robotoSlabFont}
@@ -136,6 +137,73 @@ export const EventsPage = () => {
         </Flex>
         {/* 
 
+{/* Search Event Input */}
+        <Flex
+          align={{ base: "center", sm: "flex-start", md: "flex-start" }}
+          justify={{ base: "center", sm: "flex-start", md: "flex-start" }}
+        >
+          <Box>
+            <Text
+              fontFamily={orbitronFontFamily}
+              fontWeight={orbitronWeight.bold}
+              fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
+              color={"#051622"}
+              position={"relative"}
+              left={{ base: "22%", sm: "25%", md: "200px" }}
+              top={{ base: "170px", sm: "150px", md: "250px" }}
+              letterSpacing={"0.03rem"}
+            >
+              Search Events:
+              <SearchItem
+                events={events}
+                handleFilteredEvents={handleFilteredEvents}
+              />
+            </Text>
+          </Box>
+
+          {/* Modal Form - Create Buttom*/}
+          <Box w={{ base: "100%", sm: "100%", md: "100%" }}>
+            <Button
+              maxW={"100%"}
+              position={"relative"}
+              left={{ base: "-90%", sm: "50%", md: "70%" }}
+              top={{ base: "250px", sm: "190px", md: "300px" }}
+              onClick={openModal}
+              bgGradient="linear(to-br, #00ffbc, #0ee399)"
+              fontFamily={orbitronFontFamily}
+              fontWeight={orbitronWeight.medium}
+              mb={{ base: "2rem", md: "5rem" }}
+              fontSize={{ base: "0.7rem", sm: "0.7rem", md: "0.8rem" }}
+              color={"#051622"}
+              _hover={{
+                bgColor: "green.200",
+                color: " #ff005f ",
+                // boxShadow: "0 0 7px whitesmoke",
+              }}
+              // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
+            >
+              {" "}
+              + Add Event
+            </Button>
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+              <ModalOverlay />
+              <ModalContent>
+                <ModalHeader>Create New Event</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                  {/* NewEvent goes here */}
+                  <NewEvent
+                    isOpen={isModalOpen}
+                    onClose={closeModal}
+                    onEventAdded={handleEventAdded}
+                    categories={categories}
+                    users={users}
+                  />
+                </ModalBody>
+              </ModalContent>
+            </Modal>
+          </Box>
+        </Flex>
 
         {/* This Flex manages the whole Cards Box */}
         <Flex align="center" justify="center" minH="100vh">
@@ -144,92 +212,28 @@ export const EventsPage = () => {
 
             <Box
               p={4}
-              bgColor={{ base: "gray.900", sm: "gray.800", md: "gray.800" }}
+              bgColor={"#051622"}
               border={"1px solid"}
-              borderColor={"gray.500"}
-              w={{ base: "100%", sm: "80%", md: "85%" }}
+              borderColor={"#162737"}
+              w={{ base: "100%", sm: "90%", md: "85%" }}
               h={{ base: "900px", sm: "600px", md: "800px" }}
               borderRadius={"md"}
-              mb={{ base: "-100px", md: "1rem" }}
+              mb={{ base: "-100px", sm: 0, md: "1rem" }}
               padding={{ base: "1rem", sm: "2rem", md: "2rem" }}
               position={"relative"}
-              left={{ base: "0%", sm: "10%", md: "7%" }}
+              left={{ base: 0, sm: "5%", md: "7%" }}
               right={{ base: 0, sm: 0, md: "2rem" }}
-              top={{ base: "9rem", sm: "6rem", md: "20vh" }}
+              top={{ base: "9rem", sm: "3rem", md: "20vh" }}
               overflowY={"scroll"}
             >
-              {/* Search Event Input */}
-              <Flex
-                align={{ base: "center", sm: "flex-start", md: "flex-start" }}
-                justify={{ base: "center", sm: "flex-start", md: "flex-start" }}
-              >
-                <Box>
-                  <Text
-                    fontFamily={orbitronFontFamily}
-                    fontWeight={orbitronWeight.medium}
-                    fontSize={{ base: "0.8rem", sm: "1rem", md: "1rem" }}
-                    color={"gray.200"}
-                    position={"relative"}
-                    left={{ base: "25%", sm: 0, md: "40px" }}
-                  >
-                    Search Events:
-                    <SearchItem
-                      events={events}
-                      handleFilteredEvents={handleFilteredEvents}
-                    />
-                  </Text>
-                </Box>
-
-                {/* Modal Form - Create Buttom*/}
-                <Button
-                  maxW={"100%"}
-                  position={"relative"}
-                  left={{ base: "-30%", sm: "30%", md: "50%" }}
-                  top={{ base: "90px", sm: "50px", md: "50px" }}
-                  onClick={openModal}
-                  bgGradient="linear(to-br, #00ffbc, #0ee399)"
-                  fontFamily={orbitronFontFamily}
-                  fontWeight={orbitronWeight.medium}
-                  mb={{ base: "2rem", md: "5rem" }}
-                  fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
-                  color={"gray.900"}
-                  _hover={{
-                    bgColor: "green.200",
-                    color: " #ff005f ",
-                    // boxShadow: "0 0 7px whitesmoke",
-                  }}
-                  // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
-                >
-                  {" "}
-                  Create Event
-                </Button>
-                <Modal isOpen={isModalOpen} onClose={closeModal}>
-                  <ModalOverlay />
-                  <ModalContent>
-                    <ModalHeader>Create New Event</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                      {/* NewEvent goes here */}
-                      <NewEvent
-                        isOpen={isModalOpen}
-                        onClose={closeModal}
-                        onEventAdded={handleEventAdded}
-                        categories={categories}
-                        users={users}
-                      />
-                    </ModalBody>
-                  </ModalContent>
-                </Modal>
-              </Flex>
-
               {/* Events Cards Grid */}
               <Flex align={"center"} justify={"center"}>
                 <SimpleGrid
                   columns={columns}
                   gap={8}
                   position={"relative"}
-                  right={{ base: "8%", sm: 0, md: 0 }}
-                  top={{ base: "100px", sm: 0, md: 0 }}
+                  right={{ base: "22%", sm: 0, md: 0 }}
+                  top={{ base: "40px", sm: 0, md: 0 }}
                   w={{ base: "45%", sm: "90%", md: "100%" }}
                 >
                   {/* //map through filtered events/+ Search functionality - Root component/ SeearchItem component*/}
@@ -249,10 +253,7 @@ export const EventsPage = () => {
         </Flex>
 
         {/* Sliding Text - Mid Section */}
-        <Box
-          position={"relative"}
-          top={{ base: "13rem", sm: "5rem", md: "60vh" }}
-        >
+        <Box position={"relative"} top={{ base: "10rem", sm: -90, md: "60vh" }}>
           <TextAnimation />
         </Box>
 
@@ -262,20 +263,19 @@ export const EventsPage = () => {
             {/* The two Boxes will create the effect of a gradient border */}
             <Box
               bgGradient="linear(to-r, #ff005f 0%, #610979 70%)"
-              w={{ base: "90%", sm: "90%", md: "75%" }}
+              w={{ base: "95%", sm: "90%", md: "75%" }}
               position={"relative"}
               left={{ base: 0, sm: 0, md: 0 }}
-              top={{ base: "13rem", sm: "5rem", md: "60vh" }}
-              padding={{ base: "0.05rem", sm: "0.05rem", md: "0.05rem" }}
+              top={{ base: "13rem", sm: 0, md: "60vh" }}
+              padding={{ base: "0.1rem", sm: "0.1rem", md: "0.1rem" }}
               marginTop={"1rem"}
               marginBottom={"5rem"}
-              color={"gray.300"}
-              borderRadius={"10px"}
+              color={"#FFFDE1"}
             >
               <Box
-                bgColor={"gray.900"}
+                bgColor={"#051622"}
                 h={"100%"}
-                padding={{ base: "0.6rem", sm: "0.7rem", md: "2rem" }}
+                padding={{ base: "1rem", sm: "0.7rem", md: "2rem" }}
                 // borderRadius={"10px"}
               >
                 <Flex
@@ -296,7 +296,7 @@ export const EventsPage = () => {
                     marginBottom={{ base: "1rem", md: "0" }}
                   />
                   <Text
-                    fontSize={{ base: "0.8rem", md: "md" }}
+                    fontSize={{ base: "0.8rem", sm: "16px", md: "md" }}
                     marginLeft={{ base: "0", md: "1rem" }}
                     flex="1"
                     fontFamily={robotoSlabFont}

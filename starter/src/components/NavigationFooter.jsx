@@ -23,11 +23,11 @@ export const NavigationFooter = () => {
 
   return (
     <Box
-      borderTop={"2px"}
-      borderColor="gray.700"
-      h={{ base: "60vh", sm: "30vh", md: "20vh" }}
-      bgColor={"gray.900"}
-      color={"whitesmoke"}
+      borderTop={"1px"}
+      borderColor="#162737"
+      h={{ base: "35vh", sm: "30vh", md: "20vh" }}
+      bgColor={"#FFFDE1"}
+      color={"#051622"}
       textAlign={"center"}
     >
       <Flex
@@ -35,10 +35,10 @@ export const NavigationFooter = () => {
         wrap="wrap"
         justify={{ base: "start", sm: "center", md: "center" }}
         align={{ base: "start", sm: "center", md: "center" }}
-        fontSize={{ base: "0.5em", sm: "0.4em", md: "0.7em" }}
+        fontSize={{ base: "0.4em", sm: "0.4em", md: "0.7em" }}
         letterSpacing={{ base: "0.08rem", md: "0.06rem" }}
         mt={{ base: "40px", sm: "50px", md: "30px" }}
-        ml={{ base: "20px", md: 0 }}
+        ml={{ base: "2px", md: 0 }}
         // position={"relative"}
         // left={{ base: 0, sm: 0, md: 0 }}
       >

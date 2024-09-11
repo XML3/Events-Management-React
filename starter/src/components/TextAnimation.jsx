@@ -34,7 +34,7 @@ const TextAnimation = () => {
   const textStyle = {
     fontFamily: orbitronFontFamily,
     fontWeight: orbitronWeight.semibold,
-    color: "gray.300",
+    color: "#051622",
   };
 
   return (
