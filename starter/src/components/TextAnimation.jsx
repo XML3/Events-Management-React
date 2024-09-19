@@ -45,16 +45,13 @@ const TextAnimation = () => {
         justify="center"
         minH="20vh"
         wrap="wrap"
-        position={"relative"}
-        mt={{ base: "3rem", md: "-10rem" }}
-        mr={{ base: "3rem", md: 0 }}
       >
         <motion.div
           initial={{ x: -3000 }}
           animate={{ x: 30 }}
           transition={{
             duration: "2",
-            delay: "0.8",
+            delay: "0.3",
           }}
           style={textStyle}
         >
@@ -62,12 +59,12 @@ const TextAnimation = () => {
             fontSize={{
               base: "20px",
               sm: "30px",
-              md: "30px",
-              lg: "40px",
-              xl: "50px",
+              md: "45px",
             }}
             textAlign="center"
             paddingBottom={2.5}
+            bgGradient="linear(to-r, #ff005f 0%, #610979 100%)"
+            bgClip="text"
           >
             Experience the Power of
           </Text>
@@ -86,11 +83,11 @@ const TextAnimation = () => {
             fontSize={{
               base: "20px",
               sm: "30px",
-              md: "30px",
-              lg: "40px",
-              xl: "50px",
+              md: "45px",
             }}
             textAlign="center"
+            bgGradient="linear(to-r, #ff005f 0%, #610979 100%)"
+            bgClip="text"
           >
             of movement and sound
           </Text>
