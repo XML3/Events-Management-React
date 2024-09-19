@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Typewriter from "../components/Typewriter";
 import { API_URL } from "../components/UI/constants";
 import { EditEvent } from "../components/forms/EditEvent";
+
 import {
   Heading,
   Center,
@@ -153,7 +154,7 @@ export const EventPage = () => {
   };
 
   return (
-    <Box bgColor="#FFFDE1" color="whitesmoke" minH="100vh" paddingTop={"100px"}>
+    <Box bgColor="#051622" color="whitesmoke" minH="100vh" paddingTop={"100px"}>
       <Heading
         bgGradient="linear(to-r, #ff005f 0%, #610979 70%, #020024 100%)"
         bgClip="text"
@@ -185,7 +186,8 @@ export const EventPage = () => {
           <Center>
             <Heading
               fontSize={{ base: "28px", sm: "45px", md: "45px " }}
-              color={"#610979"}
+              bgGradient="linear(to-br, #00ffbc, #0ee399)"
+              bgClip={"text"}
               mb={4}
               fontFamily={orbitronFontFamily}
               fontWeight={"900"}
@@ -198,10 +200,8 @@ export const EventPage = () => {
           <Button
             onClick={openModal}
             w={"50%"}
-            bgColor="#FFFDE1"
-            // borderColor={"linear(to-br, #00ffbc, #0ee399)"}
-            border={"2px solid #610979 "}
-            color={"gray.900"}
+            bgGradient="linear(to-br, #00ffbc, #0ee399)"
+            color={"#051622"}
             position={"relative"}
             left={{ base: -3, sm: "0.1rem", md: "0.7rem" }}
             mb={4} //added
@@ -302,7 +302,8 @@ export const EventPage = () => {
               {/* Artist Lineup */}
               <Text
                 fontSize={"16px"}
-                color={"teal.300"}
+                bgGradient="linear(to-br, #00ffbc, #0ee399)"
+                bgClip={"text"}
                 paddingBottom={"0.8rem"}
                 fontFamily={orbitronFontFamily}
                 fontWeight={orbitronWeight.medium}
@@ -316,7 +317,7 @@ export const EventPage = () => {
                 fontFamily={robotoSlabFont}
                 fontWeight={robotoSlabWeight.thin}
                 paddingLeft={"2rem"}
-                color={"#FFFDE1"}
+                color={"#d5d1bf"}
                 paddingBottom={"1rem"}
               >
                 {event.lineup}
@@ -327,7 +328,8 @@ export const EventPage = () => {
                 fontSize={"16px"}
                 fontFamily={orbitronFontFamily}
                 fontWeight={orbitronWeight.medium}
-                color={"teal.300"}
+                bgGradient="linear(to-br, #00ffbc, #0ee399)"
+                bgClip={"text"}
                 mt={{ base: "1.5px", md: "3px" }}
                 letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
               >
@@ -338,7 +340,7 @@ export const EventPage = () => {
                 letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 fontFamily={robotoSlabFont}
                 fontWeight={robotoSlabWeight.thin}
-                color={"#FFFDE1"}
+                color={"#d5d1bf"}
               >
                 {event.location}
               </Text>
@@ -365,7 +367,7 @@ export const EventPage = () => {
                     letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                     fontFamily={robotoSlabFont}
                     fontWeight={robotoSlabWeight.thin}
-                    color={"#FFFDE1"}
+                    color={"#d5d1bf"}
                   >
                     {event.startTime}
                   </Text>
@@ -386,7 +388,7 @@ export const EventPage = () => {
                     letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                     fontFamily={robotoSlabFont}
                     fontWeight={robotoSlabWeight.thin}
-                    color={"#FFFDE1"}
+                    color={"#d5d1bf"}
                   >
                     {event.endTime}
                   </Text>
@@ -401,7 +403,7 @@ export const EventPage = () => {
                   mb={{ base: "1rem", md: "1rem" }}
                 >
                   <Text
-                    color={"#FFFDE1"}
+                    color={"#d5d1bf"}
                     fontWeight={"bold"}
                     fontSize={"14px"}
                     marginBottom={2}
