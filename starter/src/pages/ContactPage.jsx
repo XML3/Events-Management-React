@@ -128,7 +128,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Box bgColor="#FFFDE1" minH="130vh" paddingTop={"100px"}>
+    <Box bgColor="#051622" minH="130vh" paddingTop={"100px"}>
       <Flex
         align={{ base: "center", md: "flex-start" }}
         minH={"20vh"}
@@ -171,7 +171,7 @@ const ContactForm = () => {
         >
           <Box
             bgColor={"#051622"}
-            color="#FFFDE1"
+            color="#d5d1bf"
             w={{ base: "100%", sm: "100%", md: "100%" }}
             h={"auto"}
             padding={{ base: "1rem", md: "2rem" }}
@@ -194,7 +194,7 @@ const ContactForm = () => {
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.regular}
                   fontSize={{ base: "22px", sm: "20px", md: "30px" }}
-                  color={"#FFFDE1"}
+                  color={"#d5d1bf"}
                   mb={{ base: "5%", sm: "2%", md: "5%" }}
                   mt={{ base: "20%", sm: "15%", md: 0 }}
                 >
@@ -205,7 +205,7 @@ const ContactForm = () => {
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.regular}
                   fontSize={{ base: "14px", sm: "16px", md: "16px" }}
-                  color={"#FFFDE1"}
+                  color={"#d5d1bf"}
                 >
                   Have any questions? Shoot us an email.
                 </Text>
@@ -213,7 +213,7 @@ const ContactForm = () => {
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.regular}
                   fontSize={{ base: "14px", sm: "16px", md: "16px" }}
-                  color={"#FFFDE1"}
+                  color={"#d5d1bf"}
                 >
                   * Contact form is disabled to avoid spam emails through
                   porfolio *{" "}
@@ -341,7 +341,7 @@ const ContactForm = () => {
                 <Button
                   type="submit"
                   bgGradient="linear(to-br, #00ffbc, #0ee399)"
-                  color={"gray.900"}
+                  color={"#051622"}
                   fontFamily={orbitronFontFamily}
                   fontWeight={orbitronWeight.medium}
                   mt={"2rem"}
