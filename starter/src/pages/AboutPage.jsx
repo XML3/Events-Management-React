@@ -33,8 +33,8 @@ export const AboutPage = () => {
 
   return (
     <Box
-      bgColor="#FFFDE1"
-      color="#051622"
+      bgColor="#051622"
+      color="#d5d1bf"
       minH={{ base: "150vh", sm: "175vh", md: "150vh" }}
       width={"100%"}
       paddingTop={"100px"}
@@ -77,7 +77,7 @@ export const AboutPage = () => {
         mb={{ base: "0", sm: "2rem", md: "2rem" }}
       >
         <Text
-          color={"#051622"}
+          color={"#d5d1bf"}
           w={"30%"}
           fontSize={{
             base: "16px",
@@ -105,7 +105,7 @@ export const AboutPage = () => {
             backgroundColor={"#051622"}
             w={{ base: "100%", sm: "100%", md: "100%" }}
             padding={{ base: "0.6rem", md: "2rem" }}
-            color={"#FFFDE1"}
+            color={"#d5d1bf"}
           >
             <Flex
               direction={{ base: "column", md: "row" }}
