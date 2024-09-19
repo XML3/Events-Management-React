@@ -12,6 +12,7 @@ export const SearchItem = ({ handleFilteredEvents }) => {
       <TextInput
         placeholder="Name, Location or Category"
         fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+        color={"#d5d1bf"}
         mb={"3rem"}
         position={"relative"}
         left={{ base: 0, md: "1px" }}
