@@ -12,14 +12,13 @@ const DataContext = createContext();
 //manage and provide data
 export const Root = ({ initialEvents, children }) => {
   const subHeaderText =
-    "Full-stack project that mocks an events management application, where users can sign_up to create, edit or delete music events with their respective authentication and authorization. The project has been deployed with some limitations.  New events can be created without the need of user's authorization token to view its functionality however, in order to avoid modification to existing data, events can not be modified or deleted.  Lastly, please keep in mind the server will take a couple of minutes to fully load all items on the page.";
+    "Events management application, where users can sign up to create, edit or delete events with their respective authentication and authorization. The Front-end of this project has been deployed with some limitations.  New events can be created without the need of user's authorization token to view its functionality however, in order to avoid modification to existing data, events can not be modified or deleted.  Lastly, please keep in mind the server will take a couple of minutes to fully load all items on the page.";
 
   const [eventsData, setEventsData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [users, setUsers] = useState([]);
   const [description, setDescription] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
-  const [articles, setArticles] = useState([]);
   const [imgAnimation, setImgAnimation] = useState([]);
   // const [currentUser, setCurrentUser] = useState(null);
   const [header, setHeader] = useState("Events Management");
@@ -81,11 +80,6 @@ export const Root = ({ initialEvents, children }) => {
           setUsers(userData);
           // setCurrentUser(userData[0]);
         }
-
-        //fetch Articles (mid section in EventsPage)
-        const articleResponse = await fetch(`${API_URL}/articles`);
-        const articleData = await articleResponse.json();
-        setArticles(articleData);
 
         //fetch imageAnimation
         const animatedImgResponse = await fetch(`${API_URL}/imgAnimation`);
@@ -168,7 +162,7 @@ export const Root = ({ initialEvents, children }) => {
     filteredEvents,
     addEvent,
     deleteEvent,
-    articles,
+
     imgAnimation,
     header,
     subHeader,
