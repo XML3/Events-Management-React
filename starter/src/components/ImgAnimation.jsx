@@ -55,7 +55,7 @@ const ImgAnimation = ({ imgAnimation }) => {
       mb={{ base: "1px", sm: "5rem", md: "0" }}
       position={"relative"}
       left={{ base: -1, sm: "25%", md: "5%" }}
-      top={{ base: "7rem", sm: "9rem", md: "9rem" }}
+      top={{ base: "7rem", sm: "11rem", md: "9rem" }}
       style={{ visibility: inView ? "visible" : "hidden" }}
     >
       {imgUrl && (
