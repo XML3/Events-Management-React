@@ -61,8 +61,8 @@ export const EventsCard = ({ event }) => {
         to={`/event/${event.id}`}
         bgGradient="linear(to-b, #ff005f 0%, #610979 70%)"
         borderRadius="md"
-        w={{ base: "14rem", sm: "100%", md: "90%" }}
-        h={{ base: "25.1rem", sm: "100%", md: "100%" }}
+        w={{ base: "14rem", sm: "100%", md: "80%" }}
+        h={{ base: "25.1rem", sm: "100%", md: "70%" }}
         padding={"0.05rem"}
         position={"relative"}
         right={{ base: "1.1rem", sm: 0, md: 0 }}
@@ -80,7 +80,8 @@ export const EventsCard = ({ event }) => {
               <Heading
                 as="h2"
                 size={{ base: "md", sm: "sm", md: "sm" }}
-                color={"green.200"}
+                bgGradient="linear(to-br, #00ffbc, #0ee399)"
+                bgClip={"text"}
                 mb={"1rem"}
                 fontFamily={orbitronFontFamily}
                 fontWeight={orbitronWeight.medium}
@@ -94,10 +95,24 @@ export const EventsCard = ({ event }) => {
               </Heading>
             </Center>
 
-            <Image src={image} borderRadius={"full"} mb={"1rem"} w={"100%"} />
+            <Box display={"flex"} justifyContent={"center"} align={"center"}>
+              <Image
+                src={image}
+                borderRadius={"full"}
+                mb={"1rem"}
+                w={{ base: "75%", sm: "75%", md: "65%" }}
+                h={{ base: "100px", sm: "100px", md: "120px" }}
+                alt={`Flyer image for each event ${event.image}`}
+              />
+            </Box>
+
             <Text
-              fontSize={{ base: "sm", sm: "12px", md: "14px" }}
-              letterSpacing={{ base: "0.07rem", sm: "0.05rem", md: "0.07rem" }}
+              fontSize={{ base: "sm", sm: "12px", md: "12px" }}
+              letterSpacing={{
+                base: "0.07rem",
+                sm: "0.05rem",
+                md: "0.07rem",
+              }}
               color={"green.200"}
               mb={"1rem"}
               fontFamily={orbitronFontFamily}
@@ -107,8 +122,8 @@ export const EventsCard = ({ event }) => {
             </Text>
 
             <Text
-              color={"whitesmoke"}
-              fontSize={{ base: "2xs", sm: "11px", md: "2xs" }}
+              color={"#d5d1bf"}
+              fontSize={{ base: "2xs", sm: "11px", md: "10px" }}
               letterSpacing={{ base: "0.1rem", sm: "0.05rem", md: "0.05rem" }}
               fontFamily={robotoSlabFont}
               fontWeight={robotoSlabWeight.thin}
@@ -118,8 +133,8 @@ export const EventsCard = ({ event }) => {
               Start Time: {startTime}
             </Text>
             <Text
-              color={"gray.200"}
-              fontSize={{ base: "2xs", sm: "11px", md: "2xs" }}
+              color={"#d5d1bf"}
+              fontSize={{ base: "2xs", sm: "11px", md: "10px" }}
               letterSpacing={{ base: "0.1rem", sm: "0.05rem", md: "0.05rem" }}
               mb={"0.5rem"}
               fontFamily={robotoSlabFont}
@@ -147,7 +162,7 @@ export const EventsCard = ({ event }) => {
                         fontSize={{
                           base: "0.7rem",
                           sm: "0.6rem",
-                          md: "0.7rem",
+                          md: "0.6rem",
                         }}
                         letterSpacing={{
                           base: "0.05rem",
@@ -162,7 +177,7 @@ export const EventsCard = ({ event }) => {
                     );
                   })
                 ) : (
-                  <Text color={"gray.200"}>No categories available</Text>
+                  <Text color={"#d5d1bf"}>No categories available</Text>
                 )}
               </Stack>
             </Center>
