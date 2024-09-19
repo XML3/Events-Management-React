@@ -90,7 +90,7 @@ export const EventsPage = () => {
       <Box
         bgColor="#051622"
         color="#d5d1bf"
-        minH={{ base: "990vh", sm: "550vh", md: "290vh" }}
+        minH={{ base: "920vh", sm: "500vh", md: "290vh" }}
         minW={"100%"}
       >
         <Flex
@@ -142,7 +142,7 @@ export const EventsPage = () => {
             >
               <Typewriter text={subHeader} delay={30} />
             </Text>
-            {/* Cassestte Image */}
+            {/* Headphones Image */}
           </Box>
           <ImgAnimation imgAnimation={imgAnimation} />
         </Flex>
@@ -237,13 +237,13 @@ export const EventsPage = () => {
             <Box
               p={4}
               w={{ base: "100%", sm: "90%", md: "90rem" }}
-              h={{ base: "900px", sm: "600px", md: "100%" }}
+              h={"100%"}
               mb={{ base: "-100px", sm: 0, md: "1rem" }}
               padding={{ base: "1rem", sm: "2rem", md: "2rem" }}
               position={"relative"}
-              left={{ base: 2, sm: "5%", md: 0 }}
+              left={{ base: 0, sm: "5%", md: 0 }}
               right={{ base: 0, sm: 0, md: 0 }}
-              top={{ base: "9rem", sm: "3rem", md: "50vh" }}
+              top={{ base: "12rem", sm: "6rem", md: "50vh" }}
             >
               {/* Events Cards Grid */}
               {/* <Flex align={"center"} justify={"center"}>
@@ -282,7 +282,7 @@ export const EventsPage = () => {
                     mb={8}
                     position={"relative"}
                     top={{ base: 0, sm: 0, md: 0 }}
-                    left={{ base: 0, sm: 0, md: "2%" }}
+                    left={{ base: 2, sm: 0, md: "2%" }}
                   >
                     <Heading
                       paddingTop={7}
