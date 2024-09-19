@@ -24,10 +24,10 @@ export const NavigationFooter = () => {
   return (
     <Box
       borderTop={"1px"}
-      borderColor="#162737"
+      borderColor="#d5d1bf"
       h={{ base: "35vh", sm: "30vh", md: "20vh" }}
-      bgColor={"#FFFDE1"}
-      color={"#051622"}
+      bgColor={"#051622"}
+      color={"#d5d1bf"}
       textAlign={"center"}
     >
       <Flex
