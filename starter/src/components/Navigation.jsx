@@ -18,9 +18,9 @@ export const Navigation = () => {
   return (
     <Box
       borderBottom={"1px"}
-      borderColor="#162737"
+      borderColor="#d5d1bf"
       maxW={"100%"}
-      bgColor={"#FFFDE1"}
+      bgColor={"#051622"}
       position="fixed"
       top={0}
       left={0}
@@ -63,7 +63,7 @@ export const Navigation = () => {
           {/* Menu Section  */}
 
           <Text
-            color="#051622"
+            color="#d5d1bf"
             fontSize={{ base: "10px", sm: "16px", md: "16px" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.semibold}
@@ -74,7 +74,7 @@ export const Navigation = () => {
 
           <Link to="/event/1">
             <Text
-              color={"#051622"}
+              color={"#d5d1bf"}
               fontSize={{ base: "10px", sm: "16px", md: "16px" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
@@ -86,7 +86,7 @@ export const Navigation = () => {
 
           <Link to="/about">
             <Text
-              color={"#051622"}
+              color={"#d5d1bf"}
               fontSize={{ base: "10px", sm: "16px", md: "16px" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
@@ -98,7 +98,7 @@ export const Navigation = () => {
 
           <Link to="/contact">
             <Text
-              color={"#051622"}
+              color={"#d5d1bf"}
               fontSize={{ base: "10px", sm: "16px", md: "16px" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
