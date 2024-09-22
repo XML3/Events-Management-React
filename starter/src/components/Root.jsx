@@ -12,7 +12,7 @@ const DataContext = createContext();
 //manage and provide data
 export const Root = ({ initialEvents, children }) => {
   const subHeaderText =
-    "Events management application, where users can sign up to create, edit or delete events with their respective authentication and authorization. The Front-end of this project has been deployed with some limitations.  New events can be created without the need of user's authorization token to view its functionality however, in order to avoid modification to existing data, events can not be modified or deleted.  Lastly, please keep in mind the server will take a couple of minutes to fully load all items on the page.";
+    "The Front-end of this application has been deployed with some limitations in order to avoid modification to existing data, events can not be modified or deleted.  Lastly, please keep in mind the server will take a couple of minutes to fully load all items on the page.";
 
   const [eventsData, setEventsData] = useState([]);
   const [categories, setCategories] = useState([]);
