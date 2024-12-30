@@ -106,8 +106,11 @@ export const EventsPage = () => {
             top={{ base: "5rem", sm: "6rem", md: "5rem" }}
           >
             <Heading
+            display={"flex"}
+            justifyContent={"start"}
+            align={"start"}
               position={"relative"}
-              left={{ base: "2%", sm: "15%", md: "-22%" }}
+              left={{ base: "2%", sm: "15%", md: "0%", "2xl":"-10%" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.bold}
               bgGradient="linear(to-r, #ff005f 0%, #610979 70%, #020024 100%)"
@@ -127,8 +130,11 @@ export const EventsPage = () => {
 
             {/* Sub-Header */}
             <Text
+             display={"flex"}
+             justifyContent={{base:"center", sm:"center", md:"start"}}
+             align={"start"}
               position={"relative"}
-              left={{ base: "0.5rem", sm: "20%", md: "-22%" }}
+              left={{ base: "0%", sm: "0%", md: "0%", "2xl":"-10%"}}
               color={"#d5d1bf"}
               pr={{ base: "0.9rem", sm: 0, md: 0 }}
               fontSize={"16px"}
@@ -173,7 +179,7 @@ export const EventsPage = () => {
               bgGradient="linear(to-br, #00ffbc, #0ee399)"
               bgClip={"text"}
               position={"relative"}
-              left={{ base: "22%", sm: "25%", md: "160px" }}
+              left={{ base: "22%", sm: "25%", md: "60%", "2xl":"90%" }}
               top={{ base: "170px", sm: "150px", md: "500px" }}
               letterSpacing={"0.03rem"}
             >
