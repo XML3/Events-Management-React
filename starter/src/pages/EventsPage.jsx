@@ -303,7 +303,7 @@ export const EventsPage = () => {
                       {category ? category.name : "Unknown Category"}
                     </Heading>
 
-                    <SimpleGrid columns={columns} gap={{base:8, sm:8, md:6, "2xl":10}} w={"100%"}>
+                    <SimpleGrid columns={columns} gap={{base:8, sm:8, md:4, "2xl":10}} w={"100%"}>
                       {categoryEvents.map((event) => (
                         <Link to={`/event/${event.id}`} key={event.id}>
                           <EventsCard event={event} categories={categories} />
