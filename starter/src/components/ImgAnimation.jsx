@@ -47,6 +47,9 @@ const ImgAnimation = ({ imgAnimation }) => {
 
   return (
     <Box
+    display={"flex"}
+    justifyContent={{base:"center", sm:"center", md:"end"}}
+    align={"start"}
       // width={"100%"}
       ref={ref}
       w={{ base: "200px", sm: "300px", md: "15%" }}
@@ -54,7 +57,7 @@ const ImgAnimation = ({ imgAnimation }) => {
       overflow="hidden"
       mb={{ base: "1px", sm: "5rem", md: "0" }}
       position={"relative"}
-      left={{ base: -1, sm: "25%", md: "5%" }}
+      // left={{ base: -1, sm: "25%", md: "5%" }}
       top={{ base: "7rem", sm: "11rem", md: "9rem" }}
       style={{ visibility: inView ? "visible" : "hidden" }}
     >
