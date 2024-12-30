@@ -179,7 +179,7 @@ export const EventsPage = () => {
               bgGradient="linear(to-br, #00ffbc, #0ee399)"
               bgClip={"text"}
               position={"relative"}
-              left={{ base: "22%", sm: "25%", md: "60%", "2xl":"90%" }}
+              left={{ base: "22%", sm: "25%", md: "60%", "2xl":"83%" }}
               top={{ base: "170px", sm: "150px", md: "500px" }}
               letterSpacing={"0.03rem"}
             >
@@ -303,7 +303,7 @@ export const EventsPage = () => {
                       {category ? category.name : "Unknown Category"}
                     </Heading>
 
-                    <SimpleGrid columns={columns} gap={8} w={"100%"}>
+                    <SimpleGrid columns={columns} gap={{base:8, sm:8, md:6, "2xl":10}} w={"100%"}>
                       {categoryEvents.map((event) => (
                         <Link to={`/event/${event.id}`} key={event.id}>
                           <EventsCard event={event} categories={categories} />
