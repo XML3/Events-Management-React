@@ -134,12 +134,12 @@ export const EventsPage = () => {
              justifyContent={{base:"center", sm:"center", md:"start"}}
              align={"start"}
               position={"relative"}
-              left={{ base: "0%", sm: "0%", md: "0%", "2xl":"-10%"}}
+              left={{ base: "0.5rem", sm: "0%", md: "0%", "2xl":"-10%"}}
               color={"#d5d1bf"}
               pr={{ base: "0.9rem", sm: 0, md: 0 }}
-              fontSize={"16px"}
+              fontSize={{base:"16px", sm:"16px", md:"16px", "2xl": "18px"}}
               letterSpacing={"0.02rem"}
-              lineHeight={{ base: 5, sm: 5, md: 5 }}
+              lineHeight={{ base: 5, sm: 5, md: 5, "2xl": 6 }}
               top={{ base: "20px", sm: "50px", md: "50px" }}
               maxW={{ base: "100%", sm: "25rem", md: "45rem" }}
               marginBottom={{ base: "1rem", md: "2rem" }}
