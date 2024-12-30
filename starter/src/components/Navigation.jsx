@@ -46,9 +46,10 @@ export const Navigation = () => {
           >  <Link to="/">
             <Image
               src={logo}
-              boxSize={{base: "50px", sm:"50px", md:"60px"}}
+              boxSize={{base: "50px", sm:"50px", md:"60px", "2xl": "80px"}}
               objectFit="scale-down"
               alt="logo"
+              _hover={{ transform: "scale(1.08)" }}
             />
             </Link>
           </Box>
@@ -61,6 +62,7 @@ export const Navigation = () => {
           justify={{ base: "start", sm: "center", md: "flex-end" }}
           spacing={{ base: "16px", sm: "24px", md: "60px" }}
           align={"end"}
+         
         >
    
 
@@ -72,6 +74,7 @@ export const Navigation = () => {
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
+              _hover={{ transform: "scale(1.08)",  color: "#ff005f" }}
             >
               Event
             </Text>
@@ -84,6 +87,7 @@ export const Navigation = () => {
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
+              _hover={{ transform: "scale(1.08)",  color: "#ff005f" }}
             >
               About
             </Text>
@@ -96,6 +100,7 @@ export const Navigation = () => {
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
+              _hover={{ transform: "scale(1.08)",  color: "#ff005f" }}
             >
               Contact
             </Text>

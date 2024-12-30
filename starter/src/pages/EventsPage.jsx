@@ -196,6 +196,7 @@ export const EventsPage = () => {
             <Button
               maxW={"100%"}
               position={"relative"}
+              z-index={10}
               left={{ base: "-90%", sm: "50%", md: "70%" }}
               top={{ base: "250px", sm: "190px", md: "550px" }}
               onClick={openModal}

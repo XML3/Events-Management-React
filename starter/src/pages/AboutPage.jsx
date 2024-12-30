@@ -60,8 +60,11 @@ export const AboutPage = () => {
             }}
             lineHeight={"1.2"}
             mt={{ base: "2rem", md: "0" }}
+            display={"flex"}
+            justifyContent={"start"}
+            align={"start"}
             position={"relative"}
-            left={{ base: "0.5rem", sm: "1.5rem", md: "7rem" }}
+            left={{ base: "0.5rem", sm: "1.5rem", md: "20%", "2xl":"25%" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.semibold}
             maxW={{ base: "100%", md: "900px" }}
