@@ -80,7 +80,6 @@
       "endTime": "2023-03-09T07:00:00.000Z",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9"
     },
-
     {
       "id": "5",
       "createdBy": "3",
@@ -117,7 +116,6 @@
       "endTime": "2023-03-15T13:30:00.000Z",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9"
     },
-
     {
       "id": "8",
       "createdBy": "5",
@@ -130,7 +128,6 @@
       "endTime": "2023-03-09T07:00:00.000Z",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9"
     },
-
     {
       "id": "9",
       "createdBy": "4",
@@ -155,7 +152,6 @@
       "startTime": "2023-03-15T12:00:00.000Z",
       "endTime": "2023-03-15T13:30:00.000Z"
     },
-
     {
       "id": "11",
       "createdBy": "3",
@@ -168,7 +164,6 @@
       "endTime": "2023-03-09T07:00:00.000Z",
       "lineup": "Artist1, Artist 2, Artist 3, Artist 4, Artist 5, Artist 6, Artist 7, Artist 8, Artist 9"
     },
-
     {
       "id": "12",
       "createdBy": "6",
@@ -196,7 +191,6 @@
       "id": "3"
     }
   ],
-
   "imgAnimation": [
     {
       "id": "1",
