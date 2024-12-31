@@ -106,8 +106,11 @@ export const EventsPage = () => {
             top={{ base: "5rem", sm: "6rem", md: "5rem" }}
           >
             <Heading
+            display={"flex"}
+            justifyContent={"start"}
+            align={"start"}
               position={"relative"}
-              left={{ base: "2%", sm: "15%", md: "-22%" }}
+              left={{ base: "2%", sm: "15%", md: "0%", "2xl":"-10%" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.bold}
               bgGradient="linear(to-r, #ff005f 0%, #610979 70%, #020024 100%)"
@@ -127,13 +130,16 @@ export const EventsPage = () => {
 
             {/* Sub-Header */}
             <Text
+             display={"flex"}
+             justifyContent={{base:"center", sm:"center", md:"start"}}
+             align={"start"}
               position={"relative"}
-              left={{ base: "0.5rem", sm: "20%", md: "-22%" }}
+              left={{ base: "0.5rem", sm: "0%", md: "0%", "2xl":"-10%"}}
               color={"#d5d1bf"}
               pr={{ base: "0.9rem", sm: 0, md: 0 }}
-              fontSize={"16px"}
+              fontSize={{base:"16px", sm:"16px", md:"16px", "2xl": "18px"}}
               letterSpacing={"0.02rem"}
-              lineHeight={{ base: 5, sm: 5, md: 5 }}
+              lineHeight={{ base: 5, sm: 5, md: 5, "2xl": 6 }}
               top={{ base: "20px", sm: "50px", md: "50px" }}
               maxW={{ base: "100%", sm: "25rem", md: "45rem" }}
               marginBottom={{ base: "1rem", md: "2rem" }}
@@ -173,7 +179,7 @@ export const EventsPage = () => {
               bgGradient="linear(to-br, #00ffbc, #0ee399)"
               bgClip={"text"}
               position={"relative"}
-              left={{ base: "22%", sm: "25%", md: "160px" }}
+              left={{ base: "22%", sm: "25%", md: "60%", "2xl":"83%" }}
               top={{ base: "170px", sm: "150px", md: "500px" }}
               letterSpacing={"0.03rem"}
             >
@@ -190,6 +196,7 @@ export const EventsPage = () => {
             <Button
               maxW={"100%"}
               position={"relative"}
+              z-index={10}
               left={{ base: "-90%", sm: "50%", md: "70%" }}
               top={{ base: "250px", sm: "190px", md: "550px" }}
               onClick={openModal}
@@ -297,7 +304,7 @@ export const EventsPage = () => {
                       {category ? category.name : "Unknown Category"}
                     </Heading>
 
-                    <SimpleGrid columns={columns} gap={8} w={"100%"}>
+                    <SimpleGrid columns={columns} gap={{base:8, sm:8, md:4, "2xl":10}} w={"100%"}>
                       {categoryEvents.map((event) => (
                         <Link to={`/event/${event.id}`} key={event.id}>
                           <EventsCard event={event} categories={categories} />

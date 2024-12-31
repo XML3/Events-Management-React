@@ -140,6 +140,9 @@ const ContactForm = () => {
           mb={{ base: "0", md: "5rem" }}
         >
           <Heading
+           display={"flex"}
+           justifyContent={"start"}
+           align={"start"}
             bgGradient="linear(to-r, #ff005f 0%, #610979 70%, #020024 100%)"
             bgClip="text"
             fontSize={{
@@ -150,7 +153,8 @@ const ContactForm = () => {
             lineHeight={"1.2"}
             mt={{ base: "1rem", md: "0" }}
             mb={{ base: "4rem", sm: "1rem", md: 0 }}
-            ml={{ base: "0.5rem", sm: "2rem", md: "8.5rem" }}
+            position={"relative"}
+            left={{ base: "0.5rem", sm: "2rem", md: "22%", "2xl":"30%" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.semibold}
             maxW={{ base: "100%", md: "900px" }}
