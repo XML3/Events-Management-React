@@ -1,5 +1,5 @@
 
-//hosted URL deployment
+//hosted URL deployment net
 const API_URL = "https://bed-express-event-api.onrender.com";
 
 //local url
