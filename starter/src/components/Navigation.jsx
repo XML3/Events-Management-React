@@ -17,64 +17,70 @@ export const Navigation = () => {
 
   return (
     <Box
-      borderBottom={"1px"}
-      borderColor="#d5d1bf"
+      // borderBottom={"1px"}
+      // borderColor="#d5d1bf"
       minW={"100%"}
-      bgColor={"#051622"}
+      bgColor={"#000000"}
       position="relative"
       zIndex={1000} // Set a high zIndex to ensure it stays on top
-      p={8}
+      paddingTop={8}
+      paddingBottom={4}
+      px={8}
     >
       <Flex
-      display={"flex"}
+        display={"flex"}
         direction={{ base: "row", sm: "row", md: "row" }}
         wrap={"wrap"}
         align={{ base: "center", sm: "center", md: "center" }}
         position={"relative"}
         justifyContent={"space-around"}
-        gap={{base:"25%", sm:"28%", md:"30%", "2xl": "50%"}}
-        right={{base: "7%", sm:0}}
-      
+        gap={{ base: "25%", sm: "28%", md: "30%", "2xl": "50%" }}
+        right={{ base: "7%", sm: 0 }}
       >
-               {/* LOGO Section */}
-               <Box
-            mb={{ base: 0, sm: 0, md: 0 }}
-            position={"relative"}
-            left={{base: 0, sm:0, md:0, "2xl": "5%"}}
-            display={"flex"}
-            justifyContent={"start"}
-          >  <Link to="/">
+        {/* LOGO Section */}
+        <Box
+          mb={{ base: 0, sm: 0, md: 0 }}
+          position={"relative"}
+          left={{ base: 0, sm: 0, md: "-2%", "2xl": "5%" }}
+          display={"flex"}
+          justifyContent={"start"}
+        >
+          {" "}
+          <Link to="/">
             <Image
               src={logo}
-              boxSize={{base: "50px", sm:"50px", md:"60px", "2xl": "80px"}}
+              boxSize={{ base: "50px", sm: "50px", md: "60px", "2xl": "80px" }}
               objectFit="scale-down"
               alt="logo"
               _hover={{ transform: "scale(1.08)" }}
             />
-            </Link>
-          </Box>
+          </Link>
+        </Box>
 
         <Stack
-          direction={{base:"column", sm:"column", md:"row"}}
+          direction={{ base: "column", sm: "row", md: "row", "2xl": "row" }}
           position={"relative"}
-          right={{base: "-10%", sm: "80%", md:"1%", "2xl":"7%"}}
+          right={{ base: "-10%", sm: "1%", md: "-3%", "2xl": "2.5%" }}
           wrap={"wrap"}
           justify={{ base: "start", sm: "center", md: "flex-end" }}
           spacing={{ base: "16px", sm: "24px", md: "60px" }}
           align={"end"}
-         
         >
-   
-
           {/* Menu Section  */}
           <Link to="/event/1">
             <Text
-              color={"#d5d1bf"}
               fontSize={{ base: "12px", sm: "16px", md: "16px", "2xl": "18px" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
-              _hover={{ transform: "scale(1.08)",  color: "#ff005f" }}
+              _hover={{ transform: "scale(1.08)", color: "#c50d34" }}
+              bgColor={"rgba(213, 209, 191, 0.8)"}
+              color={"#051622"}
+              px={4}
+              py={2}
+              borderRadius="8px"
+              textAlign="center"
+              display="inline-block"
             >
               Event
             </Text>
@@ -82,12 +88,23 @@ export const Navigation = () => {
 
           <Link to="/about">
             <Text
-              color={"#d5d1bf"}
-              fontSize={{ base: "12px", sm: "16px", md: "16px", "2xl": "18px" }}
+              fontSize={{
+                base: "12px",
+                sm: "16px",
+                md: "16px",
+                "2xl": "18px",
+              }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
-              _hover={{ transform: "scale(1.08)",  color: "#ff005f" }}
+              _hover={{ transform: "scale(1.08)", color: "#c50d34" }}
+              bgColor={"rgba(213, 209, 191, 0.8)"}
+              color={"#051622"}
+              px={4}
+              py={2}
+              borderRadius="8px"
+              textAlign="center"
+              display="inline-block"
             >
               About
             </Text>
@@ -95,12 +112,18 @@ export const Navigation = () => {
 
           <Link to="/contact">
             <Text
-              color={"#d5d1bf"}
               fontSize={{ base: "12px", sm: "16px", md: "16px", "2xl": "18px" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
-              _hover={{ transform: "scale(1.08)",  color: "#ff005f" }}
+              _hover={{ transform: "scale(1.08)", color: "#c50d34" }}
+              bgColor={"rgba(213, 209, 191, 0.8)"}
+              color={"#051622"}
+              px={4}
+              py={2}
+              borderRadius="8px"
+              textAlign="center"
+              display="inline-block"
             >
               Contact
             </Text>

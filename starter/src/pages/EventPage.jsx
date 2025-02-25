@@ -154,10 +154,14 @@ export const EventPage = () => {
   };
 
   return (
-    <Box bgColor="#051622" color="whitesmoke" minH="100vh" paddingTop={"100px"}>
+    <Box
+      bgColor={"#000000"}
+      color="whitesmoke"
+      minH="100vh"
+      paddingTop={"100px"}
+    >
       <Heading
-        bgGradient="linear(to-r, #ff005f 0%, #610979 70%, #020024 100%)"
-        bgClip="text"
+        color={"rgba(213, 209, 191, 0.5)"}
         fontSize={{ base: "38px", sm: "80px", md: "100px" }}
         lineHeight={"1.2"}
         mt={{ base: "3rem", md: "0" }}
@@ -186,8 +190,7 @@ export const EventPage = () => {
           <Center>
             <Heading
               fontSize={{ base: "28px", sm: "45px", md: "45px " }}
-              bgGradient="linear(to-br, #00ffbc, #0ee399)"
-              bgClip={"text"}
+              color={"#c50d34"}
               mb={4}
               fontFamily={orbitronFontFamily}
               fontWeight={"900"}
@@ -200,7 +203,7 @@ export const EventPage = () => {
           <Button
             onClick={openModal}
             w={"50%"}
-            bgGradient="linear(to-br, #00ffbc, #0ee399)"
+            bgColor={"rgba(213, 209, 191, 0.5)"}
             color={"#051622"}
             position={"relative"}
             left={{ base: -3, sm: "0.1rem", md: "0.7rem" }}
@@ -208,7 +211,7 @@ export const EventPage = () => {
             //shadow
             fontSize={{ base: "0.6rem", sm: "0.8rem", md: "0.7rem" }}
             _hover={{
-              color: "#ff005f",
+              color: "#c50d34",
             }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.medium}
@@ -245,7 +248,7 @@ export const EventPage = () => {
           <Button
             onClick={() => handleDeleteClick(event.id)}
             w={"50%"}
-            bgGradient="linear(to-br, #ff005f, #610979  )"
+            bgColor={"#c50d34"}
             color={"gray.400"}
             deleteEvent={deleteEvent}
             position={"relative"}
@@ -253,7 +256,6 @@ export const EventPage = () => {
             mb={4} //added
             fontSize={{ base: "0.6rem", sm: "0.8rem", md: "0.7rem" }}
             _hover={{
-              bgColor: "pink.500",
               color: "gray.900",
             }}
             fontFamily={orbitronFontFamily}
@@ -272,7 +274,7 @@ export const EventPage = () => {
         >
           <Box
             p={4}
-            bgGradient="linear(to-b, #ff005f 0%, #610979 70%)"
+            border="1px solid rgba(213, 209, 191, 0.3)"
             w={{ base: "95%", sm: "100%", md: "50%" }}
             h={"auto"}
             borderRadius={"md"}
@@ -280,10 +282,10 @@ export const EventPage = () => {
             left={{ base: "0.3rem", md: "0rem", lg: "10rem", xl: "30rem" }}
             top={{ base: "3rem", sm: "3rem", md: 0 }}
             mb={{ base: "5rem", md: "10rem" }}
-            padding={"0.1rem"}
+            padding={"0.05rem"}
           >
             <Box
-              bgColor={"#051622"}
+              bgColor={"#0f0f0f"}
               borderRadius={"md"}
               padding={{ base: "1rem", sm: "0.7rem", md: "3rem" }}
             >

@@ -24,9 +24,9 @@ export const NavigationFooter = () => {
   return (
     <Box
       borderTop={"1px"}
-      borderColor="#d5d1bf"
+      borderColor="rgba(213, 209, 191, 0.3)"
       h={{ base: "35vh", sm: "30vh", md: "20vh" }}
-      bgColor={"#051622"}
+      bgColor={"#000000"}
       color={"#d5d1bf"}
       textAlign={"center"}
     >

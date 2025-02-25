@@ -5,7 +5,6 @@ import { EventsCard } from "../components/EventsCard";
 import NewEvent from "../components/forms/NewEvent";
 import { SearchItem } from "../components/SearchItem";
 import DataContext from "../components/Root";
-import ImgAnimation from "../components/ImgAnimation";
 import TextAnimation from "../components/TextAnimation";
 import Typewriter from "../components/Typewriter";
 
@@ -13,7 +12,6 @@ import {
   Heading,
   Box,
   Flex,
-  Image,
   SimpleGrid,
   Text,
   Modal,
@@ -24,7 +22,6 @@ import {
   ModalCloseButton,
   useBreakpointValue,
   Button,
-  Center,
 } from "@chakra-ui/react";
 
 export const EventsPage = () => {
@@ -35,8 +32,7 @@ export const EventsPage = () => {
     categories,
     filteredEvents,
     users,
-
-    imgAnimation,
+    // imgAnimation,
     header,
     subHeader,
   } = useContext(DataContext);
@@ -63,6 +59,10 @@ export const EventsPage = () => {
     },
   };
 
+  //video
+  const videoLeft = "/video/tension_release_square_XM.mp4";
+  const videoRight = "/video/forEvents.mp4";
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -88,9 +88,10 @@ export const EventsPage = () => {
   return (
     <>
       <Box
-        bgColor="#051622"
+        // bgColor="#051622"
+        bgColor={"#000000"}
         color="#d5d1bf"
-        minH={{ base: "920vh", sm: "500vh", md: "290vh" }}
+        minH={{ base: "770vh", sm: "370vh", md: "390vh" }}
         minW={"100%"}
       >
         <Flex
@@ -103,41 +104,94 @@ export const EventsPage = () => {
           <Box
             position={"relative"}
             left={0}
-            top={{ base: "5rem", sm: "6rem", md: "5rem" }}
+            top={{ base: "5rem", sm: "2rem", md: "3rem" }}
           >
             <Heading
-            display={"flex"}
-            justifyContent={"start"}
-            align={"start"}
+              display={"flex"}
+              justifyContent={"start"}
+              align={"start"}
               position={"relative"}
-              left={{ base: "2%", sm: "15%", md: "0%", "2xl":"-10%" }}
+              left={{ base: "2%", sm: "15%", md: "0%", "2xl": "-20%" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.bold}
-              bgGradient="linear(to-r, #ff005f 0%, #610979 70%, #020024 100%)"
-              bgClip="text"
+              color={"rgba(213, 209, 191, 0.5)"}
               fontSize={{
                 base: "40px",
                 sm: "80px",
                 md: "100px",
               }}
               lineHeight={"1.2"}
-              top={{ base: "15%", sm: "1rem", md: "5%" }}
               maxW={{ base: "100%", md: "900px" }}
+              paddingBottom={{
+                base: "2rem",
+                sm: "2rem,",
+                md: "2rem",
+                "2xl": "5rem",
+              }}
             >
               {/* Main-Header */}
               <Typewriter text={header} delay={100} />
             </Heading>
 
+            <Box
+              display={"flex"}
+              justifyContent="center"
+              alignItems={"center"}
+              position={"relative"}
+              left={{ base: 0, sm: "20%", md: "0%", "2xl": 0 }}
+              border={"1px solid rgba(213, 209, 191, 0.3)"}
+              borderRadius={"24px"}
+              width={{ base: "60%", sm: "60%", md: "60%", "2xl": "80%" }}
+              height={"auto"}
+              mx={"auto"}
+              py={10}
+              marginBottom={{ base: 0, sm: 0, md: 0, "2xl": "3rem" }}
+            >
+              <Flex
+                width={"90%"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                gap={{ base: "70%", sm: "70%", md: "70%", "2xl": "50%" }}
+                flexDirection={{ base: "column", sm: "row", md: "row" }}
+              >
+                <Box
+                  as="video"
+                  src={videoLeft}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  objectFit={"contain"}
+                  width={"60%"}
+                  maxWidth={"550px"}
+                  border={"1px solid rgba(213, 209, 191, 0.3)"}
+                  borderRadius={"14px"}
+                ></Box>
+                <Box
+                  as="video"
+                  src={videoRight}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  objectFit={"scale-down"}
+                  width={"60%"}
+                  maxWidth={"550px"}
+                  border={"1px solid rgba(213, 209, 191, 0.3)"}
+                  borderRadius={"14px"}
+                ></Box>
+              </Flex>
+            </Box>
             {/* Sub-Header */}
             <Text
-             display={"flex"}
-             justifyContent={{base:"center", sm:"center", md:"start"}}
-             align={"start"}
+              display={"flex"}
+              justifyContent={{ base: "center", sm: "center", md: "start" }}
+              align={"start"}
               position={"relative"}
-              left={{ base: "0.5rem", sm: "0%", md: "0%", "2xl":"-10%"}}
+              left={{ base: "0.5rem", sm: "15%", md: "0%", "2xl": "-10%" }}
               color={"#d5d1bf"}
               pr={{ base: "0.9rem", sm: 0, md: 0 }}
-              fontSize={{base:"16px", sm:"16px", md:"16px", "2xl": "18px"}}
+              fontSize={{ base: "16px", sm: "16px", md: "16px", "2xl": "18px" }}
               letterSpacing={"0.02rem"}
               lineHeight={{ base: 5, sm: 5, md: 5, "2xl": 6 }}
               top={{ base: "20px", sm: "50px", md: "50px" }}
@@ -150,7 +204,6 @@ export const EventsPage = () => {
             </Text>
             {/* Headphones Image */}
           </Box>
-          <ImgAnimation imgAnimation={imgAnimation} />
         </Flex>
 
         {/* Sliding Text - Mid Section */}
@@ -179,7 +232,7 @@ export const EventsPage = () => {
               bgGradient="linear(to-br, #00ffbc, #0ee399)"
               bgClip={"text"}
               position={"relative"}
-              left={{ base: "22%", sm: "25%", md: "60%", "2xl":"83%" }}
+              left={{ base: "22%", sm: "25%", md: "60%", "2xl": "43%" }}
               top={{ base: "170px", sm: "150px", md: "500px" }}
               letterSpacing={"0.03rem"}
             >
@@ -197,21 +250,19 @@ export const EventsPage = () => {
               maxW={"100%"}
               position={"relative"}
               z-index={10}
-              left={{ base: "-90%", sm: "50%", md: "70%" }}
+              left={{ base: "-90%", sm: "50%", md: "70%", "2xl": "72.5%" }}
               top={{ base: "250px", sm: "190px", md: "550px" }}
               onClick={openModal}
-              bgGradient="linear(to-br, #00ffbc, #0ee399)"
+              bgColor="rgba(213, 209, 191, 0.5)"
+              color="#c50d34"
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.medium}
               mb={{ base: "2rem", md: "5rem" }}
               fontSize={{ base: "0.7rem", sm: "0.7rem", md: "0.8rem" }}
-              color={"#051622"}
               _hover={{
-                bgColor: "green.200",
-                color: " #ff005f ",
-                // boxShadow: "0 0 7px whitesmoke",
+                bgColor: "rgba(213, 209, 191, 0.5)",
+                color: "#051622",
               }}
-              // _active={{ boxShadow: "0px 10px 30px 0px whitesmoke" }}
             >
               {" "}
               + Add Event
@@ -243,7 +294,7 @@ export const EventsPage = () => {
 
             <Box
               p={4}
-              w={{ base: "100%", sm: "90%", md: "90rem" }}
+              w={{ base: "100%", sm: "90%", md: "100%", "2xl": "85rem" }}
               h={"100%"}
               mb={{ base: "-100px", sm: 0, md: "1rem" }}
               padding={{ base: "1rem", sm: "2rem", md: "2rem" }}
@@ -296,7 +347,7 @@ export const EventsPage = () => {
                       size={{ base: "md", sm: "md", md: "md" }}
                       mb={5}
                       mt={1}
-                      color={"#ff005f"}
+                      color={"#c50d34"}
                       fontFamily={robotoSlabFont}
                       fontWeight={"700"}
                       letterSpacing={1.5}
@@ -304,7 +355,11 @@ export const EventsPage = () => {
                       {category ? category.name : "Unknown Category"}
                     </Heading>
 
-                    <SimpleGrid columns={columns} gap={{base:8, sm:8, md:4, "2xl":10}} w={"100%"}>
+                    <SimpleGrid
+                      columns={columns}
+                      gap={{ base: 8, sm: 8, md: 4, "2xl": 10 }}
+                      w={"100%"}
+                    >
                       {categoryEvents.map((event) => (
                         <Link to={`/event/${event.id}`} key={event.id}>
                           <EventsCard event={event} categories={categories} />

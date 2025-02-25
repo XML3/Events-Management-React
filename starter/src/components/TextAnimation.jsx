@@ -63,8 +63,7 @@ const TextAnimation = () => {
             }}
             textAlign="center"
             paddingBottom={2.5}
-            bgGradient="linear(to-r, #ff005f 0%, #610979 100%)"
-            bgClip="text"
+            color={"#c50d34"}
           >
             Experience the Power of
           </Text>
@@ -86,8 +85,7 @@ const TextAnimation = () => {
               md: "45px",
             }}
             textAlign="center"
-            bgGradient="linear(to-r, #ff005f 0%, #610979 100%)"
-            bgClip="text"
+            color={"#c50d34"}
           >
             of movement and sound
           </Text>

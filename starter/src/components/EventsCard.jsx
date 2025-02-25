@@ -8,7 +8,7 @@ import {
   Center,
   Box,
 } from "@chakra-ui/react";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import DataContext from "./Root";
 
@@ -44,13 +44,13 @@ export const EventsCard = ({ event }) => {
   const categoryColor = (categoryId) => {
     switch (categoryId) {
       case "1":
-        return "#ff005f";
+        return "#c50d34";
       case "2":
         return "#fff176";
       case "3":
-        return "#9F7AEA";
+        return "green.200";
       default:
-        return "#ff005f";
+        return "#c50d34";
     }
   };
 
@@ -59,20 +59,17 @@ export const EventsCard = ({ event }) => {
       <Card
         as={Link}
         to={`/event/${event.id}`}
-        bgGradient="linear(to-b, #ff005f 0%, #610979 70%)"
         borderRadius="md"
-        w={{ base: "14rem", sm: "100%", md: "80%" }}
-        h={{ base: "25.1rem", sm: "100%", md: "70%" }}
-        padding={"0.05rem"}
+        w={{ base: "14rem", sm: "100%", md: "80%", "2xl": "80%" }}
         position={"relative"}
         right={{ base: "1.1rem", sm: 0, md: 0 }}
         cursor="pointer"
         _hover={{ transform: "scale(1.08)" }}
       >
         <Box
-          bgColor={"#051622"}
+          border={"1px solid rgba(213, 209, 191, 0.5)"}
+          bgColor={"#0f0f0f"}
           borderRadius="md"
-          w={{ base: "13.9rem", sm: "100%", md: "100%" }}
           h={{ base: "25rem", sm: "100%", md: "100%" }}
         >
           <CardBody>
@@ -80,8 +77,7 @@ export const EventsCard = ({ event }) => {
               <Heading
                 as="h2"
                 size={{ base: "md", sm: "sm", md: "sm" }}
-                bgGradient="linear(to-br, #00ffbc, #0ee399)"
-                bgClip={"text"}
+                color={"rgba(213, 209, 191, 0.8)"}
                 mb={"1rem"}
                 fontFamily={orbitronFontFamily}
                 fontWeight={orbitronWeight.medium}
@@ -156,7 +152,6 @@ export const EventsCard = ({ event }) => {
                     return (
                       <Text
                         key={category.id}
-                        // color="#ff005f "
                         color={categoryColor(categoryId)}
                         mt={{ base: "30px", sm: "20px", md: "30px" }}
                         fontSize={{
@@ -177,7 +172,9 @@ export const EventsCard = ({ event }) => {
                     );
                   })
                 ) : (
-                  <Text color={"#d5d1bf"}>No categories available</Text>
+                  <Text color={"rgba(213, 209, 191, 0.8)"}>
+                    No categories available
+                  </Text>
                 )}
               </Stack>
             </Center>
