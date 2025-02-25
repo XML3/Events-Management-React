@@ -1,4 +1,3 @@
-//hosted URL
 const API_URL = "https://bed-express-event-api.onrender.com";
 
 //local url
