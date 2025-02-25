@@ -162,15 +162,25 @@ export const EventPage = () => {
     >
       <Heading
         color={"rgba(213, 209, 191, 0.5)"}
-        fontSize={{ base: "38px", sm: "80px", md: "100px" }}
+        fontSize={{
+          base: "24px",
+          sm: "30px",
+          md: "40px",
+          "2xl": "60px",
+        }}
         lineHeight={"1.2"}
-        mt={{ base: "3rem", md: "0" }}
         mb={{ base: 0, sm: "2rem", md: 0 }}
         position={"relative"}
-        left={{ base: "0.9rem", sm: "1rem", md: "5.5rem" }}
+        top={{ base: "3rem", md: "0", "2xl": "-1rem" }}
+        left={{ base: "0.9rem", sm: "1rem", md: "5.5rem", "2xl": "8%" }}
         fontFamily={orbitronFontFamily}
         fontWeight={orbitronWeight.semibold}
-        maxW={{ base: "100%", sm: "100%", md: "900px" }}
+        maxW={{
+          base: "100%",
+          sm: "300px",
+          md: "400px",
+          "2xl": "500px",
+        }}
       >
         <Typewriter text={header} delay={100} />
       </Heading>
@@ -184,7 +194,7 @@ export const EventPage = () => {
         <Box
           mb={{ base: "2rem", sm: 0, md: "0" }}
           position="relative"
-          top={{ base: "2rem", sm: 0, md: "-5rem" }}
+          top={{ base: "2rem", sm: 0, md: "-5rem", "2xl": "-10rem" }}
           left={{ base: "0", sm: 0, md: "5rem" }}
         >
           <Center>
@@ -275,14 +285,13 @@ export const EventPage = () => {
           <Box
             p={4}
             border="1px solid rgba(213, 209, 191, 0.3)"
-            w={{ base: "95%", sm: "100%", md: "50%" }}
+            w={{ base: "95%", sm: "100%", md: "50%", "2xl": "50%" }}
             h={"auto"}
             borderRadius={"md"}
             position={"relative"}
             left={{ base: "0.3rem", md: "0rem", lg: "10rem", xl: "30rem" }}
-            top={{ base: "3rem", sm: "3rem", md: 0 }}
+            top={{ base: "3rem", sm: "3rem", md: 0, "2xl": "-9rem" }}
             mb={{ base: "5rem", md: "10rem" }}
-            padding={"0.05rem"}
           >
             <Box
               bgColor={"#0f0f0f"}

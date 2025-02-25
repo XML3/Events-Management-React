@@ -60,6 +60,9 @@ export const EventsCard = ({ event }) => {
         as={Link}
         to={`/event/${event.id}`}
         borderRadius="md"
+        border={"1px solid rgba(213, 209, 191, 0.5)"}
+        p={2}
+        bgColor="#000"
         w={{ base: "14rem", sm: "100%", md: "80%", "2xl": "80%" }}
         position={"relative"}
         right={{ base: "1.1rem", sm: 0, md: 0 }}
@@ -67,7 +70,6 @@ export const EventsCard = ({ event }) => {
         _hover={{ transform: "scale(1.08)" }}
       >
         <Box
-          border={"1px solid rgba(213, 209, 191, 0.5)"}
           bgColor={"#0f0f0f"}
           borderRadius="md"
           h={{ base: "25rem", sm: "100%", md: "100%" }}

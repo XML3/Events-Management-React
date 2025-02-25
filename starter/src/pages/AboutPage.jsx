@@ -48,25 +48,29 @@ export const AboutPage = () => {
           position={"relative"}
           left={{ base: "0", md: 0 }}
           right={{ base: "0", md: 0 }}
-          mb={{ base: "0", md: "5rem" }}
+          mb={{ base: "0", md: "5rem", "2xl": "3rem" }}
         >
           <Heading
             color={"rgba(213, 209, 191, 0.5)"}
             fontSize={{
-              base: "32px",
-              sm: "80px",
-              md: "100px",
+              base: "24px",
+              sm: "30px",
+              md: "40px",
+              "2xl": "60px",
             }}
             lineHeight={"1.2"}
-            mt={{ base: "2rem", md: 0 }}
-            display={"flex"}
-            justifyContent={"start"}
-            align={"start"}
+            mb={{ base: 0, sm: "2rem", md: 0 }}
             position={"relative"}
-            left={{ base: "0.5rem", sm: "1.5rem", md: "20%", "2xl": "25%" }}
+            top={{ base: "3rem", md: "0", "2xl": "-1rem" }}
+            left={{ base: "0.9rem", sm: "1rem", md: "5.5rem", "2xl": "45%" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.semibold}
-            maxW={{ base: "100%", md: "900px" }}
+            maxW={{
+              base: "100%",
+              sm: "300px",
+              md: "400px",
+              "2xl": "500px",
+            }}
           >
             <Typewriter text={header} delay={100} />
           </Heading>
@@ -79,10 +83,12 @@ export const AboutPage = () => {
         position={"relative"}
         left={{ base: "0", md: 0 }}
         mb={{ base: "0", sm: "2rem", md: "2rem" }}
+        bgColor={"rgba(213, 209, 191, 0.3)"}
+        width={"100%"}
       >
         <Text
           color={"#d5d1bf"}
-          w={"30%"}
+          w={"17%"}
           fontSize={{
             base: "16px",
             sm: "30px",
@@ -111,6 +117,7 @@ export const AboutPage = () => {
               direction={{ base: "column", md: "row" }}
               align={{ base: "center", md: "center" }}
               alignItems={"center"}
+              justifyContent={"space-between"}
               wrap={"wrap"}
             >
               <Text
@@ -119,13 +126,15 @@ export const AboutPage = () => {
                   base: "0.5rem",
                   sm: "1rem",
                   md: "1rem",
-                  "2xl": "2rem",
+                  "2xl": "0rem",
                 }}
+                maxWidth={"40%"}
                 flex="1"
                 fontFamily={robotoSlabFont}
                 fontWeight={robotoSlabWeight.light}
                 lineHeight={{ base: "1.7", sm: "1.7", md: "1.7" }}
                 mb={{ base: "1rem", sm: "1rem", md: 0 }}
+                color={"rgba(213, 209, 191, 0.8"}
               >
                 <Typewriter text={subHeader} delay={30} />
               </Text>
@@ -136,7 +145,7 @@ export const AboutPage = () => {
                 loop
                 muted
                 playsInline
-                w={{ base: "100%", md: "50%" }}
+                w={{ base: "100%", md: "50%", "2xl": "50%" }}
                 h={{ base: "auto", md: "auto" }}
                 padding={{ base: "0.5rem", sm: "1rem", md: 0 }}
                 marginBottom={{ base: "1rem", md: "0" }}

@@ -27,7 +27,7 @@ export const NavigationFooter = () => {
       borderColor="rgba(213, 209, 191, 0.3)"
       h={{ base: "35vh", sm: "30vh", md: "20vh" }}
       bgColor={"#000000"}
-      color={"#d5d1bf"}
+      color="rgba(213, 209, 191, 0.8)"
       textAlign={"center"}
     >
       <Flex
@@ -39,8 +39,6 @@ export const NavigationFooter = () => {
         letterSpacing={{ base: "0.08rem", md: "0.06rem" }}
         mt={{ base: "40px", sm: "50px", md: "30px" }}
         ml={{ base: "2px", md: 0 }}
-        // position={"relative"}
-        // left={{ base: 0, sm: 0, md: 0 }}
       >
         <Stack
           direction={{ base: "row", sm: "row", md: "row" }}

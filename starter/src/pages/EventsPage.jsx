@@ -34,7 +34,6 @@ export const EventsPage = () => {
     users,
     // imgAnimation,
     header,
-    subHeader,
   } = useContext(DataContext);
 
   //FONT ORBITRON
@@ -88,10 +87,9 @@ export const EventsPage = () => {
   return (
     <>
       <Box
-        // bgColor="#051622"
         bgColor={"#000000"}
         color="#d5d1bf"
-        minH={{ base: "770vh", sm: "370vh", md: "390vh" }}
+        minH={{ base: "900vh", sm: "370vh", md: "390vh", "2xl": "320vh" }}
         minW={"100%"}
       >
         <Flex
@@ -104,54 +102,28 @@ export const EventsPage = () => {
           <Box
             position={"relative"}
             left={0}
-            top={{ base: "5rem", sm: "2rem", md: "3rem" }}
+            top={{ base: "5rem", sm: "2rem", md: "2rem" }}
           >
-            <Heading
-              display={"flex"}
-              justifyContent={"start"}
-              align={"start"}
-              position={"relative"}
-              left={{ base: "2%", sm: "15%", md: "0%", "2xl": "-20%" }}
-              fontFamily={orbitronFontFamily}
-              fontWeight={orbitronWeight.bold}
-              color={"rgba(213, 209, 191, 0.5)"}
-              fontSize={{
-                base: "40px",
-                sm: "80px",
-                md: "100px",
-              }}
-              lineHeight={"1.2"}
-              maxW={{ base: "100%", md: "900px" }}
-              paddingBottom={{
-                base: "2rem",
-                sm: "2rem,",
-                md: "2rem",
-                "2xl": "5rem",
-              }}
-            >
-              {/* Main-Header */}
-              <Typewriter text={header} delay={100} />
-            </Heading>
-
             <Box
               display={"flex"}
               justifyContent="center"
               alignItems={"center"}
               position={"relative"}
               left={{ base: 0, sm: "20%", md: "0%", "2xl": 0 }}
+              top={{ base: 0, sm: "1rem", md: "1rem", "2xl": "3rem" }}
               border={"1px solid rgba(213, 209, 191, 0.3)"}
               borderRadius={"24px"}
-              width={{ base: "60%", sm: "60%", md: "60%", "2xl": "80%" }}
+              width={{ base: "70%", sm: "75%", md: "60%", "2xl": "80%" }}
               height={"auto"}
               mx={"auto"}
               py={10}
-              marginBottom={{ base: 0, sm: 0, md: 0, "2xl": "3rem" }}
+              marginBottom={{ base: 0, sm: 0, md: 0, "2xl": "2rem" }}
             >
               <Flex
                 width={"90%"}
                 justifyContent={"center"}
                 alignItems={"center"}
-                gap={{ base: "70%", sm: "70%", md: "70%", "2xl": "50%" }}
+                gap={{ base: "20px", sm: "5%", md: "4.5%", "2xl": "5%" }}
                 flexDirection={{ base: "column", sm: "row", md: "row" }}
               >
                 <Box
@@ -162,11 +134,34 @@ export const EventsPage = () => {
                   muted
                   playsInline
                   objectFit={"contain"}
-                  width={"60%"}
+                  width={"50%"}
                   maxWidth={"550px"}
                   border={"1px solid rgba(213, 209, 191, 0.3)"}
                   borderRadius={"14px"}
                 ></Box>
+                <Heading
+                  display={"flex"}
+                  justifyContent={"start"}
+                  align={"start"}
+                  fontFamily={orbitronFontFamily}
+                  fontWeight={orbitronWeight.bold}
+                  color={"rgba(213, 209, 191, 0.5)"}
+                  fontSize={{
+                    base: "24px",
+                    sm: "30px",
+                    md: "40px",
+                    "2xl": "60px",
+                  }}
+                  lineHeight={"1.2"}
+                  maxW={{
+                    base: "100%",
+                    sm: "300px",
+                    md: "400px",
+                    "2xl": "500px",
+                  }}
+                >
+                  <Typewriter text={header} delay={100} />
+                </Heading>
                 <Box
                   as="video"
                   src={videoRight}
@@ -175,34 +170,13 @@ export const EventsPage = () => {
                   muted
                   playsInline
                   objectFit={"scale-down"}
-                  width={"60%"}
+                  width={"50%"}
                   maxWidth={"550px"}
                   border={"1px solid rgba(213, 209, 191, 0.3)"}
                   borderRadius={"14px"}
                 ></Box>
               </Flex>
             </Box>
-            {/* Sub-Header */}
-            <Text
-              display={"flex"}
-              justifyContent={{ base: "center", sm: "center", md: "start" }}
-              align={"start"}
-              position={"relative"}
-              left={{ base: "0.5rem", sm: "15%", md: "0%", "2xl": "-10%" }}
-              color={"#d5d1bf"}
-              pr={{ base: "0.9rem", sm: 0, md: 0 }}
-              fontSize={{ base: "16px", sm: "16px", md: "16px", "2xl": "18px" }}
-              letterSpacing={"0.02rem"}
-              lineHeight={{ base: 5, sm: 5, md: 5, "2xl": 6 }}
-              top={{ base: "20px", sm: "50px", md: "50px" }}
-              maxW={{ base: "100%", sm: "25rem", md: "45rem" }}
-              marginBottom={{ base: "1rem", md: "2rem" }}
-              fontFamily={robotoSlabFont}
-              fontWeight={robotoSlabWeight.light}
-            >
-              <Typewriter text={subHeader} delay={30} />
-            </Text>
-            {/* Headphones Image */}
           </Box>
         </Flex>
 
@@ -229,12 +203,11 @@ export const EventsPage = () => {
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.bold}
               fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
-              bgGradient="linear(to-br, #00ffbc, #0ee399)"
-              bgClip={"text"}
+              color="rgba(213, 209, 191, 0.8)"
               position={"relative"}
               left={{ base: "22%", sm: "25%", md: "60%", "2xl": "43%" }}
               top={{ base: "170px", sm: "150px", md: "500px" }}
-              letterSpacing={"0.03rem"}
+              letterSpacing={"0.09rem"}
             >
               Search Events:
               <SearchItem

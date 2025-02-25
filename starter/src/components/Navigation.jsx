@@ -17,8 +17,8 @@ export const Navigation = () => {
 
   return (
     <Box
-      // borderBottom={"1px"}
-      // borderColor="#d5d1bf"
+      borderBottom={"1px"}
+      borderColor="rgba(213, 209, 191, 0.3)"
       minW={"100%"}
       bgColor={"#000000"}
       position="relative"
@@ -34,14 +34,14 @@ export const Navigation = () => {
         align={{ base: "center", sm: "center", md: "center" }}
         position={"relative"}
         justifyContent={"space-around"}
-        gap={{ base: "25%", sm: "28%", md: "30%", "2xl": "50%" }}
+        gap={{ base: "25%", sm: "28%", md: "30%", "2xl": "45%" }}
         right={{ base: "7%", sm: 0 }}
       >
         {/* LOGO Section */}
         <Box
           mb={{ base: 0, sm: 0, md: 0 }}
           position={"relative"}
-          left={{ base: 0, sm: 0, md: "-2%", "2xl": "5%" }}
+          left={{ base: 0, sm: 0, md: "-2%", "2xl": "0%" }}
           display={"flex"}
           justifyContent={"start"}
         >
@@ -49,7 +49,7 @@ export const Navigation = () => {
           <Link to="/">
             <Image
               src={logo}
-              boxSize={{ base: "50px", sm: "50px", md: "60px", "2xl": "80px" }}
+              boxSize={{ base: "70px", sm: "50px", md: "60px", "2xl": "60px" }}
               objectFit="scale-down"
               alt="logo"
               _hover={{ transform: "scale(1.08)" }}
@@ -60,7 +60,7 @@ export const Navigation = () => {
         <Stack
           direction={{ base: "column", sm: "row", md: "row", "2xl": "row" }}
           position={"relative"}
-          right={{ base: "-10%", sm: "1%", md: "-3%", "2xl": "2.5%" }}
+          right={{ base: "-10%", sm: "1%", md: "-3%", "2xl": "0%" }}
           wrap={"wrap"}
           justify={{ base: "start", sm: "center", md: "flex-end" }}
           spacing={{ base: "16px", sm: "24px", md: "60px" }}
@@ -69,14 +69,14 @@ export const Navigation = () => {
           {/* Menu Section  */}
           <Link to="/event/1">
             <Text
-              fontSize={{ base: "12px", sm: "16px", md: "16px", "2xl": "18px" }}
+              fontSize={{ base: "12px", sm: "14px", md: "16px", "2xl": "16px" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
               _hover={{ transform: "scale(1.08)", color: "#c50d34" }}
               bgColor={"rgba(213, 209, 191, 0.8)"}
               color={"#051622"}
-              px={4}
+              px={{ base: "40px", sm: "25px", md: "40px" }}
               py={2}
               borderRadius="8px"
               textAlign="center"
@@ -90,9 +90,9 @@ export const Navigation = () => {
             <Text
               fontSize={{
                 base: "12px",
-                sm: "16px",
+                sm: "14px",
                 md: "16px",
-                "2xl": "18px",
+                "2xl": "16px",
               }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
@@ -100,7 +100,7 @@ export const Navigation = () => {
               _hover={{ transform: "scale(1.08)", color: "#c50d34" }}
               bgColor={"rgba(213, 209, 191, 0.8)"}
               color={"#051622"}
-              px={4}
+              px={{ base: "40px", sm: "25px", md: "40px" }}
               py={2}
               borderRadius="8px"
               textAlign="center"
@@ -112,14 +112,14 @@ export const Navigation = () => {
 
           <Link to="/contact">
             <Text
-              fontSize={{ base: "12px", sm: "16px", md: "16px", "2xl": "18px" }}
+              fontSize={{ base: "12px", sm: "14px", md: "16px", "2xl": "16px" }}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.semibold}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
               _hover={{ transform: "scale(1.08)", color: "#c50d34" }}
               bgColor={"rgba(213, 209, 191, 0.8)"}
               color={"#051622"}
-              px={4}
+              px={{ base: "40px", sm: "25px", md: "40px" }}
               py={2}
               borderRadius="8px"
               textAlign="center"
