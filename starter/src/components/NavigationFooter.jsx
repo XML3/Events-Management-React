@@ -24,53 +24,28 @@ export const NavigationFooter = () => {
   return (
     <Box
       borderTop={"1px"}
-      borderColor="rgba(213, 209, 191, 0.3)"
-      h={{ base: "35vh", sm: "30vh", md: "20vh" }}
-      bgColor={"#000000"}
+      h={{ base: "13vh", sm: "15vh", md: "14vh", "2xl": "13vh" }}
+      maxWidth={"100%"}
+      bgColor={"#0f0f0f"}
       color="rgba(213, 209, 191, 0.8)"
       textAlign={"center"}
     >
       <Flex
+        display={"flex"}
         direction={{ base: "column", sm: "row", md: "row" }}
         wrap="wrap"
         justify={{ base: "start", sm: "center", md: "center" }}
-        align={{ base: "start", sm: "center", md: "center" }}
-        fontSize={{ base: "0.4em", sm: "0.4em", md: "0.7em" }}
+        align={"center"}
+        fontSize={{ base: "0.4em", sm: "0.4em", md: "0.7em", "2xl": "0.6em" }}
         letterSpacing={{ base: "0.08rem", md: "0.06rem" }}
-        mt={{ base: "40px", sm: "50px", md: "30px" }}
-        ml={{ base: "2px", md: 0 }}
+        mt={{ base: "12px", sm: "20px", md: "22px", "2xl": "15px" }}
       >
         <Stack
           direction={{ base: "row", sm: "row", md: "row" }}
           wrap={"wrap"}
           justify={"center"}
-          spacing={{ base: "20px", sm: "24px", md: "24px" }}
+          spacing={{ base: "15px", sm: "24px", md: "24px" }}
         >
-          <Link to="/about">
-            <Text
-              fontFamily={orbitronFontFamily}
-              fontWeight={orbitronWeight.normal}
-            >
-              About Us
-            </Text>
-          </Link>
-
-          <Text
-            fontFamily={orbitronFontFamily}
-            fontWeight={orbitronWeight.normal}
-          >
-            Media
-          </Text>
-
-          <Link to="/contact">
-            <Text
-              fontFamily={orbitronFontFamily}
-              fontWeight={orbitronWeight.normal}
-            >
-              Contact
-            </Text>
-          </Link>
-
           <Text
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.normal}
@@ -97,8 +72,8 @@ export const NavigationFooter = () => {
         direction={{ base: "row", md: "row" }}
         justify={{ base: "center", sm: "center", md: "space-around" }}
         alignItems={{ base: "start", md: "center" }}
-        mt={{ base: "40px", md: "30px" }}
-        mb={{ base: "10px", md: "20px" }}
+        mt={{ base: "15px", sm: "15px", md: "20px", "2xl": "20px" }}
+        mb={{ base: 0, sm: 0, "2xl": "10px" }}
         gap={6}
       >
         <Stack direction={{ base: "row", sm: "row", md: "row" }} spacing="24px">
@@ -106,35 +81,35 @@ export const NavigationFooter = () => {
             src={xIcons}
             alt="social media X icon"
             objectFit="scale-down"
-            boxSize={{ base: "20px", md: "30px" }}
+            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
           />
 
           <Image
             src={meatIcon}
             alt="social media X icon"
             objectFit="scale-down"
-            boxSize={{ base: "20px", md: "30px" }}
+            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
           />
 
           <Image
             src={instaIcon}
             alt="social media X icon"
             objectFit="scale-down"
-            boxSize={{ base: "20px", md: "30px" }}
+            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
           />
 
           <Image
             src={threadsIcon}
             alt="social media X icon"
             objectFit="scale-down"
-            boxSize={{ base: "20px", md: "30px" }}
+            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
           />
 
           <Image
             src={tiktokIcon}
             alt="social media X icon"
             objectFit="scale-down"
-            boxSize={{ base: "20px", md: "30px" }}
+            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
           />
         </Stack>
       </Flex>
@@ -146,8 +121,8 @@ export const NavigationFooter = () => {
         align={{ base: "center", sm: "start", md: "center" }}
         position={"relative"}
         left={{ base: "10px", sm: "20%", md: 0 }}
-        mt={{ base: "40px", sm: "30px", md: "10px" }}
-        mr={{ base: "10px", sm: "15rem", md: "2rem" }}
+        mt={{ base: "15px", sm: "15px", md: "10px" }}
+        mr={{ base: "010px", sm: "15rem", md: "2rem" }}
         fontSize={{ base: "0.3em", sm: "0.3rem", md: "0.5em" }}
         lineHeight={{ base: "1rem" }}
         letterSpacing={{ base: "0.1rem", md: "0.06rem" }}
@@ -155,12 +130,12 @@ export const NavigationFooter = () => {
         <Box>
           <Image
             src={logo}
-            boxSize={{ base: "40px", sm: "50px", md: "30px" }}
+            boxSize={{ base: "35px", sm: "30px", md: "30px" }}
             objectFit="scale-down"
             borderRadius="full"
             position={"relative"}
-            right={{ base: 0, sm: "80%", md: "10%" }}
-            mb={{ base: "20px", sm: 0, md: 0 }}
+            right={{ base: 0, sm: "20%", md: "10%" }}
+            mb={{ base: "5px", sm: 0, md: 0 }}
           />
         </Box>
 
@@ -168,9 +143,7 @@ export const NavigationFooter = () => {
           fontFamily={orbitronFontFamily}
           fontWeight={orbitronWeight.normal}
         >
-          2023 XaglyMontilva // Mock Website that simulates an event management
-          page - None of these events are actually real nor affilated to any of
-          the artists
+          Videos ©2023 XaglyMontilva All Rights Reserved: Mock site
         </Text>
       </Flex>
     </Box>

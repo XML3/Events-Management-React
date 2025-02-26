@@ -155,13 +155,13 @@ export const EventPage = () => {
 
   return (
     <Box
-      bgColor={"#000000"}
-      color="whitesmoke"
+      bgColor="rgba(213, 209, 191, 0.8)"
+      color="#d5d1bf"
       minH="100vh"
       paddingTop={"100px"}
     >
       <Heading
-        color={"rgba(213, 209, 191, 0.5)"}
+        color="#0f0f0f"
         fontSize={{
           base: "24px",
           sm: "30px",
@@ -171,12 +171,12 @@ export const EventPage = () => {
         lineHeight={"1.2"}
         mb={{ base: 0, sm: "2rem", md: 0 }}
         position={"relative"}
-        top={{ base: "3rem", md: "0", "2xl": "-1rem" }}
-        left={{ base: "0.9rem", sm: "1rem", md: "5.5rem", "2xl": "8%" }}
+        top={{ base: "-4rem", md: "-3rem", "2xl": "-4rem" }}
+        left={{ base: "1.5rem", sm: "1rem", md: "5.5rem", "2xl": "8%" }}
         fontFamily={orbitronFontFamily}
         fontWeight={orbitronWeight.semibold}
         maxW={{
-          base: "100%",
+          base: "50%",
           sm: "300px",
           md: "400px",
           "2xl": "500px",
@@ -184,43 +184,57 @@ export const EventPage = () => {
       >
         <Typewriter text={header} delay={100} />
       </Heading>
+      {/* Event Header / Top Line */}
+      <Box
+        display={"flex"}
+        justifyContent={{ base: "center", sm: "center", md: "flex-end" }}
+        position={"relative"}
+        top={{ base: "-2.5rem", sm: "-4rem", md: "-1rem", "2xl": "-2.5rem" }}
+        mb={{ base: "0", sm: "0", md: "0", "2xl": "2rem" }}
+        bgColor={"#0f0f0f"}
+        width={"100%"}
+      >
+        <Text
+          color={"#d5d1bf"}
+          w={{ base: "25%", sm: "15%", md: "20%", "2xl": "19%" }}
+          fontSize={{
+            base: "18px",
+            sm: "20px",
+            md: "25px",
+          }}
+          fontFamily={orbitronFontFamily}
+          fontWeight={orbitronWeight.semibold}
+        >
+          {event.title}
+        </Text>
+      </Box>
 
+      {/* Botton Section */}
       <Flex
-        align={"center "}
-        justify={"center"}
+        justify={{ base: "center", sm: "center", md: "flex-end" }}
         direction={{ base: "column", sm: "column", md: "row" }}
         p={8}
       >
         <Box
           mb={{ base: "2rem", sm: 0, md: "0" }}
           position="relative"
-          top={{ base: "2rem", sm: 0, md: "-5rem", "2xl": "-10rem" }}
-          left={{ base: "0", sm: 0, md: "5rem" }}
+          top={{ base: "-1.5rem", sm: 0, md: "-0.5rem", "2xl": "-2rem" }}
+          right={{ base: 0, sm: 0, md: "2rem", "2xl": "8rem" }}
         >
-          <Center>
-            <Heading
-              fontSize={{ base: "28px", sm: "45px", md: "45px " }}
-              color={"#c50d34"}
-              mb={4}
-              fontFamily={orbitronFontFamily}
-              fontWeight={"900"}
-            >
-              {event.title}
-            </Heading>
-          </Center>
-
           {/* Edit Event Button to open modal*/}
           <Button
             onClick={openModal}
             w={"50%"}
             bgColor={"rgba(213, 209, 191, 0.5)"}
+            border={"1px solid #0f0f0f"}
             color={"#051622"}
             position={"relative"}
             left={{ base: -3, sm: "0.1rem", md: "0.7rem" }}
             mb={4} //added
             //shadow
-            fontSize={{ base: "0.6rem", sm: "0.8rem", md: "0.7rem" }}
+            fontSize={{ base: "0.8rem", sm: "0.8rem", md: "0.7rem" }}
             _hover={{
+              bgColor: "#0f0f0f",
               color: "#c50d34",
             }}
             fontFamily={orbitronFontFamily}
@@ -264,7 +278,7 @@ export const EventPage = () => {
             position={"relative"}
             left={{ base: "0.6rem", sm: "1rem", md: "2rem" }}
             mb={4} //added
-            fontSize={{ base: "0.6rem", sm: "0.8rem", md: "0.7rem" }}
+            fontSize={{ base: "0.8rem", sm: "0.8rem", md: "0.7rem" }}
             _hover={{
               color: "gray.900",
             }}
@@ -274,159 +288,205 @@ export const EventPage = () => {
             Delete Event
           </Button>
         </Box>
+      </Flex>
 
-        {/* event box */}
-        <Flex
-          gap={1}
-          w={{ base: "300px", sm: "85%", md: "75%" }}
-          flexWrap="wrap"
-          flexDir="column"
+      {/* event box */}
+      <Flex
+        display={"flex"}
+        justifyContent={"center"}
+        align={"center"}
+        gap={1}
+        w={{ base: "100%", sm: "85%", md: "75%", "2xl": "100%" }}
+        flexWrap="wrap"
+        flexDir="column"
+      >
+        <Box
+          p={4}
+          border="1px solid #0f0f0f"
+          bgColor={"rgba(213, 209, 191, 0.8)"}
+          w={{ base: "95%", sm: "100%", md: "100%", lg: "80%", " 2xl": "50%" }}
+          h={"auto"}
+          borderRadius={"md"}
+          position={"relative"}
+          left={{ base: 0, sm: "8%", md: "16%", lg: "15%", "2xl": 0 }}
+          top={{ base: "-1rem", sm: "3rem", md: 0, "2xl": "-7rem" }}
+          mb={{ base: "5rem", md: "10rem" }}
         >
           <Box
-            p={4}
-            border="1px solid rgba(213, 209, 191, 0.3)"
-            w={{ base: "95%", sm: "100%", md: "50%", "2xl": "50%" }}
-            h={"auto"}
+            bgColor={"#0f0f0f"}
             borderRadius={"md"}
-            position={"relative"}
-            left={{ base: "0.3rem", md: "0rem", lg: "10rem", xl: "30rem" }}
-            top={{ base: "3rem", sm: "3rem", md: 0, "2xl": "-9rem" }}
-            mb={{ base: "5rem", md: "10rem" }}
+            padding={{ base: "1rem", sm: "0.7rem", md: "3rem" }}
           >
-            <Box
-              bgColor={"#0f0f0f"}
-              borderRadius={"md"}
-              padding={{ base: "1rem", sm: "0.7rem", md: "3rem" }}
+            {/* Event image */}
+            <Center>
+              <Image
+                src={event.image}
+                alt={event.title}
+                borderRadius={"full"}
+                mb={4}
+                w={{
+                  base: "100%",
+                  sm: "60%",
+                  md: "50%",
+                  lg: "60%",
+                  "2xl": "70%",
+                }}
+                h={{
+                  base: "15%",
+                  sm: "20%",
+                  md: "10rem",
+                  lg: "13rem",
+                  "2xl": "16rem",
+                }}
+              />
+            </Center>
+
+            {/* Artist Lineup */}
+            <Text
+              fontSize={{
+                base: "16px",
+                sm: "18px",
+                md: "18px",
+                "2xl": "20pxs",
+              }}
+              bgGradient="linear(to-br, #00ffbc, #0ee399)"
+              bgClip={"text"}
+              paddingBottom={"0.8rem"}
+              fontFamily={orbitronFontFamily}
+              fontWeight={orbitronWeight.medium}
+              letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
             >
-              {/* Event image */}
-              <Center>
-                <Image
-                  src={event.image}
-                  alt={event.title}
-                  borderRadius={"full"}
-                  mb={4}
-                  w={{ base: "100%", sm: "80%", md: "50%" }}
-                  h={{ base: "15%", sm: "20%", md: "10rem" }}
-                />
-              </Center>
+              Artists:
+            </Text>
+            <Text
+              fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+              letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+              fontFamily={robotoSlabFont}
+              fontWeight={robotoSlabWeight.thin}
+              paddingLeft={"2rem"}
+              color={"#d5d1bf"}
+              paddingBottom={"1rem"}
+            >
+              {event.lineup}
+            </Text>
 
-              {/* Artist Lineup */}
-              <Text
-                fontSize={"16px"}
-                bgGradient="linear(to-br, #00ffbc, #0ee399)"
-                bgClip={"text"}
-                paddingBottom={"0.8rem"}
-                fontFamily={orbitronFontFamily}
-                fontWeight={orbitronWeight.medium}
-                letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
-              >
-                Artists:
-              </Text>
-              <Text
-                fontSize={{ base: "0.6rem", md: "0.6rem" }}
-                letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                fontFamily={robotoSlabFont}
-                fontWeight={robotoSlabWeight.thin}
-                paddingLeft={"2rem"}
-                color={"#d5d1bf"}
-                paddingBottom={"1rem"}
-              >
-                {event.lineup}
-              </Text>
+            {/* Location */}
+            <Text
+              fontSize={{
+                base: "16px",
+                sm: "18px",
+                md: "18px",
+                "2xl": "20pxs",
+              }}
+              fontFamily={orbitronFontFamily}
+              fontWeight={orbitronWeight.medium}
+              bgGradient="linear(to-br, #00ffbc, #0ee399)"
+              bgClip={"text"}
+              mt={{ base: "1.5px", md: "3px" }}
+              letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
+            >
+              Location
+            </Text>
+            <Text
+              fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+              letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+              fontFamily={robotoSlabFont}
+              fontWeight={robotoSlabWeight.thin}
+              color={"#d5d1bf"}
+            >
+              {event.location}
+            </Text>
 
-              {/* Location */}
-              <Text
-                fontSize={"16px"}
-                fontFamily={orbitronFontFamily}
-                fontWeight={orbitronWeight.medium}
-                bgGradient="linear(to-br, #00ffbc, #0ee399)"
-                bgClip={"text"}
-                mt={{ base: "1.5px", md: "3px" }}
-                letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
-              >
-                Location
-              </Text>
-              <Text
-                fontSize={{ base: "0.6rem", md: "0.6rem" }}
-                letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                fontFamily={robotoSlabFont}
-                fontWeight={robotoSlabWeight.thin}
-                color={"#d5d1bf"}
-              >
-                {event.location}
-              </Text>
-
-              {/* Start Time and End Time */}
-              <Grid
-                templateColumns={{ base: "1fr", md: "1fr 1fr" }}
-                gap={8}
-                mt={4}
-                marginTop={"2.5rem"}
-              >
-                <Box>
-                  <Text
-                    fontSize={"16px"}
-                    fontFamily={orbitronFontFamily}
-                    fontWeight={orbitronWeight.medium}
-                    color={"#ff005f"}
-                    letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
-                  >
-                    Start Time:
-                  </Text>
-                  <Text
-                    fontSize={{ base: "0.6rem", md: "0.6rem" }}
-                    letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                    fontFamily={robotoSlabFont}
-                    fontWeight={robotoSlabWeight.thin}
-                    color={"#d5d1bf"}
-                  >
-                    {event.startTime}
-                  </Text>
-
-                  <Text
-                    fontSize={"16px"}
-                    // paddingTop={"0.5rem"}
-                    fontFamily={orbitronFontFamily}
-                    fontWeight={orbitronWeight.medium}
-                    color={"#ff005f"}
-                    mt={{ base: "5px", md: "10px" }}
-                    letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
-                  >
-                    End Time:
-                  </Text>
-                  <Text
-                    fontSize={{ base: "0.6rem", md: "0.6rem" }}
-                    letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                    fontFamily={robotoSlabFont}
-                    fontWeight={robotoSlabWeight.thin}
-                    color={"#d5d1bf"}
-                  >
-                    {event.endTime}
-                  </Text>
-                </Box>
-
-                {/* Render UserPage/creator */}
-                <Flex
-                  direction={"column"}
-                  alignItems={"center"}
-                  position={"relative"}
-                  right={"3rem"}
-                  mb={{ base: "1rem", md: "1rem" }}
+            {/* Start Time and End Time */}
+            <Grid
+              templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+              gap={8}
+              mt={4}
+              marginTop={"2.5rem"}
+            >
+              <Box>
+                <Text
+                  fontSize={{
+                    base: "16px",
+                    sm: "18px",
+                    md: "18px",
+                    "2xl": "20pxs",
+                  }}
+                  fontFamily={orbitronFontFamily}
+                  fontWeight={orbitronWeight.medium}
+                  color={"#ff005f"}
+                  letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
                 >
-                  <Text
-                    color={"#d5d1bf"}
-                    fontWeight={"bold"}
-                    fontSize={"14px"}
-                    marginBottom={2}
-                    marginLeft={"5rem"}
-                    fontFamily={orbitronFontFamily}
-                    letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                  >
-                    Event Creator
-                  </Text>
-                  {/* <UserPage userId={event.createdBy} /> */}
-                  {/* testing */}
-                  {/* <Image
+                  Start Time:
+                </Text>
+                <Text
+                  fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                  fontFamily={robotoSlabFont}
+                  fontWeight={robotoSlabWeight.thin}
+                  color={"#d5d1bf"}
+                >
+                  {event.startTime}
+                </Text>
+
+                <Text
+                  fontSize={{
+                    base: "16px",
+                    sm: "18px",
+                    md: "18px",
+                    "2xl": "20pxs",
+                  }}
+                  // paddingTop={"0.5rem"}
+                  fontFamily={orbitronFontFamily}
+                  fontWeight={orbitronWeight.medium}
+                  color={"#ff005f"}
+                  mt={{ base: "5px", md: "10px" }}
+                  letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
+                >
+                  End Time:
+                </Text>
+                <Text
+                  fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                  fontFamily={robotoSlabFont}
+                  fontWeight={robotoSlabWeight.thin}
+                  color={"#d5d1bf"}
+                >
+                  {event.endTime}
+                </Text>
+              </Box>
+
+              {/* Render UserPage/creator */}
+              <Flex
+                display={"flex"}
+                justifyContent="center"
+                w={"100%"}
+                direction={"column"}
+                alignItems={"center"}
+                position={"relative"}
+                mb={{ base: "1rem", md: "1rem" }}
+              >
+                <Text
+                  w={"100%"}
+                  color={"#d5d1bf"}
+                  fontWeight={"bold"}
+                  fontSize={{
+                    base: "16px",
+                    sm: "18px",
+                    md: "18px",
+                    "2xl": "20pxs",
+                  }}
+                  marginBottom={2}
+                  position={"relative"}
+                  left={{ base: "5.5rem", sm: "11.2rem", md: "4rem" }}
+                  fontFamily={orbitronFontFamily}
+                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                >
+                  Event Creator
+                </Text>
+                {/* <UserPage userId={event.createdBy} /> */}
+                {/* testing */}
+                {/* <Image
                     src={event.createdBy.image}
                     alt={event.createdBy.name}
                     borderRadius={"full"}
@@ -434,85 +494,86 @@ export const EventPage = () => {
                     mt={4}
                   />
                   <Text>{event.createdBy.name}</Text> */}
-                  {creator && (
-                    <Box
-                      fontFamily={orbitronFontFamily}
-                      fontWeight={"medium"}
-                      fontSize={{ base: "0.9rem", md: "0.6rem" }}
-                      letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                      color={"#FFFDE1"}
+                {creator && (
+                  <Box
+                    fontFamily={orbitronFontFamily}
+                    fontWeight={"medium"}
+                    fontSize={{ base: "0.9rem", sm: "0.7rem", md: "0.7rem" }}
+                    letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                    color={"#FFFDE1"}
+                  >
+                    <Image
+                      src={creator.image}
+                      alt={creator.name}
+                      w={{ base: "3rem", md: "5rem" }}
+                      h={{ base: "3rem", md: "5rem" }}
+                      borderRadius={"full"}
+                      boxSize={"100px"}
+                      mt={2}
+                      position={"relative"}
+                      left={{ base: 0, sm: "1rem" }}
+                    />
+                    <Text
+                      fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+                      mt={3}
+                      mb={6}
+                      position={"relative"}
+                      left={{ base: 0, sm: "0.5rem" }}
                     >
-                      <Image
-                        src={creator.image}
-                        alt={creator.name}
-                        w={{ base: "3rem", md: "5rem" }}
-                        h={{ base: "3rem", md: "5rem" }}
-                        borderRadius={"full"}
-                        boxSize={"100px"}
-                        mt={4}
-                        marginLeft={"5.5rem"}
-                      />
+                      {creator.name}
+                    </Text>
+                  </Box>
+                )}
+              </Flex>
+            </Grid>
+
+            {/* Description */}
+            <Center>
+              <Text
+                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+                letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                color={"yellow.300"}
+                mb={"0.5rem"}
+                fontFamily={orbitronFontFamily}
+                fontWeight={orbitronWeight.medium}
+              >
+                {event.description}
+              </Text>
+            </Center>
+
+            {/* //categories */}
+            <Center>
+              <Stack direction={"row"} mt={2}>
+                {/* checks  if it is indeed an array */}
+                {Array.isArray(event.categoryIds) ? (
+                  event.categoryIds.map((categoryId) => {
+                    const category = categories.find(
+                      (category) => category.id === categoryId
+                    );
+
+                    if (!category) return null;
+
+                    return (
                       <Text
-                        fontSize={{ base: "0.6rem", md: "0.6rem" }}
-                        marginLeft={"5rem"}
-                        mt={2}
-                        mb={4}
+                        key={category.id}
+                        color="#ff005f"
+                        fontSize={{ base: "0.7rem", md: "14px" }}
+                        letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                        mr={2}
+                        fontFamily={orbitronFontFamily}
+                        fontWeight={orbitronWeight.light}
                       >
-                        {creator.name}
+                        {category.name}
                       </Text>
-                    </Box>
-                  )}
-                </Flex>
-              </Grid>
-
-              {/* Description */}
-              <Center>
-                <Text
-                  fontSize={{ base: "0.6rem", md: "0.6rem" }}
-                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                  color={"yellow.300"}
-                  mb={"0.5rem"}
-                  fontFamily={orbitronFontFamily}
-                  fontWeight={orbitronWeight.medium}
-                >
-                  {event.description}
-                </Text>
-              </Center>
-
-              {/* //categories */}
-              <Center>
-                <Stack direction={"row"} mt={2}>
-                  {/* checks  if it is indeed an array */}
-                  {Array.isArray(event.categoryIds) ? (
-                    event.categoryIds.map((categoryId) => {
-                      const category = categories.find(
-                        (category) => category.id === categoryId
-                      );
-
-                      if (!category) return null;
-
-                      return (
-                        <Text
-                          key={category.id}
-                          color="#ff005f"
-                          fontSize={{ base: "0.7rem", md: "14px" }}
-                          letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                          mr={2}
-                          fontFamily={orbitronFontFamily}
-                          fontWeight={orbitronWeight.light}
-                        >
-                          {category.name}
-                        </Text>
-                      );
-                    })
-                  ) : (
-                    <Text>No categories available</Text>
-                  )}
-                </Stack>
-              </Center>
-            </Box>
+                    );
+                  })
+                ) : (
+                  <Text>No categories available</Text>
+                )}
+              </Stack>
+            </Center>
           </Box>
-        </Flex>
+        </Box>
       </Flex>
     </Box>
   );

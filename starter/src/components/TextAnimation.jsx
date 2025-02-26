@@ -58,8 +58,9 @@ const TextAnimation = () => {
           <Text
             fontSize={{
               base: "20px",
-              sm: "30px",
-              md: "45px",
+              sm: "25px",
+              md: "32px",
+              "2xl": "45px",
             }}
             textAlign="center"
             paddingBottom={2.5}
@@ -81,8 +82,9 @@ const TextAnimation = () => {
           <Text
             fontSize={{
               base: "20px",
-              sm: "30px",
-              md: "45px",
+              sm: "25px",
+              md: "32px",
+              "2xl": "45px",
             }}
             textAlign="center"
             color={"#c50d34"}

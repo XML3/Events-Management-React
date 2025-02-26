@@ -40,17 +40,17 @@ export const EventsCard = ({ event }) => {
     },
   };
 
-  // this funtion assigns a uinique color to each category by their ID.
+  // this funtion assigns a uinique color to each category by their ID if desired.(not in use)
   const categoryColor = (categoryId) => {
     switch (categoryId) {
       case "1":
-        return "#c50d34";
+        return "rgba(213, 209, 191, 0.8)";
       case "2":
-        return "#fff176";
+        return "rgba(213, 209, 191, 0.8)";
       case "3":
-        return "green.200";
+        return "rgba(213, 209, 191, 0.8)";
       default:
-        return "#c50d34";
+        return "rgba(213, 209, 191, 0.8)";
     }
   };
 
@@ -60,10 +60,10 @@ export const EventsCard = ({ event }) => {
         as={Link}
         to={`/event/${event.id}`}
         borderRadius="md"
-        border={"1px solid rgba(213, 209, 191, 0.5)"}
+        border={"1px solid #0f0f0f"}
         p={2}
-        bgColor="#000"
-        w={{ base: "14rem", sm: "100%", md: "80%", "2xl": "80%" }}
+        bgColor={"rgba(213, 209, 191, 0.8)"}
+        w={{ base: "100%", sm: "100%", md: "90%", "2xl": "80%" }}
         position={"relative"}
         right={{ base: "1.1rem", sm: 0, md: 0 }}
         cursor="pointer"
@@ -98,8 +98,8 @@ export const EventsCard = ({ event }) => {
                 src={image}
                 borderRadius={"full"}
                 mb={"1rem"}
-                w={{ base: "75%", sm: "75%", md: "65%" }}
-                h={{ base: "100px", sm: "100px", md: "120px" }}
+                w={{ base: "85%", sm: "75%", md: "85%", "2xl": "65%" }}
+                h={{ base: "85%", sm: "100px", md: "120px", "2xl": "65%" }}
                 alt={`Flyer image for each event ${event.image}`}
               />
             </Box>
@@ -111,7 +111,7 @@ export const EventsCard = ({ event }) => {
                 sm: "0.05rem",
                 md: "0.07rem",
               }}
-              color={"green.200"}
+              color={"blue.200"}
               mb={"1rem"}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.normal}
@@ -167,16 +167,14 @@ export const EventsCard = ({ event }) => {
                           md: "0.15rem",
                         }}
                         fontFamily={orbitronFontFamily}
-                        fontWeight={orbitronWeight.normal}
+                        fontWeight={600}
                       >
                         {category.name}
                       </Text>
                     );
                   })
                 ) : (
-                  <Text color={"rgba(213, 209, 191, 0.8)"}>
-                    No categories available
-                  </Text>
+                  <Text color={"#0f0f0f"}>No categories available</Text>
                 )}
               </Stack>
             </Center>

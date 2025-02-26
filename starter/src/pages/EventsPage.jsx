@@ -87,9 +87,16 @@ export const EventsPage = () => {
   return (
     <>
       <Box
-        bgColor={"#000000"}
+        // bgColor={"#000000"}
+        bgColor="rgba(213, 209, 191, 0.8)"
         color="#d5d1bf"
-        minH={{ base: "900vh", sm: "370vh", md: "390vh", "2xl": "320vh" }}
+        minH={{
+          base: "900vh",
+          sm: "410vh",
+          md: "390vh",
+          lg: "310vh",
+          "2xl": "320vh",
+        }}
         minW={"100%"}
       >
         <Flex
@@ -111,9 +118,9 @@ export const EventsPage = () => {
               position={"relative"}
               left={{ base: 0, sm: "20%", md: "0%", "2xl": 0 }}
               top={{ base: 0, sm: "1rem", md: "1rem", "2xl": "3rem" }}
-              border={"1px solid rgba(213, 209, 191, 0.3)"}
+              border={"1px solid #0f0f0f"}
               borderRadius={"24px"}
-              width={{ base: "70%", sm: "75%", md: "60%", "2xl": "80%" }}
+              width={{ base: "90%", sm: "75%", md: "60%", "2xl": "80%" }}
               height={"auto"}
               mx={"auto"}
               py={10}
@@ -134,9 +141,11 @@ export const EventsPage = () => {
                   muted
                   playsInline
                   objectFit={"contain"}
-                  width={"50%"}
+                  width={{ base: "90%", sm: "50%" }}
                   maxWidth={"550px"}
-                  border={"1px solid rgba(213, 209, 191, 0.3)"}
+                  // border={"1px solid rgba(213, 209, 191, 0.3)"}
+                  border={"1px solid #0f0f0f"}
+                  p={{ base: 3, md: 4 }} //*** */
                   borderRadius={"14px"}
                 ></Box>
                 <Heading
@@ -145,7 +154,7 @@ export const EventsPage = () => {
                   align={"start"}
                   fontFamily={orbitronFontFamily}
                   fontWeight={orbitronWeight.bold}
-                  color={"rgba(213, 209, 191, 0.5)"}
+                  color={"#0f0f0f"}
                   fontSize={{
                     base: "24px",
                     sm: "30px",
@@ -154,7 +163,7 @@ export const EventsPage = () => {
                   }}
                   lineHeight={"1.2"}
                   maxW={{
-                    base: "100%",
+                    base: "70%",
                     sm: "300px",
                     md: "400px",
                     "2xl": "500px",
@@ -170,9 +179,11 @@ export const EventsPage = () => {
                   muted
                   playsInline
                   objectFit={"scale-down"}
-                  width={"50%"}
+                  width={{ base: "90%", sm: "50%" }}
                   maxWidth={"550px"}
-                  border={"1px solid rgba(213, 209, 191, 0.3)"}
+                  // border={"1px solid rgba(213, 209, 191, 0.3)"}
+                  border={"1px solid #0f0f0f"}
+                  p={{ base: 3, md: 4 }} //*** */
                   borderRadius={"14px"}
                 ></Box>
               </Flex>
@@ -186,10 +197,35 @@ export const EventsPage = () => {
           justifyContent={"center"}
           align={"center"}
           position={"relative"}
-          top={{ base: "5rem", sm: "6rem", md: "20rem" }}
+          top={{ base: "3rem", sm: "1rem", md: "13rem", "2xl": "20rem" }}
           right={{ base: 6, sm: "1.5rem", md: 0 }}
         >
           <TextAnimation />
+        </Box>
+        {/* Black Stripe - Events */}
+        <Box
+          display={"flex"}
+          justifyContent={{ base: "center", sm: "center", md: "flex-end" }}
+          position={"relative"}
+          top={{ base: "3rem", sm: "2.5rem", md: "13rem", "2xl": "25rem" }}
+          mb={{ base: "0", sm: "2rem", md: "2rem" }}
+          bgColor={"#0f0f0f"}
+          width={"100%"}
+        >
+          <Text
+            color={"#d5d1bf"}
+            w={{ base: "25%", sm: "20%", "2xl": "17%" }}
+            fontSize={{
+              base: "20px",
+              sm: "22px",
+              md: "25px",
+            }}
+            top={{ base: 5, sm: 20, md: 0 }}
+            fontFamily={orbitronFontFamily}
+            fontWeight={orbitronWeight.semibold}
+          >
+            Events
+          </Text>
         </Box>
 
         {/* Search Event Input */}
@@ -203,10 +239,11 @@ export const EventsPage = () => {
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.bold}
               fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
-              color="rgba(213, 209, 191, 0.8)"
+              // color="rgba(213, 209, 191, 0.8)"
+              color={"#0f0f0f"}
               position={"relative"}
-              left={{ base: "22%", sm: "25%", md: "60%", "2xl": "43%" }}
-              top={{ base: "170px", sm: "150px", md: "500px" }}
+              left={{ base: "22%", sm: "25%", md: "20%", "2xl": "43%" }}
+              top={{ base: "170px", sm: "4rem", md: "15rem", "2xl": "500px" }}
               letterSpacing={"0.09rem"}
             >
               Search Events:
@@ -224,17 +261,18 @@ export const EventsPage = () => {
               position={"relative"}
               z-index={10}
               left={{ base: "-90%", sm: "50%", md: "70%", "2xl": "72.5%" }}
-              top={{ base: "250px", sm: "190px", md: "550px" }}
+              top={{ base: "250px", sm: "5.5rem", md: "17rem", "2xl": "550px" }}
               onClick={openModal}
-              bgColor="rgba(213, 209, 191, 0.5)"
+              bgColor="rgba(213, 209, 191, 0.3)"
+              border={"1px solid  #0f0f0f"}
               color="#c50d34"
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.medium}
               mb={{ base: "2rem", md: "5rem" }}
               fontSize={{ base: "0.7rem", sm: "0.7rem", md: "0.8rem" }}
               _hover={{
-                bgColor: "rgba(213, 209, 191, 0.5)",
-                color: "#051622",
+                bgColor: "#0f0f0f",
+                color: "#c50d34",
               }}
             >
               {" "}
@@ -274,31 +312,8 @@ export const EventsPage = () => {
               position={"relative"}
               left={{ base: 0, sm: "5%", md: 0 }}
               right={{ base: 0, sm: 0, md: 0 }}
-              top={{ base: "12rem", sm: "6rem", md: "50vh" }}
+              top={{ base: "12rem", sm: "2.5rem", md: "12rem", "2xl": "50vh" }}
             >
-              {/* Events Cards Grid */}
-              {/* <Flex align={"center"} justify={"center"}>
-                <SimpleGrid
-                  columns={columns}
-                  gap={8}
-                  position={"relative"}
-                  right={{ base: "22%", sm: 0, md: 0 }}
-                  top={{ base: "40px", sm: 0, md: 0 }}
-                  w={{ base: "45%", sm: "90%", md: "100%" }}
-                > */}
-              {/* //map through filtered events/+ Search functionality - Root component/ SeearchItem component*/}
-              {/* {filteredEvents.map((event) => (
-                    <Link to={`/event/${event.id}`} key={event.id}>
-                      <EventsCard
-                        key={event.id}
-                        event={event}
-                        categories={categories}
-                      />
-                    </Link>
-                  ))}
-                </SimpleGrid>
-              </Flex> */}
-
               {Object.keys(eventsByCategory).map((categoryId) => {
                 const category = categories.find(
                   (cat) => cat.id === categoryId
@@ -317,11 +332,11 @@ export const EventsPage = () => {
                   >
                     <Heading
                       paddingTop={7}
-                      size={{ base: "md", sm: "md", md: "md" }}
+                      size={{ base: "sm", sm: "sm", md: "md" }}
                       mb={5}
                       mt={1}
-                      color={"#c50d34"}
-                      fontFamily={robotoSlabFont}
+                      color={"#0f0f0f"}
+                      fontFamily={orbitronFontFamily}
                       fontWeight={"700"}
                       letterSpacing={1.5}
                     >
@@ -330,7 +345,7 @@ export const EventsPage = () => {
 
                     <SimpleGrid
                       columns={columns}
-                      gap={{ base: 8, sm: 8, md: 4, "2xl": 10 }}
+                      gap={{ base: 8, sm: 8, md: 0, "2xl": 10 }}
                       w={"100%"}
                     >
                       {categoryEvents.map((event) => (

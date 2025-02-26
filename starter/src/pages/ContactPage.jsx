@@ -129,22 +129,22 @@ const ContactForm = () => {
 
   return (
     <Box
-      bgColor={"#000000"}
-      minH={{ base: "130vh", sm: "130vh", "2xl": "120vh" }}
+      bgColor="rgba(213, 209, 191, 0.8)"
+      minH={{ base: "130vh", sm: "130vh", "2xl": "110vh" }}
       paddingTop={"2rem"}
     >
       <Flex
         align={{ base: "center", md: "flex-start" }}
-        minH={"20vh"}
         direction={{ base: "column", md: "row" }}
       >
         <Box
-          ml={{ base: "0", md: "1.5rem" }}
-          mr={{ base: "0", md: "2rem" }}
-          mb={{ base: "0", md: "5rem", "2xl": "2rem" }}
+          position={"relative"}
+          left={{ base: "0", md: 0 }}
+          right={{ base: "0", md: 0 }}
+          mb={{ base: "0", md: "5rem", "2xl": "3rem" }}
         >
           <Heading
-            color={"rgba(213, 209, 191, 0.5)"}
+            color={"#0f0f0f"}
             fontSize={{
               base: "24px",
               sm: "30px",
@@ -154,12 +154,12 @@ const ContactForm = () => {
             lineHeight={"1.2"}
             mb={{ base: 0, sm: "2rem", md: 0 }}
             position={"relative"}
-            top={{ base: "3rem", md: "0", "2xl": "-1rem" }}
-            left={{ base: "0.9rem", sm: "1rem", md: "5.5rem", "2xl": "45%" }}
+            top={{ base: "-1rem", md: "0", "2xl": "-1rem" }}
+            left={{ base: "-3rem", sm: "-8rem", md: "5.5rem", "2xl": "45%" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.semibold}
             maxW={{
-              base: "100%",
+              base: "70%",
               sm: "300px",
               md: "400px",
               "2xl": "500px",
@@ -175,16 +175,17 @@ const ContactForm = () => {
         justifyContent={{ base: "center", sm: "center", md: "flex-end" }}
         position={"relative"}
         left={{ base: "0", md: 0 }}
+        top={{ base: "-6rem", sm: "-6rem", md: 0 }}
         mb={{ base: "0", sm: "2rem", md: "2rem" }}
-        bgColor={"rgba(213, 209, 191, 0.3)"}
+        bgColor={"#0f0f0f"}
         width={"100%"}
       >
         <Text
           color={"#d5d1bf"}
-          w={"26%"}
+          w={"20%"}
           fontSize={{
             base: "16px",
-            sm: "30px",
+            sm: "20px",
             md: "25px",
           }}
           top={{ base: 5, sm: 20, md: 0 }}
@@ -198,11 +199,11 @@ const ContactForm = () => {
       <Center>
         <Box
           border={"1px solid rgba(213, 209, 191, 0.3)"}
-          w={{ base: "95%", sm: "90%", md: "70%" }}
+          w={{ base: "100%", sm: "90%", md: "70%" }}
           h={"auto"}
           padding={{ base: "0.05rem", sm: "0.05rem", md: "0.05rem" }}
           position={"relative"}
-          top={{ base: 0, sm: "2rem", md: 0 }}
+          top={{ base: "-2rem", sm: "-4rem", md: 0 }}
         >
           <Box
             bgColor={"#0f0f0f"}
@@ -236,7 +237,7 @@ const ContactForm = () => {
                   fontSize={{ base: "22px", sm: "20px", md: "30px" }}
                   color="rgba(213, 209, 191, 0.8)"
                   mb={{ base: "5%", sm: "2%", md: "2%", "2xl": "5%" }}
-                  mt={{ base: "20%", sm: "15%", md: "-70%", "2xl": "0%" }}
+                  mt={{ base: "20%", sm: "15%", md: "0%", "2xl": "0%" }}
                 >
                   Get in Touch
                 </Text>
@@ -388,7 +389,7 @@ const ContactForm = () => {
                 {/* BUTTON */}
                 <Button
                   type="submit"
-                  bgColor={"#c50d34"}
+                  bgColor="rgba(213, 209, 191, 0.8)"
                   color={"#051622"}
                   fontFamily={orbitronFontFamily}
                   fontWeight={orbitronWeight.heavy}
@@ -399,7 +400,7 @@ const ContactForm = () => {
                   position={"relative"}
                   left={{ base: "20%", sm: "25%", md: "25%" }}
                   _hover={{
-                    bgColor: "green.200",
+                    bgColor: "#c50d34",
                     color: "#051622",
                     // boxShadow: "0 0 7px whitesmoke",
                   }}
