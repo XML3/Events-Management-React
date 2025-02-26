@@ -35,7 +35,7 @@ export const AboutPage = () => {
     <Box
       bgColor="rgba(213, 209, 191, 0.8)"
       color="#d5d1bf"
-      minH={{ base: "100vh", sm: "175vh", md: "120vh", "2xl": "100vh" }}
+      minH={{ base: "100vh", sm: "120vh", md: "120vh", "2xl": "100vh" }}
       width={"100%"}
       paddingTop={"2rem"}
     >
@@ -61,8 +61,8 @@ export const AboutPage = () => {
             lineHeight={"1.2"}
             mb={{ base: 0, sm: "2rem", md: 0 }}
             position={"relative"}
-            top={{ base: "-1rem", md: "0", "2xl": "-1rem" }}
-            left={{ base: "-3rem", sm: "-8rem", md: "5.5rem", "2xl": "45%" }}
+            top={{ base: "0.5rem", md: "0", "2xl": "-1rem" }}
+            left={{ base: "0", sm: "-8rem", md: "5.5rem", "2xl": "45%" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.semibold}
             maxW={{
@@ -82,17 +82,17 @@ export const AboutPage = () => {
         justifyContent={{ base: "center", sm: "center", md: "flex-end" }}
         position={"relative"}
         left={{ base: "0", md: 0 }}
-        top={{ base: "-6rem", sm: "-6rem", md: 0 }}
+        top={{ base: "-4rem", sm: "-3rem", md: 0 }}
         mb={{ base: "0", sm: "2rem", md: "2rem", "2xl": "3rem" }}
         bgColor={"#0f0f0f"}
         width={"100%"}
       >
         <Text
           color={"#d5d1bf"}
-          w={"17%"}
+          w={{ base: "25%", sm: "11%", "2xl": "17%" }}
           fontSize={{
             base: "16px",
-            sm: "30px",
+            sm: "22px",
             md: "25px",
           }}
           top={{ base: 5, sm: 20, md: 0 }}
@@ -106,7 +106,7 @@ export const AboutPage = () => {
         <Box
           w={{ base: "95%", sm: "90%", md: "70%", "2xl": "77%" }}
           position={"relative"}
-          top={{ base: "-4rem", sm: "-4rem", md: 0 }}
+          top={{ base: "-2rem", sm: "-2rem", md: 0 }}
         >
           <Box
             backgroundColor={"#0f0f0f"}

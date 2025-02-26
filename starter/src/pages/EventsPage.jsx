@@ -91,7 +91,7 @@ export const EventsPage = () => {
         bgColor="rgba(213, 209, 191, 0.8)"
         color="#d5d1bf"
         minH={{
-          base: "900vh",
+          base: "950vh",
           sm: "410vh",
           md: "390vh",
           lg: "310vh",

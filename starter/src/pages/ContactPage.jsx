@@ -154,8 +154,8 @@ const ContactForm = () => {
             lineHeight={"1.2"}
             mb={{ base: 0, sm: "2rem", md: 0 }}
             position={"relative"}
-            top={{ base: "-1rem", md: "0", "2xl": "-1rem" }}
-            left={{ base: "-3rem", sm: "-8rem", md: "5.5rem", "2xl": "45%" }}
+            top={{ base: 0, md: "0", "2xl": "-1rem" }}
+            left={{ base: 0, sm: "-8rem", md: "5.5rem", "2xl": "45%" }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.semibold}
             maxW={{
@@ -175,14 +175,14 @@ const ContactForm = () => {
         justifyContent={{ base: "center", sm: "center", md: "flex-end" }}
         position={"relative"}
         left={{ base: "0", md: 0 }}
-        top={{ base: "-6rem", sm: "-6rem", md: 0 }}
+        top={{ base: "2rem", sm: "0.5rem", md: 0 }}
         mb={{ base: "0", sm: "2rem", md: "2rem" }}
         bgColor={"#0f0f0f"}
         width={"100%"}
       >
         <Text
           color={"#d5d1bf"}
-          w={"20%"}
+          w={{ base: "35%", sm: "20%" }}
           fontSize={{
             base: "16px",
             sm: "20px",
@@ -203,7 +203,7 @@ const ContactForm = () => {
           h={"auto"}
           padding={{ base: "0.05rem", sm: "0.05rem", md: "0.05rem" }}
           position={"relative"}
-          top={{ base: "-2rem", sm: "-4rem", md: 0 }}
+          top={{ base: "5rem", sm: "4rem", md: 0 }}
         >
           <Box
             bgColor={"#0f0f0f"}

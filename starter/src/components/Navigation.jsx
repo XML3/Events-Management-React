@@ -17,15 +17,13 @@ export const Navigation = () => {
 
   return (
     <Box
-      borderBottom={"1px"}
-      borderColor="rgba(213, 209, 191, 0.3)"
       minW={"100%"}
       bgColor={"#0f0f0f"}
       position="relative"
       zIndex={1000} // Set a high zIndex to ensure it stays on top
       paddingTop={2}
       paddingBottom={2}
-      px={8}
+      px={{ base: 1, sm: 8 }}
     >
       <Flex
         display={"flex"}
@@ -33,9 +31,9 @@ export const Navigation = () => {
         wrap={"wrap"}
         align={{ base: "center", sm: "center", md: "center" }}
         position={"relative"}
-        justifyContent={"space-around"}
-        gap={{ base: "2%", sm: "28%", md: "30%", "2xl": "45%" }}
-        right={{ base: "0.2rem", sm: 0 }}
+        justifyContent={{ base: "space-between", sm: "space-around" }}
+        gap={{ base: "0", sm: "28%", md: "30%", "2xl": "45%" }}
+        right={{ base: 0, sm: 0 }}
       >
         {/* LOGO Section */}
         <Box
@@ -49,7 +47,7 @@ export const Navigation = () => {
           <Link to="/">
             <Image
               src={logo}
-              boxSize={{ base: "50px", sm: "50px", md: "60px", "2xl": "55px" }}
+              boxSize={{ base: "45px", sm: "50px", md: "60px", "2xl": "55px" }}
               objectFit="scale-down"
               alt="logo"
               _hover={{ transform: "scale(1.08)" }}
@@ -60,10 +58,10 @@ export const Navigation = () => {
         <Stack
           direction={"row"}
           position={"relative"}
-          right={{ base: "-10%", sm: "1%", md: "-3%", "2xl": "0%" }}
+          right={{ base: "1%", sm: "1%", md: "-3%", "2xl": "0%" }}
           wrap={"wrap"}
-          justify={{ base: "center", sm: "center", md: "flex-end" }}
-          spacing={{ base: "16px", sm: "24px", md: "60px" }}
+          justify={{ base: "flex-start", sm: "center", md: "flex-end" }}
+          spacing={{ base: "10px", sm: "24px", md: "60px" }}
           align={"end"}
         >
           {/* Menu Section  */}
@@ -81,7 +79,7 @@ export const Navigation = () => {
               _hover={{ transform: "scale(1.08)", bgColor: "#c50d34" }}
               bgColor={"rgba(213, 209, 191, 0.8)"}
               color={"#0f0f0f"}
-              px={{ base: "22px", sm: "25px", md: "40px" }}
+              px={{ base: "10px", sm: "25px", md: "40px" }}
               py={2}
               borderRadius="8px"
               textAlign="center"
@@ -105,7 +103,7 @@ export const Navigation = () => {
               _hover={{ transform: "scale(1.08)", bgColor: "#c50d34" }}
               bgColor={"rgba(213, 209, 191, 0.8)"}
               color={"#0f0f0f"}
-              px={{ base: "22px", sm: "25px", md: "40px" }}
+              px={{ base: "10px", sm: "25px", md: "40px" }}
               py={2}
               borderRadius="8px"
               textAlign="center"
@@ -129,7 +127,7 @@ export const Navigation = () => {
               _hover={{ transform: "scale(1.08)", bgColor: "#c50d34" }}
               bgColor={"rgba(213, 209, 191, 0.8)"}
               color={"#0f0f0f"}
-              px={{ base: "22px", sm: "25px", md: "40px" }}
+              px={{ base: "16px", sm: "25px", md: "40px" }}
               py={2}
               borderRadius="8px"
               textAlign="center"

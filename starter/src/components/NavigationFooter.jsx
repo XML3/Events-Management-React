@@ -73,7 +73,7 @@ export const NavigationFooter = () => {
         justify={{ base: "center", sm: "center", md: "space-around" }}
         alignItems={{ base: "start", md: "center" }}
         mt={{ base: "15px", sm: "15px", md: "20px", "2xl": "20px" }}
-        mb={{ base: 0, sm: 0, "2xl": "10px" }}
+        mb={{ base: "10px", sm: 0, "2xl": "10px" }}
         gap={6}
       >
         <Stack direction={{ base: "row", sm: "row", md: "row" }} spacing="24px">
@@ -116,26 +116,27 @@ export const NavigationFooter = () => {
 
       {/* LOGO + COPYRIGHT */}
       <Flex
+        display={"flex"}
         direction={{ base: "column", sm: "row", md: "row" }}
         justify={{ base: "center", md: "center" }}
-        align={{ base: "center", sm: "start", md: "center" }}
+        align={{ base: "center", sm: "center", md: "center" }}
         position={"relative"}
-        left={{ base: "10px", sm: "20%", md: 0 }}
-        mt={{ base: "15px", sm: "15px", md: "10px" }}
-        mr={{ base: "010px", sm: "15rem", md: "2rem" }}
-        fontSize={{ base: "0.3em", sm: "0.3rem", md: "0.5em" }}
+        left={{ base: 0, sm: 0, md: 0 }}
+        top={{ base: "0", sm: "15px", md: "10px" }}
+        right={{ base: "0", sm: 0, md: "2rem" }}
+        fontSize={{ base: "0.3em", sm: "0.4rem", md: "0.5em" }}
         lineHeight={{ base: "1rem" }}
         letterSpacing={{ base: "0.1rem", md: "0.06rem" }}
+        gap={2}
       >
         <Box>
           <Image
             src={logo}
-            boxSize={{ base: "35px", sm: "30px", md: "30px" }}
+            boxSize={{ base: "30px", sm: "35px", md: "30px" }}
             objectFit="scale-down"
             borderRadius="full"
             position={"relative"}
-            right={{ base: 0, sm: "20%", md: "10%" }}
-            mb={{ base: "5px", sm: 0, md: 0 }}
+            right={{ base: 0, sm: 0, md: "10%" }}
           />
         </Box>
 

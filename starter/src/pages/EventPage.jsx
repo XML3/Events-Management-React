@@ -172,11 +172,11 @@ export const EventPage = () => {
         mb={{ base: 0, sm: "2rem", md: 0 }}
         position={"relative"}
         top={{ base: "-4rem", md: "-3rem", "2xl": "-4rem" }}
-        left={{ base: "1.5rem", sm: "1rem", md: "5.5rem", "2xl": "8%" }}
+        left={{ base: "1.2rem", sm: "1rem", md: "5.5rem", "2xl": "8%" }}
         fontFamily={orbitronFontFamily}
         fontWeight={orbitronWeight.semibold}
         maxW={{
-          base: "50%",
+          base: "60%",
           sm: "300px",
           md: "400px",
           "2xl": "500px",
@@ -196,9 +196,9 @@ export const EventPage = () => {
       >
         <Text
           color={"#d5d1bf"}
-          w={{ base: "25%", sm: "15%", md: "20%", "2xl": "19%" }}
+          w={{ base: "30%", sm: "15%", md: "20%", "2xl": "19%" }}
           fontSize={{
-            base: "18px",
+            base: "16px",
             sm: "20px",
             md: "25px",
           }}
@@ -213,13 +213,13 @@ export const EventPage = () => {
       <Flex
         justify={{ base: "center", sm: "center", md: "flex-end" }}
         direction={{ base: "column", sm: "column", md: "row" }}
-        p={8}
+        p={{ base: 3, sm: 8 }}
       >
         <Box
           mb={{ base: "2rem", sm: 0, md: "0" }}
           position="relative"
           top={{ base: "-1.5rem", sm: 0, md: "-0.5rem", "2xl": "-2rem" }}
-          right={{ base: 0, sm: 0, md: "2rem", "2xl": "8rem" }}
+          right={{ base: 1, sm: 0, md: "2rem", "2xl": "8rem" }}
         >
           {/* Edit Event Button to open modal*/}
           <Button
@@ -229,10 +229,9 @@ export const EventPage = () => {
             border={"1px solid #0f0f0f"}
             color={"#051622"}
             position={"relative"}
-            left={{ base: -3, sm: "0.1rem", md: "0.7rem" }}
-            mb={4} //added
-            //shadow
-            fontSize={{ base: "0.8rem", sm: "0.8rem", md: "0.7rem" }}
+            left={{ base: 0, sm: "0.1rem", md: "0.7rem" }}
+            mb={4}
+            fontSize={{ base: "0.7rem", sm: "0.8rem", md: "0.7rem" }}
             _hover={{
               bgColor: "#0f0f0f",
               color: "#c50d34",
@@ -272,15 +271,18 @@ export const EventPage = () => {
           <Button
             onClick={() => handleDeleteClick(event.id)}
             w={"50%"}
-            bgColor={"#c50d34"}
-            color={"gray.400"}
+            bgColor="rgba(213, 209, 191, 0.5)"
+            border="1px solid #0f0f0f"
+            color={"#c50d34"}
             deleteEvent={deleteEvent}
             position={"relative"}
             left={{ base: "0.6rem", sm: "1rem", md: "2rem" }}
-            mb={4} //added
-            fontSize={{ base: "0.8rem", sm: "0.8rem", md: "0.7rem" }}
+            mb={4}
+            fontSize={{ base: "0.7rem", sm: "0.8rem", md: "0.7rem" }}
             _hover={{
-              color: "gray.900",
+              color: "#0f0f0f",
+              bgColor: "#c50d34",
+              border: "none",
             }}
             fontFamily={orbitronFontFamily}
             fontWeight={orbitronWeight.medium}
