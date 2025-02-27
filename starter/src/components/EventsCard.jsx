@@ -96,10 +96,12 @@ export const EventsCard = ({ event }) => {
             <Box display={"flex"} justifyContent={"center"} align={"center"}>
               <Image
                 src={image}
+                objectFit={"cover"}
                 borderRadius={"full"}
                 mb={"1rem"}
-                w={{ base: "85%", sm: "75%", md: "85%", "2xl": "65%" }}
-                h={{ base: "85%", sm: "100px", md: "120px", "2xl": "65%" }}
+                w={{ base: "155px", sm: "130px", md: "140px", "2xl": "150px" }}
+                h={{ base: "105px", sm: "85px", md: "90px", "2xl": "100px" }}
+                overflow={"hidden"}
                 alt={`Flyer image for each event ${event.image}`}
               />
             </Box>

@@ -324,6 +324,7 @@ export const EventPage = () => {
               <Image
                 src={event.image}
                 alt={event.title}
+                objectFit={"cover"}
                 borderRadius={"full"}
                 mb={4}
                 w={{
@@ -507,6 +508,7 @@ export const EventPage = () => {
                     <Image
                       src={creator.image}
                       alt={creator.name}
+                      objectFit={"cover"}
                       w={{ base: "3rem", md: "5rem" }}
                       h={{ base: "3rem", md: "5rem" }}
                       borderRadius={"full"}
