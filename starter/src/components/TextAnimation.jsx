@@ -64,9 +64,9 @@ const TextAnimation = () => {
             }}
             textAlign="center"
             paddingBottom={2.5}
-            color={"#c50d34"}
+            color={"#0f0f0f"}
           >
-            Experience the Power of
+            Add, manage, and customize
           </Text>
         </motion.div>
 
@@ -87,9 +87,9 @@ const TextAnimation = () => {
               "2xl": "45px",
             }}
             textAlign="center"
-            color={"#c50d34"}
+            color={"#0f0f0f"}
           >
-            of movement and sound
+            your events with ease.
           </Text>
         </motion.div>
       </Flex>

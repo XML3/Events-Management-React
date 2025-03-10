@@ -198,7 +198,6 @@ const ContactForm = () => {
 
       <Center>
         <Box
-          border={"1px solid rgba(213, 209, 191, 0.3)"}
           w={{ base: "100%", sm: "90%", md: "70%" }}
           h={"auto"}
           padding={{ base: "0.05rem", sm: "0.05rem", md: "0.05rem" }}
@@ -207,7 +206,7 @@ const ContactForm = () => {
         >
           <Box
             bgColor={"#0f0f0f"}
-            color="#d5d1bf"
+            color="rgba(213, 209, 191, 1)"
             w={{ base: "100%", sm: "100%", md: "100%" }}
             h={"auto"}
             padding={{ base: "1rem", md: "2rem" }}
@@ -235,7 +234,7 @@ const ContactForm = () => {
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.regular}
                   fontSize={{ base: "22px", sm: "20px", md: "30px" }}
-                  color="rgba(213, 209, 191, 0.8)"
+                  color="rgba(213, 209, 191, 1)"
                   mb={{ base: "5%", sm: "2%", md: "2%", "2xl": "5%" }}
                   mt={{ base: "20%", sm: "15%", md: "0%", "2xl": "0%" }}
                 >
@@ -246,7 +245,7 @@ const ContactForm = () => {
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.regular}
                   fontSize={{ base: "14px", sm: "16px", md: "16px" }}
-                  color={"#d5d1bf"}
+                  color="rgba(213, 209, 191, 1)"
                 >
                   Have any questions? Shoot us an email.
                 </Text>
@@ -254,7 +253,7 @@ const ContactForm = () => {
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.regular}
                   fontSize={{ base: "14px", sm: "16px", md: "16px" }}
-                  color={"#d5d1bf"}
+                  color="rgba(213, 209, 191, 1)"
                 >
                   * Contact form is disabled to avoid spam emails through
                   porfolio *{" "}
@@ -295,7 +294,7 @@ const ContactForm = () => {
                     style={{
                       borderColor: isNameError
                         ? "red.500"
-                        : "rgba(213, 209, 191, 0.8)",
+                        : "rgba(213, 209, 191, 1)",
                     }}
                   />
                   {isNameError && (
@@ -336,7 +335,7 @@ const ContactForm = () => {
                     style={{
                       borderColor: isEmailError
                         ? "red.500"
-                        : "rgba(213, 209, 191, 0.8)",
+                        : "rgba(213, 209, 191, 1)",
                     }}
                   />
                   {isEmailError && (
@@ -375,7 +374,7 @@ const ContactForm = () => {
                     style={{
                       borderColor: isMessageError
                         ? "red.500"
-                        : "rgba(213, 209, 191, 0.8)",
+                        : "rgba(213, 209, 191, 1)",
                     }}
                   />
                   {isMessageError && (
@@ -389,7 +388,7 @@ const ContactForm = () => {
                 {/* BUTTON */}
                 <Button
                   type="submit"
-                  bgColor="rgba(213, 209, 191, 0.8)"
+                  bgColor="rgba(213, 209, 191, 1)"
                   color={"#051622"}
                   fontFamily={orbitronFontFamily}
                   fontWeight={orbitronWeight.heavy}

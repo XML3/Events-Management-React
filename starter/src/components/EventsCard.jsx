@@ -44,13 +44,13 @@ export const EventsCard = ({ event }) => {
   const categoryColor = (categoryId) => {
     switch (categoryId) {
       case "1":
-        return "rgba(213, 209, 191, 0.8)";
+        return "#c50d34";
       case "2":
-        return "rgba(213, 209, 191, 0.8)";
+        return "#49108B";
       case "3":
-        return "rgba(213, 209, 191, 0.8)";
+        return "#0F6292";
       default:
-        return "rgba(213, 209, 191, 0.8)";
+        return "#0f0f0f";
     }
   };
 
@@ -60,17 +60,15 @@ export const EventsCard = ({ event }) => {
         as={Link}
         to={`/event/${event.id}`}
         borderRadius="md"
-        border={"1px solid #0f0f0f"}
+        border={"1px solid rgba(213, 209, 191, 0.8)"}
         p={2}
-        bgColor={"rgba(213, 209, 191, 0.8)"}
-        w={{ base: "100%", sm: "100%", md: "90%", "2xl": "80%" }}
-        position={"relative"}
-        right={{ base: "1.1rem", sm: 0, md: 0 }}
+        bgColor={"#0f0f0f"}
+        w="100%"
         cursor="pointer"
         _hover={{ transform: "scale(1.08)" }}
       >
         <Box
-          bgColor={"#0f0f0f"}
+          bgColor={"rgba(213, 209, 191, 1)"}
           borderRadius="md"
           h={{ base: "25rem", sm: "100%", md: "100%" }}
         >
@@ -78,8 +76,8 @@ export const EventsCard = ({ event }) => {
             <Center>
               <Heading
                 as="h2"
-                size={{ base: "md", sm: "sm", md: "sm" }}
-                color={"rgba(213, 209, 191, 0.8)"}
+                size={{ base: "16px", sm: "sm", md: "sm" }}
+                color={"#0f0f0f"}
                 mb={"1rem"}
                 fontFamily={orbitronFontFamily}
                 fontWeight={orbitronWeight.medium}
@@ -89,64 +87,77 @@ export const EventsCard = ({ event }) => {
                   md: "0.09rem",
                 }}
               >
-                {title}
+                {title || "untitled Event"}
               </Heading>
             </Center>
 
             <Box display={"flex"} justifyContent={"center"} align={"center"}>
               <Image
-                src={image}
+                src={image || "/img/Vreemd_tension.png"}
                 objectFit={"cover"}
-                borderRadius={"full"}
+                borderRadius={"12px"}
                 mb={"1rem"}
-                w={{ base: "155px", sm: "130px", md: "140px", "2xl": "150px" }}
-                h={{ base: "105px", sm: "85px", md: "90px", "2xl": "100px" }}
+                w={{
+                  base: "200px",
+                  sm: "200px",
+                  md: "250px",
+                  lg: "275px",
+                  "2xl": "290px",
+                }}
+                h={{
+                  base: "130px",
+                  sm: "120px",
+                  md: "160px",
+                  lg: "170px",
+                  "2xl": "200px",
+                }}
                 overflow={"hidden"}
-                alt={`Flyer image for each event ${event.image}`}
+                alt={`Flyer image for ${title || "Untitled Events"} `}
               />
             </Box>
 
             <Text
-              fontSize={{ base: "sm", sm: "12px", md: "12px" }}
+              fontSize={{ base: "14px", sm: "12px", md: "12px" }}
               letterSpacing={{
                 base: "0.07rem",
                 sm: "0.05rem",
                 md: "0.07rem",
               }}
-              color={"blue.200"}
+              color={"#0f0f0f"}
               mb={"1rem"}
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.normal}
             >
-              {description}
+              {description || "No description available."}
             </Text>
 
             <Text
-              color={"#d5d1bf"}
-              fontSize={{ base: "2xs", sm: "11px", md: "10px" }}
+              color={"#0f0f0f"}
+              fontSize={{ base: "11px", sm: "11px", md: "10px" }}
               letterSpacing={{ base: "0.1rem", sm: "0.05rem", md: "0.05rem" }}
               fontFamily={robotoSlabFont}
               fontWeight={robotoSlabWeight.thin}
-              mt={{ base: "30px", md: "40px" }}
+              mt={{ base: "30px", md: "20px" }}
             >
               {" "}
-              Start Time: {startTime}
+              Start Time: {startTime || "No Start Time"}
             </Text>
             <Text
-              color={"#d5d1bf"}
-              fontSize={{ base: "2xs", sm: "11px", md: "10px" }}
+              color={"#0f0f0f"}
+              fontSize={{ base: "11px", sm: "11px", md: "10px" }}
               letterSpacing={{ base: "0.1rem", sm: "0.05rem", md: "0.05rem" }}
               mb={"0.5rem"}
               fontFamily={robotoSlabFont}
               fontWeight={robotoSlabWeight.thin}
             >
-              End Time: {endTime}
+              End Time: {endTime || "No End Time"}
             </Text>
 
             {/* Display categories */}
             <Center>
               <Stack direction="row">
-                {Array.isArray(event.categoryIds) ? (
+                {Array.isArray(event.categoryIds) &&
+                event.categoryIds.length > 0 ? (
                   event.categoryIds.map((categoryId) => {
                     const category = categories.find(
                       (category) => category.id === categoryId

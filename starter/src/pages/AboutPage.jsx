@@ -110,9 +110,8 @@ export const AboutPage = () => {
         >
           <Box
             backgroundColor={"#0f0f0f"}
-            border={"1px solid rgba(213, 209, 191, 0.3)"}
             padding={{ base: "0.6rem", md: "3rem" }}
-            color={"#d5d1bf"}
+            color="rgba(213, 209, 191, 1)"
           >
             <Flex
               direction={{ base: "column", md: "row" }}
@@ -135,7 +134,7 @@ export const AboutPage = () => {
                 fontWeight={robotoSlabWeight.light}
                 lineHeight={{ base: "1.7", sm: "1.7", md: "1.7" }}
                 mb={{ base: "0", sm: "1rem", md: 0 }}
-                color={"rgba(213, 209, 191, 0.8"}
+                color={"rgba(213, 209, 191, 1"}
               >
                 <Typewriter text={subHeader} delay={30} />
               </Text>

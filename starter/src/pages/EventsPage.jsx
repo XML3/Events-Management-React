@@ -1,18 +1,15 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-
-import { EventsCard } from "../components/EventsCard";
 import NewEvent from "../components/forms/NewEvent";
 import { SearchItem } from "../components/SearchItem";
 import DataContext from "../components/Root";
 import TextAnimation from "../components/TextAnimation";
 import Typewriter from "../components/Typewriter";
+import { EventsCarousel } from "../components/EventsCarousel";
 
 import {
   Heading,
   Box,
   Flex,
-  SimpleGrid,
   Text,
   Modal,
   ModalOverlay,
@@ -20,7 +17,6 @@ import {
   ModalHeader,
   ModalBody,
   ModalCloseButton,
-  useBreakpointValue,
   Button,
 } from "@chakra-ui/react";
 
@@ -32,7 +28,6 @@ export const EventsPage = () => {
     categories,
     filteredEvents,
     users,
-    // imgAnimation,
     header,
   } = useContext(DataContext);
 
@@ -44,17 +39,6 @@ export const EventsPage = () => {
       medium: 600,
       semibold: 700,
       bold: 900,
-    },
-  };
-  //FONT ROBOT SLAB
-  const robotoSlabFont = "Roboto Slab, serif";
-  const robotoSlabWeight = {
-    fontWeight: {
-      thin: 100,
-      extraLight: 200,
-      light: 300,
-      regular: 400,
-      medium: 500,
     },
   };
 
@@ -73,6 +57,7 @@ export const EventsPage = () => {
 
   //Goup Events by Categories and display group of Events inside their respective category
   const eventsByCategory = filteredEvents.reduce((acc, event) => {
+    if (!event) return acc;
     event.categoryIds.forEach((categoryId) => {
       if (!acc[categoryId]) {
         acc[categoryId] = [];
@@ -82,27 +67,24 @@ export const EventsPage = () => {
     return acc;
   }, {});
 
-  const columns = useBreakpointValue({ base: 1, sm: 2, md: 3, lg: 4 });
-
   return (
     <>
       <Box
-        // bgColor={"#000000"}
         bgColor="rgba(213, 209, 191, 0.8)"
-        color="#d5d1bf"
+        color="#0f0f0f"
         minH={{
-          base: "950vh",
+          base: "410vh",
           sm: "410vh",
           md: "390vh",
-          lg: "310vh",
-          "2xl": "320vh",
+          lg: "320vh",
+          "2xl": "360vh",
         }}
         minW={"100%"}
+        maxW={"100%"}
       >
         <Flex
           align={{ base: "center", md: "flex-start" }}
           justify={"center"}
-          // minH={"80vh"}
           w={{ base: "100%", sm: "70%", md: "100%" }}
           direction={{ base: "column", sm: "column", md: "row" }}
         >
@@ -143,7 +125,6 @@ export const EventsPage = () => {
                   objectFit={"contain"}
                   width={{ base: "90%", sm: "50%" }}
                   maxWidth={"550px"}
-                  // border={"1px solid rgba(213, 209, 191, 0.3)"}
                   border={"1px solid #0f0f0f"}
                   p={{ base: 3, md: 4 }} //*** */
                   borderRadius={"14px"}
@@ -305,13 +286,9 @@ export const EventsPage = () => {
 
             <Box
               p={4}
-              w={{ base: "100%", sm: "90%", md: "100%", "2xl": "85rem" }}
               h={"100%"}
               mb={{ base: "-100px", sm: 0, md: "1rem" }}
-              padding={{ base: "1rem", sm: "2rem", md: "2rem" }}
               position={"relative"}
-              left={{ base: 0, sm: "5%", md: 0 }}
-              right={{ base: 0, sm: 0, md: 0 }}
               top={{ base: "12rem", sm: "2.5rem", md: "12rem", "2xl": "50vh" }}
             >
               {Object.keys(eventsByCategory).map((categoryId) => {
@@ -323,17 +300,20 @@ export const EventsPage = () => {
                 if (categoryEvents.length === 0) return null; // If no events in this category, skip rendering
 
                 return (
-                  <Box
-                    key={categoryId}
-                    mb={8}
-                    position={"relative"}
-                    top={{ base: 0, sm: 0, md: 0 }}
-                    left={{ base: 2, sm: 0, md: "2%" }}
-                  >
+                  <Box key={categoryId} mb={8}>
                     <Heading
+                      w={"35%"}
+                      position={"relative"}
+                      left={{
+                        base: "33%",
+                        sm: "20%",
+                        md: "0",
+                        lg: "12%",
+                        "2xl": "2%",
+                      }}
                       paddingTop={7}
                       size={{ base: "sm", sm: "sm", md: "md" }}
-                      mb={5}
+                      mb={2}
                       mt={1}
                       color={"#0f0f0f"}
                       fontFamily={orbitronFontFamily}
@@ -343,7 +323,9 @@ export const EventsPage = () => {
                       {category ? category.name : "Unknown Category"}
                     </Heading>
 
-                    <SimpleGrid
+                    {/* <SimpleGrid
+                      bgColor={"gray.900"}
+                      p={"30px"}
                       columns={columns}
                       gap={{ base: 8, sm: 8, md: 0, "2xl": 10 }}
                       w={"100%"}
@@ -353,7 +335,10 @@ export const EventsPage = () => {
                           <EventsCard event={event} categories={categories} />
                         </Link>
                       ))}
-                    </SimpleGrid>
+                    </SimpleGrid> */}
+                    {categoryEvents && categoryEvents.length > 0 && (
+                      <EventsCarousel categoryEvents={categoryEvents} />
+                    )}
                   </Box>
                 );
               })}

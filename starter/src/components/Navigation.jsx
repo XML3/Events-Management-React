@@ -77,7 +77,7 @@ export const Navigation = () => {
               fontWeight={600}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
               _hover={{ transform: "scale(1.08)", bgColor: "#c50d34" }}
-              bgColor={"rgba(213, 209, 191, 0.8)"}
+              bgColor={"rgba(213, 209, 191, 1)"}
               color={"#0f0f0f"}
               px={{ base: "10px", sm: "25px", md: "40px" }}
               py={2}
@@ -101,7 +101,7 @@ export const Navigation = () => {
               fontWeight={600}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
               _hover={{ transform: "scale(1.08)", bgColor: "#c50d34" }}
-              bgColor={"rgba(213, 209, 191, 0.8)"}
+              bgColor={"rgba(213, 209, 191, 1)"}
               color={"#0f0f0f"}
               px={{ base: "10px", sm: "25px", md: "40px" }}
               py={2}
@@ -125,7 +125,7 @@ export const Navigation = () => {
               fontWeight={600}
               letterSpacing={{ base: "0.1rem", md: "0.05rem" }}
               _hover={{ transform: "scale(1.08)", bgColor: "#c50d34" }}
-              bgColor={"rgba(213, 209, 191, 0.8)"}
+              bgColor={"rgba(213, 209, 191, 1)"}
               color={"#0f0f0f"}
               px={{ base: "16px", sm: "25px", md: "40px" }}
               py={2}

@@ -154,12 +154,7 @@ export const EventPage = () => {
   };
 
   return (
-    <Box
-      bgColor="rgba(213, 209, 191, 0.8)"
-      color="#d5d1bf"
-      minH="100vh"
-      paddingTop={"100px"}
-    >
+    <Box bgColor="rgba(213, 209, 191, 0.8)" minH="100vh" paddingTop={"100px"}>
       <Heading
         color="#0f0f0f"
         fontSize={{
@@ -296,22 +291,23 @@ export const EventPage = () => {
       <Flex
         display={"flex"}
         justifyContent={"center"}
-        align={"center"}
-        gap={1}
+        alignContent={"center"}
         w={{ base: "100%", sm: "85%", md: "75%", "2xl": "100%" }}
         flexWrap="wrap"
         flexDir="column"
       >
         <Box
-          p={4}
+          justifyContent={"center"}
+          align={"center"}
+          p={2.5}
           border="1px solid #0f0f0f"
           bgColor={"rgba(213, 209, 191, 0.8)"}
-          w={{ base: "95%", sm: "100%", md: "100%", lg: "80%", " 2xl": "50%" }}
+          w={{ base: "95%", sm: "100%", md: "100%", lg: "80%", " 2xl": "100%" }}
           h={"auto"}
           borderRadius={"md"}
           position={"relative"}
-          left={{ base: 0, sm: "8%", md: "16%", lg: "15%", "2xl": 0 }}
-          top={{ base: "-1rem", sm: "3rem", md: 0, "2xl": "-7rem" }}
+          left={{ base: 0, sm: "8%", md: 0, lg: 0, "2xl": 0 }}
+          top={{ base: "-1rem", sm: "3rem", md: 0, "2xl": 0 }}
           mb={{ base: "5rem", md: "10rem" }}
         >
           <Box
@@ -320,29 +316,26 @@ export const EventPage = () => {
             padding={{ base: "1rem", sm: "0.7rem", md: "3rem" }}
           >
             {/* Event image */}
-            <Center>
-              <Image
-                src={event.image}
-                alt={event.title}
-                objectFit={"cover"}
-                borderRadius={"full"}
-                mb={4}
-                w={{
-                  base: "100%",
-                  sm: "60%",
-                  md: "50%",
-                  lg: "60%",
-                  "2xl": "70%",
-                }}
-                h={{
-                  base: "15%",
-                  sm: "20%",
-                  md: "10rem",
-                  lg: "13rem",
-                  "2xl": "16rem",
-                }}
-              />
-            </Center>
+
+            <Image
+              src={event.image}
+              alt={event.title}
+              objectFit={"cover"}
+              borderRadius={"12px"}
+              mb={4}
+              w={{
+                base: "100%",
+                sm: "90%",
+                md: "90%",
+              }}
+              h={{
+                base: "15%",
+                sm: "11rem",
+                md: "12rem",
+                lg: "13rem",
+                "2xl": "16rem",
+              }}
+            />
 
             {/* Artist Lineup */}
             <Text
@@ -367,7 +360,7 @@ export const EventPage = () => {
               fontFamily={robotoSlabFont}
               fontWeight={robotoSlabWeight.thin}
               paddingLeft={"2rem"}
-              color={"#d5d1bf"}
+              color="rgba(213, 209, 191, 1)"
               paddingBottom={"1rem"}
             >
               {event.lineup}
@@ -395,7 +388,7 @@ export const EventPage = () => {
               letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
               fontFamily={robotoSlabFont}
               fontWeight={robotoSlabWeight.thin}
-              color={"#d5d1bf"}
+              color="rgba(213, 209, 191, 1)"
             >
               {event.location}
             </Text>
@@ -427,7 +420,7 @@ export const EventPage = () => {
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.thin}
-                  color={"#d5d1bf"}
+                  color="rgba(213, 209, 191, 1)"
                 >
                   {event.startTime}
                 </Text>
@@ -453,7 +446,7 @@ export const EventPage = () => {
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                   fontFamily={robotoSlabFont}
                   fontWeight={robotoSlabWeight.thin}
-                  color={"#d5d1bf"}
+                  color="rgba(213, 209, 191, 1)"
                 >
                   {event.endTime}
                 </Text>
@@ -471,7 +464,7 @@ export const EventPage = () => {
               >
                 <Text
                   w={"100%"}
-                  color={"#d5d1bf"}
+                  color="rgba(213, 209, 191, 1)"
                   fontWeight={"bold"}
                   fontSize={{
                     base: "16px",
@@ -481,7 +474,6 @@ export const EventPage = () => {
                   }}
                   marginBottom={2}
                   position={"relative"}
-                  left={{ base: "5.5rem", sm: "11.2rem", md: "4rem" }}
                   fontFamily={orbitronFontFamily}
                   letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
                 >
@@ -503,7 +495,7 @@ export const EventPage = () => {
                     fontWeight={"medium"}
                     fontSize={{ base: "0.9rem", sm: "0.7rem", md: "0.7rem" }}
                     letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                    color={"#FFFDE1"}
+                    color="rgba(213, 209, 191, 1)"
                   >
                     <Image
                       src={creator.image}
@@ -515,14 +507,12 @@ export const EventPage = () => {
                       boxSize={"100px"}
                       mt={2}
                       position={"relative"}
-                      left={{ base: 0, sm: "1rem" }}
                     />
                     <Text
                       fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
                       mt={3}
                       mb={6}
                       position={"relative"}
-                      left={{ base: 0, sm: "0.5rem" }}
                     >
                       {creator.name}
                     </Text>

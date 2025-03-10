@@ -27,7 +27,7 @@ export const NavigationFooter = () => {
       h={{ base: "13vh", sm: "15vh", md: "14vh", "2xl": "13vh" }}
       maxWidth={"100%"}
       bgColor={"#0f0f0f"}
-      color="rgba(213, 209, 191, 0.8)"
+      color="rgba(213, 209, 191, 1)"
       textAlign={"center"}
     >
       <Flex
