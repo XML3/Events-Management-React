@@ -15,7 +15,7 @@ export const SearchItem = ({ handleFilteredEvents }) => {
         color={"0f0f0f"}
         mb={"3rem"}
         position={"relative"}
-        left={{ base: 0, md: "1px" }}
+        right={{ base: "25%", sm: "5%", md: "4%", "2xl": "4%" }}
         w={{ base: "12rem", sm: "15rem", md: "20rem" }}
         h={{ base: "40px", md: "50px" }}
         onChange={handleChange}

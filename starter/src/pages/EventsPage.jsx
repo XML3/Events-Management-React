@@ -162,7 +162,6 @@ export const EventsPage = () => {
                   objectFit={"scale-down"}
                   width={{ base: "90%", sm: "50%" }}
                   maxWidth={"550px"}
-                  // border={"1px solid rgba(213, 209, 191, 0.3)"}
                   border={"1px solid #0f0f0f"}
                   p={{ base: 3, md: 4 }} //*** */
                   borderRadius={"14px"}
@@ -220,10 +219,9 @@ export const EventsPage = () => {
               fontFamily={orbitronFontFamily}
               fontWeight={orbitronWeight.bold}
               fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
-              // color="rgba(213, 209, 191, 0.8)"
               color={"#0f0f0f"}
               position={"relative"}
-              left={{ base: "22%", sm: "25%", md: "20%", "2xl": "43%" }}
+              left={{ base: "50%", sm: "15%", md: "20%", "2xl": "28%" }}
               top={{ base: "170px", sm: "4rem", md: "15rem", "2xl": "500px" }}
               letterSpacing={"0.09rem"}
             >
@@ -241,8 +239,14 @@ export const EventsPage = () => {
               maxW={"100%"}
               position={"relative"}
               z-index={10}
-              left={{ base: "-90%", sm: "50%", md: "70%", "2xl": "72.5%" }}
-              top={{ base: "250px", sm: "5.5rem", md: "17rem", "2xl": "550px" }}
+              left={{
+                base: "-90%",
+                sm: "50%",
+                md: "67%",
+                lg: "70%",
+                "2xl": "77.2%",
+              }}
+              top={{ base: "250px", sm: "5.5rem", md: "17rem", "2xl": "545px" }}
               onClick={openModal}
               bgColor="rgba(213, 209, 191, 0.3)"
               border={"1px solid  #0f0f0f"}
@@ -280,50 +284,46 @@ export const EventsPage = () => {
         </Flex>
 
         {/* This Flex manages the whole Cards Box */}
-        <Flex align="center" justify="center" minH="100vh">
-          <div className="events-page">
-            {/* Outside Box with Search and Cards */}
+        <Flex
+          align={{ base: "flex-start", md: "center" }}
+          justify={{ base: "flex-start", md: "center" }}
+          minH="100vh"
+        >
+          {/* Outside Box with Search and Cards */}
 
-            <Box
-              p={4}
-              h={"100%"}
-              mb={{ base: "-100px", sm: 0, md: "1rem" }}
-              position={"relative"}
-              top={{ base: "12rem", sm: "2.5rem", md: "12rem", "2xl": "50vh" }}
-            >
-              {Object.keys(eventsByCategory).map((categoryId) => {
-                const category = categories.find(
-                  (cat) => cat.id === categoryId
-                );
-                const categoryEvents = eventsByCategory[categoryId];
+          <Box
+            p={4}
+            h={"100%"}
+            mb={{ base: "-100px", sm: 0, md: "1rem" }}
+            position={"relative"}
+            top={{ base: "12rem", sm: "2.5rem", md: "12rem", "2xl": "50vh" }}
+            width={"100%"}
+          >
+            {Object.keys(eventsByCategory).map((categoryId) => {
+              const category = categories.find((cat) => cat.id === categoryId);
+              const categoryEvents = eventsByCategory[categoryId];
 
-                if (categoryEvents.length === 0) return null; // If no events in this category, skip rendering
+              if (categoryEvents.length === 0) return null; // If no events in this category, skip rendering
 
-                return (
-                  <Box key={categoryId} mb={8}>
-                    <Heading
-                      w={"35%"}
-                      position={"relative"}
-                      left={{
-                        base: "33%",
-                        sm: "20%",
-                        md: "0",
-                        lg: "12%",
-                        "2xl": "2%",
-                      }}
-                      paddingTop={7}
-                      size={{ base: "sm", sm: "sm", md: "md" }}
-                      mb={2}
-                      mt={1}
-                      color={"#0f0f0f"}
-                      fontFamily={orbitronFontFamily}
-                      fontWeight={"700"}
-                      letterSpacing={1.5}
-                    >
-                      {category ? category.name : "Unknown Category"}
-                    </Heading>
+              return (
+                <Box key={categoryId} mb={8}>
+                  <Heading
+                    w={{ base: "100%", sm: "45%", lg: "50%" }}
+                    position={"relative"}
+                    left={{ base: 0, sm: "5%" }}
+                    paddingTop={7}
+                    size={{ base: "sm", sm: "sm", md: "md" }}
+                    mb={2}
+                    mt={1}
+                    color={"#0f0f0f"}
+                    fontFamily={orbitronFontFamily}
+                    fontWeight={"700"}
+                    letterSpacing={1.5}
+                  >
+                    {category ? category.name : "Unknown Category"}
+                  </Heading>
 
-                    {/* <SimpleGrid
+                  {/* <SimpleGrid
                       bgColor={"gray.900"}
                       p={"30px"}
                       columns={columns}
@@ -336,14 +336,13 @@ export const EventsPage = () => {
                         </Link>
                       ))}
                     </SimpleGrid> */}
-                    {categoryEvents && categoryEvents.length > 0 && (
-                      <EventsCarousel categoryEvents={categoryEvents} />
-                    )}
-                  </Box>
-                );
-              })}
-            </Box>
-          </div>
+                  {categoryEvents && categoryEvents.length > 0 && (
+                    <EventsCarousel categoryEvents={categoryEvents} />
+                  )}
+                </Box>
+              );
+            })}
+          </Box>
         </Flex>
       </Box>
     </>

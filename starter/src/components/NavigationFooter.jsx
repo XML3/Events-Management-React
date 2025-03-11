@@ -38,7 +38,7 @@ export const NavigationFooter = () => {
         align={"center"}
         fontSize={{ base: "0.4em", sm: "0.4em", md: "0.7em", "2xl": "0.6em" }}
         letterSpacing={{ base: "0.08rem", md: "0.06rem" }}
-        mt={{ base: "12px", sm: "20px", md: "22px", "2xl": "15px" }}
+        mt={{ base: "12px", sm: "40px", md: "35px", "2xl": "35px" }}
       >
         <Stack
           direction={{ base: "row", sm: "row", md: "row" }}
@@ -67,53 +67,6 @@ export const NavigationFooter = () => {
         </Stack>
       </Flex>
 
-      {/* ICONS */}
-      <Flex
-        direction={{ base: "row", md: "row" }}
-        justify={{ base: "center", sm: "center", md: "space-around" }}
-        alignItems={{ base: "start", md: "center" }}
-        mt={{ base: "15px", sm: "15px", md: "20px", "2xl": "20px" }}
-        mb={{ base: "10px", sm: 0, "2xl": "10px" }}
-        gap={6}
-      >
-        <Stack direction={{ base: "row", sm: "row", md: "row" }} spacing="24px">
-          <Image
-            src={xIcons}
-            alt="social media X icon"
-            objectFit="scale-down"
-            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
-          />
-
-          <Image
-            src={meatIcon}
-            alt="social media X icon"
-            objectFit="scale-down"
-            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
-          />
-
-          <Image
-            src={instaIcon}
-            alt="social media X icon"
-            objectFit="scale-down"
-            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
-          />
-
-          <Image
-            src={threadsIcon}
-            alt="social media X icon"
-            objectFit="scale-down"
-            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
-          />
-
-          <Image
-            src={tiktokIcon}
-            alt="social media X icon"
-            objectFit="scale-down"
-            boxSize={{ base: "10px", sm: "12px", md: "16px", "2xl": "20px" }}
-          />
-        </Stack>
-      </Flex>
-
       {/* LOGO + COPYRIGHT */}
       <Flex
         display={"flex"}
@@ -121,13 +74,11 @@ export const NavigationFooter = () => {
         justify={{ base: "center", md: "center" }}
         align={{ base: "center", sm: "center", md: "center" }}
         position={"relative"}
-        left={{ base: 0, sm: 0, md: 0 }}
-        top={{ base: "0", sm: "15px", md: "10px" }}
-        right={{ base: "0", sm: 0, md: "2rem" }}
         fontSize={{ base: "0.3em", sm: "0.4rem", md: "0.5em" }}
         lineHeight={{ base: "1rem" }}
         letterSpacing={{ base: "0.1rem", md: "0.06rem" }}
         gap={2}
+        mt={{ base: 3, sm: 5, md: 6, "2xl": 4 }}
       >
         <Box>
           <Image
@@ -136,7 +87,7 @@ export const NavigationFooter = () => {
             objectFit="scale-down"
             borderRadius="full"
             position={"relative"}
-            right={{ base: 0, sm: 0, md: "10%" }}
+            right={{ base: 0, sm: 0, md: "20%" }}
           />
         </Box>
 

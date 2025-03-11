@@ -10,11 +10,12 @@ export const EventsCarousel = ({ categoryEvents }) => {
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
 
   // const columns = 1;
+
   const cardWidth = useBreakpointValue({
     base: 95,
-    sm: 60,
+    sm: 50,
     md: 40,
-    lg: 25,
+    lg: 35,
     "2xl": 22,
   });
   // const totalWidth = Math.min(categoryEvents.length * cardWidth, 100);
@@ -54,11 +55,11 @@ export const EventsCarousel = ({ categoryEvents }) => {
   }, [scrollPosition, totalWidth]);
 
   const containerWidth = useBreakpointValue({
-    base: "35%",
-    sm: "70%",
+    base: "100%",
+    sm: "95%",
     md: "90%",
-    lg: "80%",
-    "2xl": "85rem",
+    lg: "90%",
+    "2xl": "92%",
   });
 
   const arrowDisplay = useBreakpointValue({
@@ -73,7 +74,6 @@ export const EventsCarousel = ({ categoryEvents }) => {
     <>
       <Box
         position="relative"
-        left={{ base: "0%" }}
         w={containerWidth}
         overflow={"hidden"}
         bgColor={"#0f0f0f"}

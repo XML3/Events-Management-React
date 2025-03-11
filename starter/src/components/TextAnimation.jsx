@@ -60,7 +60,7 @@ const TextAnimation = () => {
               base: "20px",
               sm: "25px",
               md: "32px",
-              "2xl": "45px",
+              "2xl": "38px",
             }}
             textAlign="center"
             paddingBottom={2.5}
@@ -84,7 +84,7 @@ const TextAnimation = () => {
               base: "20px",
               sm: "25px",
               md: "32px",
-              "2xl": "45px",
+              "2xl": "38px",
             }}
             textAlign="center"
             color={"#0f0f0f"}

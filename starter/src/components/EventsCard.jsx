@@ -94,7 +94,7 @@ export const EventsCard = ({ event }) => {
             <Box display={"flex"} justifyContent={"center"} align={"center"}>
               <Image
                 src={image || "/img/Vreemd_tension.png"}
-                objectFit={"cover"}
+                objectFit={"contain"}
                 borderRadius={"12px"}
                 mb={"1rem"}
                 w={{
