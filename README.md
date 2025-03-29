@@ -20,6 +20,9 @@ Sentry: Performance monitoring and error tracking.
 
 Auth0: Authentication and authorization services for secure access.
 
+Demo:  A live demo of the project can be viewed at
+https://eventsmanagementapp.netlify.app
+
 ## Features
 Search Events: Users can search events by location, name, or category.
 
