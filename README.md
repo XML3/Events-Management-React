@@ -1,7 +1,7 @@
 # Events Management with React.js
 This is a front-end application designed to simulate an event management system. Users can search for events by location, name, or category and connect with event organizers via a contact form. Additionally, event organizers have access to an intuitive set of tools to manage their events, including functionality to create, edit, and delete events.
 
-![Events Management App](https://i.ibb.co/HLFg6cQQ/EventsM.png)
+![Image](https://github.com/user-attachments/assets/0168be7b-3bd1-46eb-98b3-b61eb1429749)
 
 ## Technologies & Tools
 Front-end:
