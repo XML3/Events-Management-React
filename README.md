@@ -42,7 +42,7 @@ For React development, ensure you have the React app and Chakra UI installed.
 Clone the repository to your local machine:
 
 ## bash
-git clone https://github.com/yourusername/events-management-react.git
+git clone [repo]
 Install the required dependencies for the React app:
 
 ## bash
