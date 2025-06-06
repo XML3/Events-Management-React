@@ -41,7 +41,7 @@ Event Management Tools: Event organizers can manage their events (create, edit, 
 
 User Authentication: Secured access to certain features via Auth0 authentication tokens.
 
-## Desgn Tools
+## Design Tools
 Figma
 
 ## Getting Started
