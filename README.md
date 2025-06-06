@@ -41,8 +41,8 @@ Event Management Tools: Event organizers can manage their events (create, edit, 
 
 User Authentication: Secured access to certain features via Auth0 authentication tokens.
 
-## NOTE:
-This app has been deployed for portfolio viewing purposes. To prevent spam and unintentional changes, the features to edit, delete, and contact have been disabled. These features are intended to be used with an authorization token for proper access control. However, the ability to create new events remains active.
+## Desgn Tools
+Figma
 
 ## Getting Started
 Prerequisites
