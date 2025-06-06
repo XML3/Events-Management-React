@@ -33,6 +33,7 @@ export const EditEvent = ({
     ...initialData,
     categoryIds: initialData.categoryIds || [],
   });
+  console.log(initialData);
 
   //initialData prop to show form fields with event data when opened.
   useEffect(() => {
@@ -61,32 +62,50 @@ export const EditEvent = ({
     }
   };
 
-  //Edit image upload - This won't fully work without Back-End Development.
-  const handleImageEditChange = (event) => {
-    const imageFile = event.target.files[0]; //retrieves first file selected by user. [0] for single file
-    setFormData((previousData) => ({
-      ...previousData,
-      image: imageFile,
-      userImage: imageFile,
-    }));
-  };
-
   //action - PUT (edit) / handle form Submit-Save /success-error message to user
+  // const processAction = async ({ request }) => {
+  //   try {
+
+  //     const response = await fetch(`${API_URL}/${initialData.eventId}`, {
+  //       method: "PUT",
+  //       body: JSON.stringify(formData),
+  //       headers: { "Content-Type": "application/json" },
+  //     });
+  //     if (response.ok) {
+  //       setEvent(formData);
+  //       toast({
+  //         title: "Event Edited",
+  //         description: "Your event has been successfuly edited!",
+  //         status: "success",
+  //         duration: 5000,
+  //         isClosable: true,
+  //       });
+  //       return { status: 200, json: { success: true } };
+  //     } else {
+  //       toast({
+  //         title: "Error",
+  //         description: "An Error occurred while editing the event",
+  //         status: "error",
+  //         duration: 5000,
+  //         isClosable: true,
+  //       });
+  //       const errorMessage = await response.text();
+  //       return { status: response.status, json: { error: errorMessage } };
+  //     }
+  //   } catch (error) {
+  //     return { status: 500, json: { error: "Internal Server Error" } };
+  //   }
+  // };
   const processAction = async ({ request }) => {
-    //make formData into object {key, value] and stringify.
     try {
-      // const formDataObject = {};
-      // for (const [key, value] of request.entries()) {
-      //   formDataObject[key] = value;
-      // }
-      // const requestBody = JSON.stringify(formDataObject);
+      // request here is expected to be plain JS object with all fields
       const response = await fetch(`${API_URL}/${initialData.eventId}`, {
         method: "PUT",
-        body: JSON.stringify(formData),
+        body: JSON.stringify(request), // use request, not outer formData
         headers: { "Content-Type": "application/json" },
       });
       if (response.ok) {
-        setEvent(formData);
+        setEvent(request);
         toast({
           title: "Event Edited",
           description: "Your event has been successfuly edited!",
@@ -113,10 +132,12 @@ export const EditEvent = ({
 
   const handleUserEditChange = (event) => {
     const selectedUserId = event.target.value;
+    const selectedUser = users.find((user) => user.id === selectedUserId);
 
     setFormData((previousData) => ({
       ...previousData,
-      userName: users.find((user) => user.id === selectedUserId)?.name || "",
+      userName: selectedUser?.name || "",
+      userImage: selectedUser?.image || "",
       createdBy: selectedUserId,
     }));
   };
@@ -139,12 +160,10 @@ export const EditEvent = ({
             </FormControl>
             <FormControl>
               <FormLabel>Image</FormLabel>
-              {/* /Event Image upload */}
               <Input
                 name="image"
-                type="file"
-                accept="image/*"
-                onChange={handleImageEditChange}
+                value={formData.image}
+                onChange={handleInputEditChange}
               />
             </FormControl>
             <FormControl>
@@ -230,21 +249,12 @@ export const EditEvent = ({
                 </Box>
               )}
             </FormControl>
-            <FormControl>
-              {/* /User Image upload */}
-              <FormLabel>User Image</FormLabel>
-              <Input
-                name="userImage"
-                type="file"
-                onChange={handleImageEditChange}
-              />
-            </FormControl>
           </Form>
         </ModalBody>
 
         <ModalFooter>
           {/* Additional modal footer actions go here  */}
-          <Button
+          {/* <Button
             colorScheme="blue"
             mr={3}
             onClick={async () => {
@@ -262,7 +272,7 @@ export const EditEvent = ({
               updatedData.append("userName", formData.userName);
               updatedData.append("userImage", formData.userImage);
 
-              const result = await processAction({ request: updatedData });
+              const result = await processAction({ request: formData });
               console.log("PUT request result:", result);
               //200=succeful save
               if (result.status === 200) {
@@ -274,7 +284,24 @@ export const EditEvent = ({
             }}
           >
             Save
+          </Button> */}
+
+          <Button
+            colorScheme="blue"
+            mr={3}
+            onClick={async () => {
+              const result = await processAction({ request: formData }); // pass current state
+              console.log("PUT request result:", result);
+              if (result.status === 200) {
+                onClose();
+              } else {
+                console.error("An error occurred:", result.json?.error);
+              }
+            }}
+          >
+            Save
           </Button>
+
           <Button onClick={onClose}>Close</Button>
         </ModalFooter>
       </ModalContent>

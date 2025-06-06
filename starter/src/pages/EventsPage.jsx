@@ -67,7 +67,7 @@ export const EventsPage = () => {
 
   //Goup Events by Categories and display group of Events inside their respective category
   const eventsByCategory = filteredEvents.reduce((acc, event) => {
-    if (!event) return acc;
+    if (!event || !Array.isArray(event.categoryIds)) return acc;
     event.categoryIds.forEach((categoryId) => {
       if (!acc[categoryId]) {
         acc[categoryId] = [];

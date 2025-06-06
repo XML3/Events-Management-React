@@ -3,7 +3,6 @@ import React from "react";
 // import { UserPage } from "./UserPage";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import Typewriter from "../components/Typewriter";
 import { API_URL } from "../components/UI/constants";
 import { EditEvent } from "../components/forms/EditEvent";
 
@@ -25,12 +24,11 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  CardBody,
 } from "@chakra-ui/react";
 import DataContext from "../components/Root";
 
 export const EventPage = () => {
-  const { deleteEvent, header, users, categories } = useContext(DataContext);
+  const { deleteEvent, users, categories } = useContext(DataContext);
 
   const { eventId } = useParams();
 
@@ -566,16 +564,7 @@ export const EventPage = () => {
                   >
                     Event Creator
                   </Text>
-                  {/* <UserPage userId={event.createdBy} /> */}
-                  {/* testing */}
-                  {/* <Image
-                    src={event.createdBy.image}
-                    alt={event.createdBy.name}
-                    borderRadius={"full"}
-                    boxSize={"100px"}
-                    mt={4}
-                  />
-                  <Text>{event.createdBy.name}</Text> */}
+
                   {creator && (
                     <Box
                       fontFamily={bebasNeueFontFamily}
@@ -716,31 +705,16 @@ export const EventPage = () => {
                   Edit Event
                 </Button>
 
-                {/* Modal Form */}
-                <Modal isOpen={isModalOpen} onClose={closeModal}>
-                  <ModalOverlay />
-                  <ModalContent>
-                    <ModalHeader>Edit New Event</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                      {/* NewEvent goes here */}
-                      <EditEvent
-                        isOpen={isModalOpen}
-                        onClose={closeModal}
-                        initialData={{ ...event, eventId: eventId }}
-                        //add setEvent to upload the changes on the page
-                        setEvent={setEvent}
-                        categories={categories}
-                        users={users}
-                      />
-                    </ModalBody>
-                    <ModalFooter>
-                      {/* Additional modal footer actions */}
-                      <Button onClick={openModal}>Edit Event</Button>
-                      <Button onClick={closeModal}>Close</Button>
-                    </ModalFooter>
-                  </ModalContent>
-                </Modal>
+                {/* NewEvent goes here */}
+                <EditEvent
+                  isOpen={isModalOpen}
+                  onClose={closeModal}
+                  initialData={{ ...event, eventId: eventId }}
+                  //add setEvent to upload the changes on the page
+                  setEvent={setEvent}
+                  categories={categories}
+                  users={users}
+                />
               </Box>
 
               {/* Delete Event Button */}
