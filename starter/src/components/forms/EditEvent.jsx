@@ -99,7 +99,7 @@ export const EditEvent = ({
   const processAction = async ({ request }) => {
     try {
       // request here is expected to be plain JS object with all fields
-      const response = await fetch(`${API_URL}/${initialData.eventId}`, {
+      const response = await fetch(`${API_URL}/events/${initialData.eventId}`, {
         method: "PUT",
         body: JSON.stringify(request), // use request, not outer formData
         headers: { "Content-Type": "application/json" },
