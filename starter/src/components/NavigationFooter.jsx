@@ -2,17 +2,12 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import { Box, Text, Flex, Image, Grid, Stack } from "@chakra-ui/react";
 
-const meatIcon = "/icons/meta_pink_icon3.png";
-const instaIcon = "/icons/pink_instagram3_icon.png";
-const threadsIcon = "/icons/threads_pink_icon.png";
-const tiktokIcon = "/icons/tiktok_pink_icon.png";
-const xIcons = "/icons/x_social_media_pink_icon3.png";
 const logo = "/img/red_logo_smaller2.png";
 
 export const NavigationFooter = () => {
   //FONT ORBITRON
-  const orbitronFontFamily = "Orbitron, sans-serif";
-  const orbitronWeight = {
+  const workSansFontFamily = "Work Sans, sans-serif";
+  const workSansWeight = {
     fontWeights: {
       normal: 400,
       medium: 600,
@@ -23,50 +18,13 @@ export const NavigationFooter = () => {
 
   return (
     <Box
-      borderTop={"1px"}
-      h={{ base: "13vh", sm: "15vh", md: "14vh", "2xl": "13vh" }}
+      borderTop={"1px solid #0f0f0f"}
+      h={{ base: "13vh", sm: "15vh", md: "14vh", "2xl": "8vh" }}
       maxWidth={"100%"}
-      bgColor={"#0f0f0f"}
-      color="rgba(213, 209, 191, 1)"
+      bgColor={"#D9D9D9"}
+      color="#0f0f0f"
       textAlign={"center"}
     >
-      <Flex
-        display={"flex"}
-        direction={{ base: "column", sm: "row", md: "row" }}
-        wrap="wrap"
-        justify={{ base: "start", sm: "center", md: "center" }}
-        align={"center"}
-        fontSize={{ base: "0.4em", sm: "0.4em", md: "0.7em", "2xl": "0.6em" }}
-        letterSpacing={{ base: "0.08rem", md: "0.06rem" }}
-        mt={{ base: "12px", sm: "40px", md: "35px", "2xl": "35px" }}
-      >
-        <Stack
-          direction={{ base: "row", sm: "row", md: "row" }}
-          wrap={"wrap"}
-          justify={"center"}
-          spacing={{ base: "15px", sm: "24px", md: "24px" }}
-        >
-          <Text
-            fontFamily={orbitronFontFamily}
-            fontWeight={orbitronWeight.normal}
-          >
-            Bussiness B.V
-          </Text>
-          <Text
-            fontFamily={orbitronFontFamily}
-            fontWeight={orbitronWeight.normal}
-          >
-            FAQ/Help
-          </Text>
-          <Text
-            fontFamily={orbitronFontFamily}
-            fontWeight={orbitronWeight.normal}
-          >
-            Privacy Policy
-          </Text>
-        </Stack>
-      </Flex>
-
       {/* LOGO + COPYRIGHT */}
       <Flex
         display={"flex"}
@@ -92,10 +50,10 @@ export const NavigationFooter = () => {
         </Box>
 
         <Text
-          fontFamily={orbitronFontFamily}
-          fontWeight={orbitronWeight.normal}
+          fontFamily={workSansFontFamily}
+          fontWeight={workSansWeight.normal}
         >
-          Videos ©2023 XaglyMontilva All Rights Reserved: Mock site
+          ©2023 Mock Events Management Application
         </Text>
       </Flex>
     </Box>

@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import { Center, Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Center, Box, Flex, Heading, Text, Image } from "@chakra-ui/react";
 import DataContext from "../components/Root";
 import Typewriter from "../components/Typewriter";
 
 export const AboutPage = () => {
   const { header, subHeader } = useContext(DataContext);
 
-  //FONT ORBITRON
-  const orbitronFontFamily = "Orbitron, sans-serif";
-  const orbitronWeight = {
+  //FONT BEBAS
+  const bebasNeueFontFamily = "Bebas Neue, sans-serif";
+  const bebasNeuenWeight = {
     fontWeights: {
       normal: 400,
       medium: 600,
@@ -17,143 +17,227 @@ export const AboutPage = () => {
     },
   };
 
-  //FONT ROBOTO SLAB
-  const robotoSlabFont = "Roboto Slab, serif";
-  const robotoSlabWeight = {
-    fontWeight: {
-      thin: 100,
-      extraLight: 200,
-      light: 300,
-      regular: 400,
-      medium: 500,
+  //FONT WorkSans
+  const workSansFontFamily = "Work Sans, sans-serif";
+  const workSansWeight = {
+    fontWeights: {
+      normal: 400,
+      medium: 600,
+      semibold: 700,
+      bold: 900,
     },
   };
 
-  const videoOne = "/video/newEventsWide.mp4";
+  const aboutImage = "/img/about-image.png";
+  const aboutUsImg = "/img/about-us.jpg";
+  const aboutHeader = "About Us";
 
   return (
     <Box
-      bgColor="rgba(213, 209, 191, 0.8)"
+      bgColor="#FFE054"
       color="#d5d1bf"
-      minH={{ base: "100vh", sm: "120vh", md: "120vh", "2xl": "100vh" }}
+      minW={"100%"}
+      maxW={"100%"}
       width={"100%"}
-      paddingTop={"2rem"}
     >
-      <Flex
-        align={{ base: "center", md: "flex-start" }}
-        minH={"20vh"}
-        direction={{ base: "column", md: "row" }}
-      >
-        <Box
-          position={"relative"}
-          left={{ base: "0", md: 0 }}
-          right={{ base: "0", md: 0 }}
-          mb={{ base: "0", md: "5rem", "2xl": "3rem" }}
-        >
-          <Heading
-            color={"#0f0f0f"}
-            fontSize={{
-              base: "24px",
-              sm: "30px",
-              md: "40px",
-              "2xl": "60px",
-            }}
-            lineHeight={"1.2"}
-            mb={{ base: 0, sm: "2rem", md: 0 }}
-            position={"relative"}
-            top={{ base: "0.5rem", md: "0", "2xl": "-1rem" }}
-            left={{ base: "0", sm: "-8rem", md: "5.5rem", "2xl": "45%" }}
-            fontFamily={orbitronFontFamily}
-            fontWeight={orbitronWeight.semibold}
-            maxW={{
-              base: "70%",
-              sm: "300px",
-              md: "400px",
-              "2xl": "500px",
-            }}
-          >
-            <Typewriter text={header} delay={100} />
-          </Heading>
-        </Box>
-      </Flex>
-
-      <Box
-        display={"flex"}
-        justifyContent={{ base: "center", sm: "center", md: "flex-end" }}
-        position={"relative"}
-        left={{ base: "0", md: 0 }}
-        top={{ base: "-4rem", sm: "-3rem", md: 0 }}
-        mb={{ base: "0", sm: "2rem", md: "2rem", "2xl": "3rem" }}
-        bgColor={"#0f0f0f"}
-        width={"100%"}
-      >
-        <Text
-          color={"#d5d1bf"}
-          w={{ base: "25%", sm: "11%", "2xl": "17%" }}
-          fontSize={{
-            base: "16px",
-            sm: "22px",
-            md: "25px",
-          }}
-          top={{ base: 5, sm: 20, md: 0 }}
-          fontFamily={orbitronFontFamily}
-          fontWeight={orbitronWeight.semibold}
-        >
-          About
-        </Text>
-      </Box>
-      <Center>
-        <Box
-          w={{ base: "95%", sm: "90%", md: "70%", "2xl": "77%" }}
-          position={"relative"}
-          top={{ base: "-2rem", sm: "-2rem", md: 0 }}
+      <Box minHeight={"100dvh"}>
+        <Flex
+          align={{ base: "center", md: "flex-start" }}
+          direction={{ base: "column", md: "row" }}
         >
           <Box
-            backgroundColor={"#0f0f0f"}
-            padding={{ base: "0.6rem", md: "3rem" }}
-            color="rgba(213, 209, 191, 1)"
+            as="section"
+            position={"relative"}
+            width={"100%"}
+            height={{ base: "79vh", sm: "78vh", lg: "78vh", "2xl": "80vh" }}
+            pt={0}
+            zIndex={0}
           >
+            <Image
+              src={aboutImage}
+              alt="Hero Background Image"
+              objectFit={"cover"}
+              width={"100%"}
+              height={"100%"}
+              position="absolute"
+              top="0"
+              left={"0"}
+              zIndex={1}
+            />
             <Flex
-              direction={{ base: "column", md: "row" }}
-              align={"center"}
+              flexDir={"column"}
+              flexWrap={"wrap"}
+              textAlign={"center"}
+              justifyContent={"center"}
               alignItems={"center"}
-              justifyContent={"space-between"}
-              wrap={"wrap"}
+              position={"relative"}
+              height={"100%"}
+              pt={{
+                base: "5rem",
+                sm: "6rem",
+                md: "0",
+                lg: "0rem",
+                "2xl": "6rem",
+              }}
+              zIndex={2}
             >
-              <Text
-                fontSize={{ base: "0.6rem", sm: "16px", md: "sm" }}
-                padding={{
-                  base: "32px",
-                  sm: "24px",
-                  md: "1rem",
-                  "2xl": "0rem",
+              <Heading
+                maxW={"100%"}
+                mx="auto"
+                textAlign={"center"}
+                fontFamily={bebasNeueFontFamily}
+                fontWeight={400}
+                fontSize={{
+                  base: "48px",
+                  sm: "80px",
+                  md: "100px",
+                  lg: "120px",
+                  "2xl": "160px",
                 }}
-                maxWidth={{ base: "80%", sm: "100%", md: "40%" }}
-                flex="1"
-                fontFamily={robotoSlabFont}
-                fontWeight={robotoSlabWeight.light}
-                lineHeight={{ base: "1.7", sm: "1.7", md: "1.7" }}
-                mb={{ base: "0", sm: "1rem", md: 0 }}
-                color={"rgba(213, 209, 191, 1"}
+                letterSpacing={{ base: "0.4rem", md: "0.4rem" }}
+                color={"#FFE054"}
+                mb={{
+                  base: "2rem",
+                  sm: "2rem",
+                  lg: "0.5rem",
+                  "2xl": "0",
+                }}
               >
-                <Typewriter text={subHeader} delay={30} />
-              </Text>
-              <Box
-                as="video"
-                src={videoOne}
-                autoPlay
-                loop
-                muted
-                playsInline
-                w={{ base: "100%", md: "50%", "2xl": "50%" }}
-                h={{ base: "auto", md: "auto" }}
-                padding={{ base: "0.5rem", sm: "1rem", md: 0 }}
-                marginBottom={{ base: "1rem", md: "0" }}
-              />
+                {aboutHeader}
+              </Heading>
             </Flex>
           </Box>
+        </Flex>
+
+        {/* Block section under Hero */}
+        <Box width={"100%"} height={"220px"}>
+          <Flex
+            align={{ base: "center", sm: "flex-start", md: "center" }}
+            justify={{ base: "center", sm: "flex-start", md: "space-between" }}
+          >
+            <Box
+              bgColor={"D9D9D9"}
+              width={"50%"}
+              height={"22vh"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              justifyItems={"center"}
+            >
+              <Text
+                fontFamily={workSansFontFamily}
+                fontWeight={600}
+                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
+                color={"#1E1E1E"}
+                letterSpacing={"0.09rem"}
+                textAlign={"center"}
+              >
+                Celebrating culture, community, and creativity.
+              </Text>
+            </Box>
+
+            <Box
+              bgColor={"#0f0f0f"}
+              width={"50%"}
+              height={"22vh"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              justifyItems={"center"}
+            >
+              <Text
+                fontFamily={workSansFontFamily}
+                fontWeight={600}
+                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
+                color={"#fff"}
+                letterSpacing={"0.09rem"}
+                textAlign={"center"}
+              >
+                Read About Us
+              </Text>
+            </Box>
+          </Flex>
         </Box>
-      </Center>
+      </Box>
+
+      <Box
+        minHeight={{ base: "77dvh", sm: "90dvh", md: "70dvh", lg: "100dvh" }}
+        sx={{
+          "@media screen and (max-height: 550px)": {
+            minHeight: "110vh",
+          },
+        }}
+      >
+        {/* Black Middle Line */}
+        <Box
+          position={"relative"}
+          bottom={{ base: 3, sm: 0, md: 0, lg: "1.2rem", "2xl": 1.5 }}
+          sx={{
+            "@media screen and (max-height: 550px)": {
+              bottom: "5.6rem",
+            },
+          }}
+          width={"100%"}
+          border="1px solid #0f0f0f"
+        >
+          {" "}
+        </Box>
+
+        {/* About us Block + Image */}
+        <Center>
+          <Box
+            w={{ base: "95%", sm: "90%", md: "90%", "2xl": "77%" }}
+            position={"relative"}
+            top={{ base: "2rem", sm: "3.5rem", md: "8rem" }}
+            sx={{
+              "@media screen and (max-height: 550px)": {
+                top: "-2rem",
+              },
+            }}
+          >
+            <Box
+              backgroundColor={"#0f0f0f"}
+              borderRadius={"12px"}
+              padding={{ base: "0.6rem", md: "3rem" }}
+              color="rgba(213, 209, 191, 1)"
+            >
+              <Flex
+                direction={{ base: "column", md: "row" }}
+                align={"center"}
+                alignItems={"center"}
+                justifyContent={"space-between"}
+                wrap={"wrap"}
+              >
+                <Text
+                  fontSize={{ base: "0.6rem", sm: "16px", md: "sm" }}
+                  padding={{
+                    base: "32px",
+                    sm: "24px",
+                    md: "1rem",
+                    "2xl": "0rem",
+                  }}
+                  maxWidth={{ base: "80%", sm: "100%", md: "40%" }}
+                  flex="1"
+                  fontFamily={workSansFontFamily}
+                  fontWeight={workSansWeight.light}
+                  lineHeight={{ base: "1.7", sm: "1.7", md: "1.7" }}
+                  mb={{ base: "0", sm: "1rem", md: 0 }}
+                  color={"rgba(213, 209, 191, 1"}
+                >
+                  <Typewriter text={subHeader} delay={30} />
+                </Text>
+                <Image
+                  src={aboutUsImg}
+                  w={{ base: "100%", md: "50%", "2xl": "50%" }}
+                  h={{ base: "auto", md: "auto" }}
+                  padding={{ base: "0.5rem", sm: "1rem", md: 0 }}
+                  marginBottom={{ base: "1rem", md: "0" }}
+                />
+              </Flex>
+            </Box>
+          </Box>
+        </Center>
+      </Box>
     </Box>
   );
 };

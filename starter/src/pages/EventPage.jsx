@@ -25,6 +25,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  CardBody,
 } from "@chakra-ui/react";
 import DataContext from "../components/Root";
 
@@ -129,10 +130,9 @@ export const EventPage = () => {
       }
     }
   };
-
-  //FONT ORBITRON
-  const orbitronFontFamily = "Orbitron, sans-serif";
-  const orbitronWeight = {
+  //FONT BEBAS
+  const bebasNeueFontFamily = "Bebas Neue, sans-serif";
+  const bebasNeuenWeight = {
     fontWeights: {
       normal: 400,
       medium: 600,
@@ -141,347 +141,434 @@ export const EventPage = () => {
     },
   };
 
-  //FONT ROBOTO SLAB
-  const robotoSlabFont = "Roboto Slab, serif";
-  const robotoSlabWeight = {
-    fontWeight: {
-      thin: 100,
-      extraLight: 200,
-      light: 300,
-      regular: 400,
-      medium: 500,
+  //FONT WorkSans
+  const workSansFontFamily = "Work Sans, sans-serif";
+  const workSansWeight = {
+    fontWeights: {
+      normal: 400,
+      medium: 600,
+      semibold: 700,
+      bold: 900,
     },
   };
 
+  const eventHero = "/img/event-page-hero3.png";
+
   return (
-    <Box bgColor="rgba(213, 209, 191, 0.8)" minH="100vh" paddingTop={"100px"}>
-      <Heading
-        color="#0f0f0f"
-        fontSize={{
-          base: "24px",
-          sm: "30px",
-          md: "40px",
-          "2xl": "60px",
-        }}
-        lineHeight={"1.2"}
-        mb={{ base: 0, sm: "2rem", md: 0 }}
-        position={"relative"}
-        top={{ base: "-4rem", md: "-3rem", "2xl": "-4rem" }}
-        left={{ base: "1.2rem", sm: "1rem", md: "5.5rem", "2xl": "8%" }}
-        fontFamily={orbitronFontFamily}
-        fontWeight={orbitronWeight.semibold}
-        maxW={{
-          base: "60%",
-          sm: "300px",
-          md: "400px",
-          "2xl": "500px",
-        }}
-      >
-        <Typewriter text={header} delay={100} />
-      </Heading>
-      {/* Event Header / Top Line */}
-      <Box
-        display={"flex"}
-        justifyContent={{ base: "center", sm: "center", md: "flex-end" }}
-        position={"relative"}
-        top={{ base: "-2.5rem", sm: "-4rem", md: "-1rem", "2xl": "-2.5rem" }}
-        mb={{ base: "0", sm: "0", md: "0", "2xl": "2rem" }}
-        bgColor={"#0f0f0f"}
-        width={"100%"}
-      >
-        <Text
-          color={"#d5d1bf"}
-          w={{ base: "30%", sm: "15%", md: "20%", "2xl": "19%" }}
-          fontSize={{
-            base: "16px",
-            sm: "20px",
-            md: "25px",
-          }}
-          fontFamily={orbitronFontFamily}
-          fontWeight={orbitronWeight.semibold}
-        >
-          {event.title}
-        </Text>
-      </Box>
-
-      {/* Botton Section */}
-      <Flex
-        justify={{ base: "center", sm: "center", md: "flex-end" }}
-        direction={{ base: "column", sm: "column", md: "row" }}
-        p={{ base: 3, sm: 8 }}
-      >
-        <Box
-          mb={{ base: "2rem", sm: 0, md: "0" }}
-          position="relative"
-          top={{ base: "-1.5rem", sm: 0, md: "-0.5rem", "2xl": "-2rem" }}
-          right={{ base: 1, sm: 0, md: "2rem", "2xl": "8rem" }}
-        >
-          {/* Edit Event Button to open modal*/}
-          <Button
-            onClick={openModal}
-            w={"50%"}
-            bgColor={"rgba(213, 209, 191, 0.5)"}
-            border={"1px solid #0f0f0f"}
-            color={"#051622"}
-            position={"relative"}
-            left={{ base: 0, sm: "0.1rem", md: "0.7rem" }}
-            mb={4}
-            fontSize={{ base: "0.7rem", sm: "0.8rem", md: "0.7rem" }}
-            _hover={{
-              bgColor: "#0f0f0f",
-              color: "#c50d34",
-            }}
-            fontFamily={orbitronFontFamily}
-            fontWeight={orbitronWeight.medium}
-          >
-            Edit Event
-          </Button>
-
-          {/* Modal Form */}
-          <Modal isOpen={isModalOpen} onClose={closeModal}>
-            <ModalOverlay />
-            <ModalContent>
-              <ModalHeader>Edit New Event</ModalHeader>
-              <ModalCloseButton />
-              <ModalBody>
-                {/* NewEvent goes here */}
-                <EditEvent
-                  isOpen={isModalOpen}
-                  onClose={closeModal}
-                  initialData={{ ...event, eventId: eventId }}
-                  //add setEvent to upload the changes on the page
-                  setEvent={setEvent}
-                  categories={categories}
-                  users={users}
-                />
-              </ModalBody>
-              <ModalFooter>
-                {/* Additional modal footer actions */}
-                <Button onClick={openModal}>Edit Event</Button>
-                <Button onClick={closeModal}>Close</Button>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
-          {/* Delete Event Button */}
-          <Button
-            onClick={() => handleDeleteClick(event.id)}
-            w={"50%"}
-            bgColor="rgba(213, 209, 191, 0.5)"
-            border="1px solid #0f0f0f"
-            color={"#c50d34"}
-            deleteEvent={deleteEvent}
-            position={"relative"}
-            left={{ base: "0.6rem", sm: "1rem", md: "2rem" }}
-            mb={4}
-            fontSize={{ base: "0.7rem", sm: "0.8rem", md: "0.7rem" }}
-            _hover={{
-              color: "#0f0f0f",
-              bgColor: "#c50d34",
-              border: "none",
-            }}
-            fontFamily={orbitronFontFamily}
-            fontWeight={orbitronWeight.medium}
-          >
-            Delete Event
-          </Button>
-        </Box>
-      </Flex>
-
-      {/* event box */}
-      <Flex
-        display={"flex"}
-        justifyContent={"center"}
-        alignContent={"center"}
-        w={{ base: "100%", sm: "85%", md: "75%", "2xl": "100%" }}
-        flexWrap="wrap"
-        flexDir="column"
-      >
-        <Box
-          justifyContent={"center"}
-          align={"center"}
-          p={2.5}
-          border="1px solid #0f0f0f"
-          bgColor={"rgba(213, 209, 191, 0.8)"}
-          w={{ base: "95%", sm: "100%", md: "100%", lg: "80%", " 2xl": "100%" }}
-          h={"auto"}
-          borderRadius={"md"}
-          position={"relative"}
-          left={{ base: 0, sm: "8%", md: 0, lg: 0, "2xl": 0 }}
-          top={{ base: "-1rem", sm: "3rem", md: 0, "2xl": 0 }}
-          mb={{ base: "5rem", md: "10rem" }}
+    <Box
+      bgColor="#D9D9D9"
+      color="#d5d1bf"
+      minW={"100%"}
+      maxW={"100%"}
+      width={"100%"}
+    >
+      <Box minHeight={"100dvh"}>
+        <Flex
+          align={{ base: "center", md: "flex-start" }}
+          direction={{ base: "column", md: "row" }}
         >
           <Box
-            bgColor={"#0f0f0f"}
-            borderRadius={"md"}
-            padding={{ base: "1rem", sm: "0.7rem", md: "3rem" }}
+            as="section"
+            position={"relative"}
+            width={"100%"}
+            height={{ base: "79vh", sm: "78vh", lg: "78vh", "2xl": "80vh" }}
+            pt={0}
+            zIndex={0}
           >
-            {/* Event image */}
-
             <Image
-              src={event.image}
-              alt={event.title}
+              src={eventHero}
+              alt="Hero Background Image"
               objectFit={"cover"}
-              borderRadius={"12px"}
-              mb={4}
-              w={{
-                base: "100%",
-                sm: "90%",
-                md: "90%",
-              }}
-              h={{
-                base: "15%",
-                sm: "11rem",
-                md: "12rem",
-                lg: "13rem",
-                "2xl": "16rem",
-              }}
+              width={"100%"}
+              height={"100%"}
+              position="absolute"
+              top="0"
+              left={"0"}
+              zIndex={1}
             />
-
-            {/* Artist Lineup */}
-            <Text
-              fontSize={{
-                base: "16px",
-                sm: "18px",
-                md: "18px",
-                "2xl": "20pxs",
+            <Flex
+              flexDir={"column"}
+              flexWrap={"wrap"}
+              textAlign={"center"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              position={"relative"}
+              height={"100%"}
+              pt={{
+                base: "5rem",
+                sm: "6rem",
+                md: "0",
+                lg: "0rem",
+                "2xl": "6rem",
               }}
-              bgGradient="linear(to-br, #00ffbc, #0ee399)"
-              bgClip={"text"}
-              paddingBottom={"0.8rem"}
-              fontFamily={orbitronFontFamily}
-              fontWeight={orbitronWeight.medium}
-              letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
+              zIndex={2}
             >
-              Artists:
-            </Text>
-            <Text
-              fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
-              letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-              fontFamily={robotoSlabFont}
-              fontWeight={robotoSlabWeight.thin}
-              paddingLeft={"2rem"}
-              color="rgba(213, 209, 191, 1)"
-              paddingBottom={"1rem"}
-            >
-              {event.lineup}
-            </Text>
-
-            {/* Location */}
-            <Text
-              fontSize={{
-                base: "16px",
-                sm: "18px",
-                md: "18px",
-                "2xl": "20pxs",
-              }}
-              fontFamily={orbitronFontFamily}
-              fontWeight={orbitronWeight.medium}
-              bgGradient="linear(to-br, #00ffbc, #0ee399)"
-              bgClip={"text"}
-              mt={{ base: "1.5px", md: "3px" }}
-              letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
-            >
-              Location
-            </Text>
-            <Text
-              fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
-              letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-              fontFamily={robotoSlabFont}
-              fontWeight={robotoSlabWeight.thin}
-              color="rgba(213, 209, 191, 1)"
-            >
-              {event.location}
-            </Text>
-
-            {/* Start Time and End Time */}
-            <Grid
-              templateColumns={{ base: "1fr", md: "1fr 1fr" }}
-              gap={8}
-              mt={4}
-              marginTop={"2.5rem"}
-            >
-              <Box>
+              <Heading
+                maxW={"100%"}
+                mx="auto"
+                textAlign={"center"}
+                fontFamily={bebasNeueFontFamily}
+                fontWeight={400}
+                fontSize={{
+                  base: "48px",
+                  sm: "80px",
+                  md: "100px",
+                  lg: "120px",
+                  "2xl": "160px",
+                }}
+                letterSpacing={{ base: "0.4rem", md: "0.4rem" }}
+                color={"#FFE054"}
+                mb={{
+                  base: "2rem",
+                  sm: "2rem",
+                  lg: "0.5rem",
+                  "2xl": "0",
+                }}
+              >
+                {event.title}
+              </Heading>
+              <Box w={"100%"}>
                 <Text
+                  color={"#D9D9D9"}
+                  fontFamily={workSansFontFamily}
+                  fontWeight={600}
                   fontSize={{
-                    base: "16px",
-                    sm: "18px",
-                    md: "18px",
-                    "2xl": "20pxs",
+                    base: "20px",
+                    sm: "25px",
+                    md: "32px",
+                    "2xl": "32px",
                   }}
-                  fontFamily={orbitronFontFamily}
-                  fontWeight={orbitronWeight.medium}
-                  color={"#ff005f"}
-                  letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
                 >
-                  Start Time:
-                </Text>
-                <Text
-                  fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
-                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                  fontFamily={robotoSlabFont}
-                  fontWeight={robotoSlabWeight.thin}
-                  color="rgba(213, 209, 191, 1)"
-                >
-                  {event.startTime}
-                </Text>
-
-                <Text
-                  fontSize={{
-                    base: "16px",
-                    sm: "18px",
-                    md: "18px",
-                    "2xl": "20pxs",
-                  }}
-                  // paddingTop={"0.5rem"}
-                  fontFamily={orbitronFontFamily}
-                  fontWeight={orbitronWeight.medium}
-                  color={"#ff005f"}
-                  mt={{ base: "5px", md: "10px" }}
-                  letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
-                >
-                  End Time:
-                </Text>
-                <Text
-                  fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
-                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                  fontFamily={robotoSlabFont}
-                  fontWeight={robotoSlabWeight.thin}
-                  color="rgba(213, 209, 191, 1)"
-                >
-                  {event.endTime}
+                  {event.description}
                 </Text>
               </Box>
+            </Flex>
+          </Box>
+        </Flex>
 
-              {/* Render UserPage/creator */}
-              <Flex
-                display={"flex"}
-                justifyContent="center"
-                w={"100%"}
-                direction={"column"}
-                alignItems={"center"}
-                position={"relative"}
-                mb={{ base: "1rem", md: "1rem" }}
+        {/* Block section under Hero */}
+        <Box width={"100%"} height={"220px"}>
+          <Flex
+            align={{ base: "center", sm: "flex-start", md: "center" }}
+            justify={{ base: "center", sm: "flex-start", md: "space-between" }}
+          >
+            <Box
+              bgColor={"D9D9D9"}
+              width={"50%"}
+              height={"22vh"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              justifyItems={"center"}
+            >
+              <Text
+                fontFamily={workSansFontFamily}
+                fontWeight={600}
+                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
+                color={"#1E1E1E"}
+                letterSpacing={"0.09rem"}
+                textAlign={"center"}
               >
-                <Text
+                Celebrating culture, community, and creativity.
+              </Text>
+            </Box>
+
+            <Box
+              bgColor={"#0f0f0f"}
+              width={"50%"}
+              height={"22vh"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              justifyItems={"center"}
+            >
+              <Text
+                fontFamily={workSansFontFamily}
+                fontWeight={600}
+                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
+                color={"#fff"}
+                letterSpacing={"0.09rem"}
+                textAlign={"center"}
+                px={{ base: "2px", sm: 0 }}
+              >
+                Scroll down to view, edit or delete event.
+              </Text>
+            </Box>
+          </Flex>
+        </Box>
+      </Box>
+
+      {/* 2nd Section */}
+      <Box
+        minHeight={{ base: "77dvh", sm: "90dvh", md: "70dvh", lg: "100dvh" }}
+        sx={{
+          "@media screen and (max-height: 550px)": {
+            minHeight: "110vh",
+          },
+        }}
+      >
+        {/* Black Middle Line */}
+        <Box
+          position={"relative"}
+          bottom={{ base: 3, sm: 0, md: 0, lg: "1.2rem", "2xl": 1.5 }}
+          sx={{
+            "@media screen and (max-height: 550px)": {
+              bottom: "5.6rem",
+            },
+          }}
+          width={"100%"}
+          border="1px solid #0f0f0f"
+        >
+          {" "}
+        </Box>
+
+        <Flex width={"100%"} justifyContent={"center"} mt={"2rem"}>
+          <Text
+            width={{ base: "100%", sm: "50%" }}
+            textAlign={"center"}
+            fontSize={{
+              base: "18px",
+              sm: "22px",
+              md: "18px",
+              lg: "20px",
+              "2xl": "22px",
+            }}
+            fontFamily={bebasNeueFontFamily}
+            letterSpacing={"0.1rem"}
+            color="#0f0f0f"
+            mt={6}
+            sx={{
+              "@media screen and (max-height: 550px)": {
+                mt: -20,
+              },
+            }}
+            mb={"5rem"}
+            px={4}
+          >
+            You're viewing details for a selected event. Below you'll find all
+            the important information including dates, location, and the event
+            organizer.
+          </Text>
+        </Flex>
+
+        {/* event box & Buttons */}
+        <Box
+          display={"flex"}
+          flexDir={{ base: "column", lg: "row" }}
+          sx={{
+            "@media screen and (max-height: 550px)": {
+              flexDir: "row",
+              mb: "2rem",
+              mt: -8,
+            },
+          }}
+          justifyContent={{ base: "center", lg: "space-between" }}
+          alignItems={"center"}
+          textAlign={"center"}
+          pl={{ base: 0, lg: "8%", "2xl": "25%" }}
+          pr={{ base: 0, lg: "8%", "2xl": "25%" }}
+          w={"100%"}
+          h={"auto"}
+          mb={{ base: "5rem", md: "10rem", "2xl": "5rem" }}
+        >
+          {/* event box */}
+          <Flex
+            flexDirection={"column"}
+            justifyContent={"center"}
+            align={"center"}
+            width={{ base: "100%", sm: "85%", md: "100%", "2xl": "100%" }}
+            maxW={{ base: "100%", sm: "100%", lg: "50%", "2xl": "45%" }}
+            sx={{
+              "@media screen and (max-height: 550px)": {
+                maxWidth: "40%",
+              },
+            }}
+            flexWrap="wrap"
+          >
+            <Box
+              bgColor={"#0f0f0f"}
+              borderRadius={"14px"}
+              padding={{
+                base: "1rem",
+                sm: "1rem",
+                md: "3rem",
+                lg: "3rem",
+                "2xl": "1.5rem",
+              }}
+              sx={{
+                "@media screen and (max-height: 550px)": {
+                  padding: "0.8rem",
+                },
+              }}
+            >
+              {/* Event image */}
+
+              <Image
+                src={event.image}
+                alt={event.title}
+                objectFit={"cover"}
+                borderRadius={"12px"}
+                mb={4}
+                w={"100%"}
+                h={{
+                  base: "15%",
+                  sm: "15rem",
+                  md: "17rem",
+                  lg: "15rem",
+                  "2xl": "10rem",
+                }}
+                sx={{
+                  "@media screen and (max-height: 550px)": {
+                    h: "12rem",
+                  },
+                }}
+              />
+
+              {/* Artist Lineup */}
+              <Text
+                fontSize={{
+                  base: "16px",
+                  sm: "18px",
+                  md: "18px",
+                  "2xl": "20pxs",
+                }}
+                bgGradient="linear(to-br, #00ffbc, #0ee399)"
+                bgClip={"text"}
+                paddingBottom={"0.8rem"}
+                fontFamily={bebasNeueFontFamily}
+                fontWeight={bebasNeuenWeight.medium}
+                letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
+              >
+                Artists:
+              </Text>
+              <Text
+                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+                letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                fontFamily={workSansFontFamily}
+                fontWeight={workSansWeight.thin}
+                paddingLeft={"2rem"}
+                color="rgba(213, 209, 191, 1)"
+                paddingBottom={"1rem"}
+              >
+                {event.lineup}
+              </Text>
+
+              {/* Location */}
+              <Text
+                fontSize={{
+                  base: "16px",
+                  sm: "18px",
+                  md: "18px",
+                  "2xl": "20pxs",
+                }}
+                fontFamily={bebasNeueFontFamily}
+                fontWeight={bebasNeuenWeight.medium}
+                bgGradient="linear(to-br, #00ffbc, #0ee399)"
+                bgClip={"text"}
+                mt={{ base: "1.5px", md: "3px" }}
+                letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
+              >
+                Location
+              </Text>
+              <Text
+                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+                letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                fontFamily={workSansFontFamily}
+                fontWeight={workSansWeight.thin}
+                color="rgba(213, 209, 191, 1)"
+              >
+                {event.location}
+              </Text>
+
+              {/* Start Time and End Time */}
+              <Grid
+                templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+                gap={8}
+                mt={4}
+                marginTop={"2.5rem"}
+              >
+                <Box>
+                  <Text
+                    fontSize={{
+                      base: "16px",
+                      sm: "18px",
+                      md: "18px",
+                      "2xl": "20pxs",
+                    }}
+                    fontFamily={bebasNeueFontFamily}
+                    fontWeight={bebasNeuenWeight.medium}
+                    color={"#ff005f"}
+                    letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
+                  >
+                    Start Time:
+                  </Text>
+                  <Text
+                    fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+                    letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                    fontFamily={workSansFontFamily}
+                    fontWeight={workSansWeight.thin}
+                    color="rgba(213, 209, 191, 1)"
+                  >
+                    {event.startTime}
+                  </Text>
+
+                  <Text
+                    fontSize={{
+                      base: "16px",
+                      sm: "18px",
+                      md: "18px",
+                      "2xl": "20pxs",
+                    }}
+                    // paddingTop={"0.5rem"}
+                    fontFamily={bebasNeueFontFamily}
+                    fontWeight={bebasNeuenWeight.thin}
+                    color={"#ff005f"}
+                    mt={{ base: "5px", md: "10px" }}
+                    letterSpacing={{ base: "0.05rem", md: "0.12rem" }}
+                  >
+                    End Time:
+                  </Text>
+                  <Text
+                    fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+                    letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                    fontFamily={bebasNeueFontFamily}
+                    fontWeight={bebasNeuenWeight.thin}
+                    color="rgba(213, 209, 191, 1)"
+                  >
+                    {event.endTime}
+                  </Text>
+                </Box>
+
+                {/* Render UserPage/creator */}
+                <Flex
+                  display={"flex"}
+                  justifyContent="center"
                   w={"100%"}
-                  color="rgba(213, 209, 191, 1)"
-                  fontWeight={"bold"}
-                  fontSize={{
-                    base: "16px",
-                    sm: "18px",
-                    md: "18px",
-                    "2xl": "20pxs",
-                  }}
-                  marginBottom={2}
+                  direction={"column"}
+                  alignItems={"center"}
                   position={"relative"}
-                  fontFamily={orbitronFontFamily}
-                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                  mb={{ base: "1rem", md: "1rem" }}
                 >
-                  Event Creator
-                </Text>
-                {/* <UserPage userId={event.createdBy} /> */}
-                {/* testing */}
-                {/* <Image
+                  <Text
+                    w={"100%"}
+                    color="rgba(213, 209, 191, 1)"
+                    fontWeight={"bold"}
+                    fontSize={{
+                      base: "16px",
+                      sm: "18px",
+                      md: "18px",
+                      "2xl": "20pxs",
+                    }}
+                    marginBottom={2}
+                    position={"relative"}
+                    fontFamily={bebasNeueFontFamily}
+                    letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                  >
+                    Event Creator
+                  </Text>
+                  {/* <UserPage userId={event.createdBy} /> */}
+                  {/* testing */}
+                  {/* <Image
                     src={event.createdBy.image}
                     alt={event.createdBy.name}
                     borderRadius={"full"}
@@ -489,86 +576,247 @@ export const EventPage = () => {
                     mt={4}
                   />
                   <Text>{event.createdBy.name}</Text> */}
-                {creator && (
-                  <Box
-                    fontFamily={orbitronFontFamily}
-                    fontWeight={"medium"}
-                    fontSize={{ base: "0.9rem", sm: "0.7rem", md: "0.7rem" }}
-                    letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                    color="rgba(213, 209, 191, 1)"
-                  >
-                    <Image
-                      src={creator.image}
-                      alt={creator.name}
-                      objectFit={"cover"}
-                      w={{ base: "3rem", md: "5rem" }}
-                      h={{ base: "3rem", md: "5rem" }}
-                      borderRadius={"full"}
-                      boxSize={"100px"}
-                      mt={2}
-                      position={"relative"}
-                    />
-                    <Text
-                      fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
-                      mt={3}
-                      mb={6}
-                      position={"relative"}
+                  {creator && (
+                    <Box
+                      fontFamily={bebasNeueFontFamily}
+                      fontWeight={"medium"}
+                      fontSize={{ base: "0.9rem", sm: "0.7rem", md: "0.7rem" }}
+                      letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                      color="rgba(213, 209, 191, 1)"
                     >
-                      {creator.name}
-                    </Text>
-                  </Box>
-                )}
-              </Flex>
-            </Grid>
-
-            {/* Description */}
-            <Center>
-              <Text
-                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
-                letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                color={"yellow.300"}
-                mb={"0.5rem"}
-                fontFamily={orbitronFontFamily}
-                fontWeight={orbitronWeight.medium}
-              >
-                {event.description}
-              </Text>
-            </Center>
-
-            {/* //categories */}
-            <Center>
-              <Stack direction={"row"} mt={2}>
-                {/* checks  if it is indeed an array */}
-                {Array.isArray(event.categoryIds) ? (
-                  event.categoryIds.map((categoryId) => {
-                    const category = categories.find(
-                      (category) => category.id === categoryId
-                    );
-
-                    if (!category) return null;
-
-                    return (
+                      <Image
+                        src={creator.image}
+                        alt={creator.name}
+                        objectFit={"cover"}
+                        w={{ base: "3rem", md: "5rem" }}
+                        h={{ base: "3rem", md: "5rem" }}
+                        borderRadius={"full"}
+                        boxSize={"100px"}
+                        mt={2}
+                        position={"relative"}
+                      />
                       <Text
-                        key={category.id}
-                        color="#ff005f"
-                        fontSize={{ base: "0.7rem", md: "14px" }}
-                        letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
-                        mr={2}
-                        fontFamily={orbitronFontFamily}
-                        fontWeight={orbitronWeight.light}
+                        fontSize={{
+                          base: "0.6rem",
+                          sm: "0.7rem",
+                          md: "0.7rem",
+                        }}
+                        mt={3}
+                        mb={6}
+                        position={"relative"}
                       >
-                        {category.name}
+                        {creator.name}
                       </Text>
-                    );
-                  })
-                ) : (
-                  <Text>No categories available</Text>
-                )}
-              </Stack>
-            </Center>
+                    </Box>
+                  )}
+                </Flex>
+              </Grid>
+
+              {/* Description */}
+              <Center>
+                <Text
+                  fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
+                  letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                  color={"yellow.300"}
+                  mb={"0.5rem"}
+                  fontFamily={bebasNeueFontFamily}
+                  fontWeight={bebasNeuenWeight.medium}
+                >
+                  {event.description}
+                </Text>
+              </Center>
+
+              {/* //categories */}
+              <Center>
+                <Stack direction={"row"} mt={2}>
+                  {/* checks  if it is indeed an array */}
+                  {Array.isArray(event.categoryIds) ? (
+                    event.categoryIds.map((categoryId) => {
+                      const category = categories.find(
+                        (category) => category.id === categoryId
+                      );
+
+                      if (!category) return null;
+
+                      return (
+                        <Text
+                          key={category.id}
+                          color="#ff005f"
+                          fontSize={{ base: "0.7rem", md: "14px" }}
+                          letterSpacing={{ base: "0.05rem", md: "0.06rem" }}
+                          mr={2}
+                          fontFamily={bebasNeueFontFamily}
+                          fontWeight={bebasNeuenWeight.light}
+                        >
+                          {category.name}
+                        </Text>
+                      );
+                    })
+                  ) : (
+                    <Text>No categories available</Text>
+                  )}
+                </Stack>
+              </Center>
+            </Box>
+          </Flex>
+
+          {/* Botton Section */}
+          <Box
+            mt={{ base: "2rem", md: 0 }}
+            mb={{ base: "2rem", sm: 0, md: "0" }}
+            display={"flex"}
+            justifyContent={"center"}
+          >
+            <Flex
+              justify={{ base: "center", sm: "center", md: "space-between" }}
+              direction={{ base: "column", sm: "column", md: "column" }}
+              p={{ base: 3, sm: 8 }}
+            >
+              {/* Edit Event Button to open modal*/}
+              <Box borderBottom={"1px solid #0f0f0f"} p={"4%"}>
+                <Text
+                  color={"#0f0f0f"}
+                  fontFamily={workSansFontFamily}
+                  fontWeight={400}
+                  letterSpacing={1}
+                  fontSize={{
+                    base: "0.7rem",
+                    sm: "0.8rem",
+                    md: "0.7rem",
+                    lg: "0.7rem",
+                    "2xl": "0.9rem",
+                  }}
+                >
+                  {" "}
+                  Want to make changes to your event? <br></br>Use the Edit
+                  button
+                </Text>
+                <Button
+                  onClick={openModal}
+                  bgColor={"#FFE054"}
+                  border={"1px solid #0f0f0f"}
+                  color={"#0f0f0f"}
+                  mt={"2rem"}
+                  px={"55px"}
+                  letterSpacing={1.5}
+                  fontSize={{
+                    base: "0.7rem",
+                    sm: "0.8rem",
+                    md: "0.7rem",
+                    lg: "0.7rem",
+                    "2xl": "0.9rem",
+                  }}
+                  _hover={{
+                    bgColor: "#0f0f0f",
+                    color: "#c50d34",
+                  }}
+                  fontFamily={bebasNeueFontFamily}
+                  fontWeight={400}
+                >
+                  Edit Event
+                </Button>
+
+                {/* Modal Form */}
+                <Modal isOpen={isModalOpen} onClose={closeModal}>
+                  <ModalOverlay />
+                  <ModalContent>
+                    <ModalHeader>Edit New Event</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                      {/* NewEvent goes here */}
+                      <EditEvent
+                        isOpen={isModalOpen}
+                        onClose={closeModal}
+                        initialData={{ ...event, eventId: eventId }}
+                        //add setEvent to upload the changes on the page
+                        setEvent={setEvent}
+                        categories={categories}
+                        users={users}
+                      />
+                    </ModalBody>
+                    <ModalFooter>
+                      {/* Additional modal footer actions */}
+                      <Button onClick={openModal}>Edit Event</Button>
+                      <Button onClick={closeModal}>Close</Button>
+                    </ModalFooter>
+                  </ModalContent>
+                </Modal>
+              </Box>
+
+              {/* Delete Event Button */}
+              <Box borderBottom={"1px solid #0f0f0f"} p={"4%"}>
+                <Text
+                  color={"#0f0f0f"}
+                  fontFamily={workSansFontFamily}
+                  fontWeight={400}
+                  letterSpacing={1}
+                  fontSize={{
+                    base: "0.7rem",
+                    sm: "0.8rem",
+                    md: "0.7rem",
+                    lg: "0.7rem",
+                    "2xl": "0.9rem",
+                  }}
+                >
+                  {" "}
+                  Want to make delete to your event? <br></br>Use the Delete
+                  button
+                </Text>
+                <Button
+                  onClick={() => handleDeleteClick(event.id)}
+                  bgColor="#D9D9D9"
+                  border="1px solid #0f0f0f"
+                  color={"#c50d34"}
+                  deleteEvent={deleteEvent}
+                  px={"55px"}
+                  mt={"2rem"}
+                  fontSize={{
+                    base: "0.7rem",
+                    sm: "0.8rem",
+                    md: "0.7rem",
+                    lg: "0.7rem",
+                    "2xl": "0.9rem",
+                  }}
+                  letterSpacing={1.5}
+                  _hover={{
+                    color: "#0f0f0f",
+                    bgColor: "#c50d34",
+                    border: "none",
+                  }}
+                  fontFamily={bebasNeueFontFamily}
+                  fontWeight={400}
+                >
+                  Delete Event
+                </Button>
+              </Box>
+            </Flex>
           </Box>
         </Box>
-      </Flex>
+      </Box>
+
+      <Box
+        display={"flex"}
+        justifyContent={{ base: "center", md: "left" }}
+        pl={{ base: 0, md: "2rem" }}
+      >
+        <Button
+          mt={{ base: 10, "2xl": 0 }}
+          mb={{ base: 0, "2xl": 10 }}
+          fontFamily={workSansFontFamily}
+          fontWeight={600}
+          fontSize={{ base: "18px", sm: "20px" }}
+          sx={{
+            "@media screen and (max-height: 550px)": {
+              fontSize: "16px",
+            },
+          }}
+          variant="ghost"
+          onClick={() => navigate("/")}
+          border={"1px solid #0f0f0f"}
+        >
+          ← Back to All Events
+        </Button>
+      </Box>
     </Box>
   );
 };

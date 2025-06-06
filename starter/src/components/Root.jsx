@@ -12,7 +12,7 @@ const DataContext = createContext();
 //manage and provide data
 export const Root = ({ initialEvents, children }) => {
   const subHeaderText =
-    "The Front-end of this application has been deployed with some limitations in order to avoid modification to existing data, events can not be modified or deleted.  Lastly, please keep in mind the server will take a couple of minutes to fully load all items on the page.";
+    "An event management system. Users can search for events by location, name, or category and connect with event organizers via a contact form. Additionally, event organizers have access to an intuitive set of tools to manage their events, including functionality to create, edit, and delete events. [ Items fetched from the databse will take a minute to load ]";
 
   const [eventsData, setEventsData] = useState([]);
   const [categories, setCategories] = useState([]);

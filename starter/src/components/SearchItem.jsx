@@ -13,11 +13,14 @@ export const SearchItem = ({ handleFilteredEvents }) => {
         placeholder="Name, Location or Category"
         fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.7rem" }}
         color={"0f0f0f"}
-        mb={"3rem"}
-        position={"relative"}
-        right={{ base: "25%", sm: "5%", md: "4%", "2xl": "4%" }}
-        w={{ base: "12rem", sm: "15rem", md: "20rem" }}
-        h={{ base: "40px", md: "50px" }}
+        width={{
+          base: "15rem",
+          sm: "25rem",
+          md: "35rem",
+          lg: "45rem",
+          "2xl": "75rem",
+        }}
+        height={{ base: "40px", md: "50px" }}
         onChange={handleChange}
       />
     </div>

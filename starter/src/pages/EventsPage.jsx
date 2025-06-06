@@ -18,6 +18,7 @@ import {
   ModalBody,
   ModalCloseButton,
   Button,
+  Image,
 } from "@chakra-ui/react";
 
 export const EventsPage = () => {
@@ -32,8 +33,8 @@ export const EventsPage = () => {
   } = useContext(DataContext);
 
   //FONT ORBITRON
-  const orbitronFontFamily = "Orbitron, sans-serif";
-  const orbitronWeight = {
+  const bebasNeueFontFamily = "Bebas Neue, sans-serif";
+  const bebasNeuenWeight = {
     fontWeights: {
       normal: 400,
       medium: 600,
@@ -42,9 +43,18 @@ export const EventsPage = () => {
     },
   };
 
-  //video
-  const videoLeft = "/video/tension_release_square_XM.mp4";
-  const videoRight = "/video/forEvents.mp4";
+  const workSansFontFamily = "Work Sans, sans-serif";
+  const workSansWeight = {
+    fontWeights: {
+      normal: 400,
+      medium: 600,
+      semibold: 700,
+      bold: 900,
+    },
+  };
+
+  //Hero Image
+  const heroImage = "/img/HeroImage.png";
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -70,198 +80,417 @@ export const EventsPage = () => {
   return (
     <>
       <Box
-        bgColor="rgba(213, 209, 191, 0.8)"
-        color="#0f0f0f"
+        bgColor="#D9D9D9"
+        color="#1E1E1E"
         minH={{
-          base: "410vh",
-          sm: "410vh",
-          md: "390vh",
+          base: "390vh",
+          sm: "350vh",
+          md: "300vh",
           lg: "320vh",
           "2xl": "360vh",
+        }}
+        sx={{
+          "@media screen and (max-height: 550px)": {
+            minH: "650vh",
+          },
         }}
         minW={"100%"}
         maxW={"100%"}
       >
         <Flex
-          align={{ base: "center", md: "flex-start" }}
+          align={"center"}
           justify={"center"}
-          w={{ base: "100%", sm: "70%", md: "100%" }}
-          direction={{ base: "column", sm: "column", md: "row" }}
+          w={{ base: "100%", sm: "100%", md: "100%" }}
+          direction={{
+            base: "column",
+            sm: "column",
+            md: "column",
+            lg: "row",
+            "2xl": "row",
+          }}
         >
-          <Box
-            position={"relative"}
-            left={0}
-            top={{ base: "5rem", sm: "2rem", md: "2rem" }}
-          >
-            <Box
+          <Box width={"100%"} height={"auto"} mx={"auto"}>
+            <Flex
               display={"flex"}
               justifyContent="center"
               alignItems={"center"}
-              position={"relative"}
-              left={{ base: 0, sm: "20%", md: "0%", "2xl": 0 }}
-              top={{ base: 0, sm: "1rem", md: "1rem", "2xl": "3rem" }}
-              border={"1px solid #0f0f0f"}
-              borderRadius={"24px"}
-              width={{ base: "90%", sm: "75%", md: "60%", "2xl": "80%" }}
-              height={"auto"}
-              mx={"auto"}
-              py={10}
-              marginBottom={{ base: 0, sm: 0, md: 0, "2xl": "2rem" }}
+              width={"100%"}
+              flexDirection={{ base: "column", sm: "row", md: "row" }}
             >
-              <Flex
-                width={"90%"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                gap={{ base: "20px", sm: "5%", md: "4.5%", "2xl": "5%" }}
-                flexDirection={{ base: "column", sm: "row", md: "row" }}
+              <Box
+                as="section"
+                position={"relative"}
+                width={"100%"}
+                height={{ base: "79vh", sm: "78vh", lg: "78vh", "2xl": "80vh" }}
+                pt={0}
+                zIndex={0}
               >
-                <Box
-                  as="video"
-                  src={videoLeft}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  objectFit={"contain"}
-                  width={{ base: "90%", sm: "50%" }}
-                  maxWidth={"550px"}
-                  border={"1px solid #0f0f0f"}
-                  p={{ base: 3, md: 4 }} //*** */
-                  borderRadius={"14px"}
-                ></Box>
-                <Heading
-                  display={"flex"}
-                  justifyContent={"start"}
-                  align={"start"}
-                  fontFamily={orbitronFontFamily}
-                  fontWeight={orbitronWeight.bold}
-                  color={"#0f0f0f"}
-                  fontSize={{
-                    base: "24px",
-                    sm: "30px",
-                    md: "40px",
-                    "2xl": "60px",
+                <Image
+                  src={heroImage}
+                  alt="Hero Background Image"
+                  objectFit={"cover"}
+                  width={"100%"}
+                  height={"100%"}
+                  position="absolute"
+                  top="0"
+                  left={"0"}
+                  zIndex={1}
+                />
+                <Flex
+                  flexDir={"column"}
+                  flexWrap={"wrap"}
+                  textAlign={"center"}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  position={"relative"}
+                  height={"100%"}
+                  pt={{
+                    base: "5rem",
+                    sm: "6rem",
+                    md: "0",
+                    lg: "0rem",
+                    "2xl": "6rem",
                   }}
-                  lineHeight={"1.2"}
-                  maxW={{
-                    base: "70%",
-                    sm: "300px",
-                    md: "400px",
-                    "2xl": "500px",
+                  sx={{
+                    "@media screen and (max-height: 550px)": {
+                      pt: "3rem",
+                    },
                   }}
+                  zIndex={2}
                 >
-                  <Typewriter text={header} delay={100} />
-                </Heading>
-                <Box
-                  as="video"
-                  src={videoRight}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  objectFit={"scale-down"}
-                  width={{ base: "90%", sm: "50%" }}
-                  maxWidth={"550px"}
-                  border={"1px solid #0f0f0f"}
-                  p={{ base: 3, md: 4 }} //*** */
-                  borderRadius={"14px"}
-                ></Box>
-              </Flex>
-            </Box>
+                  <Heading
+                    maxW={"100%"}
+                    mx="auto"
+                    textAlign={"center"}
+                    fontFamily={bebasNeueFontFamily}
+                    fontWeight={400}
+                    fontSize={{
+                      base: "48px",
+                      sm: "80px",
+                      md: "100px",
+                      lg: "120px",
+                      "2xl": "160px",
+                    }}
+                    letterSpacing={{ base: "0.4rem", md: "0.4rem" }}
+                    color={"#FFE054"}
+                    mb={{
+                      base: "2rem",
+                      sm: "2rem",
+                      lg: "0.5rem",
+                      "2xl": "5rem",
+                    }}
+                    sx={{
+                      "@media screen and (max-height: 550px)": {
+                        mb: "0rem",
+                      },
+                    }}
+                  >
+                    {header}
+                  </Heading>
+                  {/* Sliding Text - Mid Section */}
+                  <Box w={"100%"}>
+                    <TextAnimation />
+                  </Box>
+                </Flex>
+              </Box>
+            </Flex>
           </Box>
         </Flex>
 
-        {/* Sliding Text - Mid Section */}
-        <Box
-          display={"flex"}
-          justifyContent={"center"}
-          align={"center"}
-          position={"relative"}
-          top={{ base: "3rem", sm: "1rem", md: "13rem", "2xl": "20rem" }}
-          right={{ base: 6, sm: "1.5rem", md: 0 }}
-        >
-          <TextAnimation />
-        </Box>
-        {/* Black Stripe - Events */}
-        <Box
-          display={"flex"}
-          justifyContent={{ base: "center", sm: "center", md: "flex-end" }}
-          position={"relative"}
-          top={{ base: "3rem", sm: "2.5rem", md: "13rem", "2xl": "25rem" }}
-          mb={{ base: "0", sm: "2rem", md: "2rem" }}
-          bgColor={"#0f0f0f"}
-          width={"100%"}
-        >
-          <Text
-            color={"#d5d1bf"}
-            w={{ base: "25%", sm: "20%", "2xl": "17%" }}
-            fontSize={{
-              base: "20px",
-              sm: "22px",
-              md: "25px",
-            }}
-            top={{ base: 5, sm: 20, md: 0 }}
-            fontFamily={orbitronFontFamily}
-            fontWeight={orbitronWeight.semibold}
+        {/* Block section under Hero */}
+        <Box width={"100%"} height={"220px"}>
+          <Flex
+            align={{ base: "center", sm: "flex-start", md: "center" }}
+            justify={{ base: "center", sm: "flex-start", md: "space-between" }}
           >
-            Events
-          </Text>
+            <Box
+              bgColor={"D9D9D9"}
+              width={"50%"}
+              height={"22vh"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              justifyItems={"center"}
+            >
+              <Text
+                fontFamily={workSansFontFamily}
+                fontWeight={600}
+                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
+                color={"#1E1E1E"}
+                letterSpacing={"0.09rem"}
+                textAlign={"center"}
+              >
+                Celebrating culture, community, and creativity.
+              </Text>
+            </Box>
+
+            <Box
+              bgColor={"#FFE054"}
+              width={"50%"}
+              height={"22vh"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              justifyItems={"center"}
+            >
+              <Text
+                fontFamily={workSansFontFamily}
+                fontWeight={600}
+                fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
+                color={"#1E1E1E"}
+                letterSpacing={"0.09rem"}
+                textAlign={"center"}
+              >
+                Scroll to explore
+              </Text>
+            </Box>
+          </Flex>
         </Box>
 
-        {/* Search Event Input */}
-
-        <Flex
-          align={{ base: "center", sm: "flex-start", md: "flex-start" }}
-          justify={{ base: "center", sm: "flex-start", md: "flex-start" }}
+        {/* Black Middle Line */}
+        <Box
+          position={"relative"}
+          bottom={{ base: 3, sm: -1, md: "-4rem", lg: "1.1rem", "2xl": 1 }}
+          sx={{
+            "@media screen and (max-height: 550px)": {
+              bottom: "5.5rem",
+            },
+          }}
+          width={"100%"}
+          border="1px solid #0f0f0f"
         >
-          <Box>
+          {" "}
+        </Box>
+
+        {/* Search Section */}
+        <Box width={"100%"}>
+          <Flex
+            flexDir={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
             <Text
-              fontFamily={orbitronFontFamily}
-              fontWeight={orbitronWeight.bold}
-              fontSize={{ base: "0.6rem", sm: "0.7rem", md: "0.8rem" }}
               color={"#0f0f0f"}
+              width={"100%"}
+              fontSize={{
+                base: "18px",
+                sm: "22px",
+                md: "18px",
+                lg: "20px",
+                "2xl": "22px",
+              }}
+              letterSpacing={"0.1rem"}
+              pt={{ base: 5, sm: 10, md: "6.5rem", lg: 5, "2xl": "4rem" }}
+              sx={{
+                "@media screen and (max-height: 550px)": {
+                  pt: "0rem",
+                },
+              }}
+              fontFamily={bebasNeueFontFamily}
+              fontWeight={500}
+              textAlign={"center"}
+            >
+              Search and explore upcoming exhibitions, <br></br>festivals, and
+              private gatherings.
+            </Text>
+          </Flex>
+
+          {/* Search text and imput */}
+          <Flex
+            width={"100%"}
+            mt={{ base: "5%", sm: "0", md: "2rem" }}
+            flexDir={{ base: "column", sm: "column", md: "row" }}
+            justifyContent={{
+              base: "center",
+              sm: "center",
+              md: "space-between",
+              lg: "space-between",
+              "2xl": "space-between",
+            }}
+            alignItems={"center"}
+            pl={{ base: 0, sm: 0, md: "7%", lg: "5%" }}
+            pr={{ base: 0, sm: 0, md: "8%", lg: "6%" }}
+          >
+            <Text
+              color={"#0f0f0f"}
+              width={{
+                base: "100%",
+                sm: "100%",
+                md: "20%",
+                lg: "20%",
+                "2xl": "15%",
+              }}
+              fontSize={{
+                base: "18px",
+                sm: "22px",
+                md: "24px",
+                lg: "24px",
+              }}
+              letterSpacing={"0.1rem"}
+              pt={{ base: 5, sm: 10, md: 5, lg: 20, "2xl": 30 }}
               position={"relative"}
-              left={{ base: "50%", sm: "15%", md: "20%", "2xl": "28%" }}
-              top={{ base: "170px", sm: "4rem", md: "15rem", "2xl": "500px" }}
-              letterSpacing={"0.09rem"}
+              fontFamily={bebasNeueFontFamily}
+              fontWeight={400}
+              textAlign={"center"}
             >
               Search Events:
-              <SearchItem
-                events={events}
-                handleFilteredEvents={handleFilteredEvents}
-              />
             </Text>
-          </Box>
+            <SearchItem
+              events={events}
+              handleFilteredEvents={handleFilteredEvents}
+            />
+          </Flex>
 
-          {/* Modal Form - Create Buttom*/}
-          <Box w={{ base: "100%", sm: "100%", md: "100%" }}>
+          <Flex
+            flexDir={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Text
+              color={"#0f0f0f"}
+              width={"100%"}
+              fontSize={{
+                base: "38px",
+                sm: "68px",
+                md: "80px",
+                lg: "100px",
+                "2xl": "120px",
+              }}
+              letterSpacing={"0.1rem"}
+              pt={{ base: 5, sm: 10, md: "2rem", lg: 5, "2xl": "5rem" }}
+              fontFamily={bebasNeueFontFamily}
+              fontWeight={500}
+              textAlign={"center"}
+            >
+              Popular Events
+            </Text>
+          </Flex>
+        </Box>
+
+        {/* This Flex manages the whole Cards Box */}
+        <Flex
+          align={{ base: "flex-start", md: "center" }}
+          justify={{ base: "flex-start", md: "center" }}
+          minH="100vh"
+        >
+          <Box
+            p={4}
+            h={"100%"}
+            mb={{ base: "0.5rem", sm: 0, md: "1rem" }}
+            position={"relative"}
+            top={{
+              base: "1rem",
+              sm: "0",
+              md: "0",
+              lg: "2rem",
+              "2xl": "5vh",
+            }}
+            width={"100%"}
+          >
+            {Object.keys(eventsByCategory).map((categoryId) => {
+              const category = categories.find((cat) => cat.id === categoryId);
+              const categoryEvents = eventsByCategory[categoryId];
+
+              if (categoryEvents.length === 0) return null; // If no events in this category, skip rendering
+
+              return (
+                <Box key={categoryId} mb={8}>
+                  <Heading
+                    w={{ base: "100%", sm: "45%", lg: "50%" }}
+                    position={"relative"}
+                    left={{ base: 0, sm: "5%" }}
+                    paddingTop={7}
+                    fontSize={{
+                      base: "16px",
+                      sm: "20px",
+                      md: "24px",
+                      lg: "24px",
+                      "2xl": "32px",
+                    }}
+                    mb={2}
+                    mt={1}
+                    color={"#0f0f0f"}
+                    fontFamily={bebasNeueFontFamily}
+                    fontWeight={500}
+                    letterSpacing={1.5}
+                  >
+                    {category ? category.name : "Unknown Category"}
+                  </Heading>
+
+                  {categoryEvents && categoryEvents.length > 0 && (
+                    <EventsCarousel categoryEvents={categoryEvents} />
+                  )}
+                </Box>
+              );
+            })}
+          </Box>
+        </Flex>
+
+        <Box width={"100%"}>
+          <Flex
+            flexDir={"column"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Text
+              color={"#0f0f0f"}
+              width={"100%"}
+              fontSize={{
+                base: "38px",
+                sm: "68px",
+                md: "80px",
+                lg: "100px",
+                "2xl": "120px",
+              }}
+              letterSpacing={"0.1rem"}
+              pt={{ base: "20px", sm: 10, md: "2rem", lg: 5, "2xl": 30 }}
+              fontFamily={bebasNeueFontFamily}
+              fontWeight={400}
+              textAlign={"center"}
+            >
+              Want to host your own?
+            </Text>
+
             <Button
               maxW={"100%"}
               position={"relative"}
               z-index={10}
-              left={{
-                base: "-90%",
-                sm: "50%",
-                md: "67%",
-                lg: "70%",
-                "2xl": "77.2%",
+              px={{ base: "120px", sm: "80px", md: "120px", lg: "50px" }}
+              sx={{
+                "@media screen and (max-height: 550px)": {
+                  px: "50px",
+                },
               }}
-              top={{ base: "250px", sm: "5.5rem", md: "17rem", "2xl": "545px" }}
+              py={{ base: 0, sm: 0, md: "30px", lg: "25px" }}
+              textAlign={"center"}
+              letterSpacing={{
+                base: "0.2em",
+                sm: "0.2rem",
+                md: "0.2rem",
+                lg: "0.1rem",
+              }}
+              mt={{ base: "3%", lg: "0" }}
+              mb={{ base: 0, lg: "10%" }}
+              zIndex={20}
               onClick={openModal}
-              bgColor="rgba(213, 209, 191, 0.3)"
-              border={"1px solid  #0f0f0f"}
-              color="#c50d34"
-              fontFamily={orbitronFontFamily}
-              fontWeight={orbitronWeight.medium}
-              mb={{ base: "2rem", md: "5rem" }}
-              fontSize={{ base: "0.7rem", sm: "0.7rem", md: "0.8rem" }}
+              bgColor="#FFE054"
+              border={"1px solid #0f0f0f"}
+              color="#0f0f0f"
+              fontFamily={bebasNeueFontFamily}
+              fontWeight={400}
+              fontSize={{
+                base: "0.7rem",
+                sm: "0.9rem",
+                md: "22px",
+                lg: "18px",
+              }}
               _hover={{
                 bgColor: "#0f0f0f",
-                color: "#c50d34",
+                color: "#FFE054",
               }}
             >
               {" "}
-              + Add Event
+              Create Event
             </Button>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
               <ModalOverlay />
@@ -280,70 +509,8 @@ export const EventsPage = () => {
                 </ModalBody>
               </ModalContent>
             </Modal>
-          </Box>
-        </Flex>
-
-        {/* This Flex manages the whole Cards Box */}
-        <Flex
-          align={{ base: "flex-start", md: "center" }}
-          justify={{ base: "flex-start", md: "center" }}
-          minH="100vh"
-        >
-          {/* Outside Box with Search and Cards */}
-
-          <Box
-            p={4}
-            h={"100%"}
-            mb={{ base: "-100px", sm: 0, md: "1rem" }}
-            position={"relative"}
-            top={{ base: "12rem", sm: "2.5rem", md: "12rem", "2xl": "50vh" }}
-            width={"100%"}
-          >
-            {Object.keys(eventsByCategory).map((categoryId) => {
-              const category = categories.find((cat) => cat.id === categoryId);
-              const categoryEvents = eventsByCategory[categoryId];
-
-              if (categoryEvents.length === 0) return null; // If no events in this category, skip rendering
-
-              return (
-                <Box key={categoryId} mb={8}>
-                  <Heading
-                    w={{ base: "100%", sm: "45%", lg: "50%" }}
-                    position={"relative"}
-                    left={{ base: 0, sm: "5%" }}
-                    paddingTop={7}
-                    size={{ base: "sm", sm: "sm", md: "md" }}
-                    mb={2}
-                    mt={1}
-                    color={"#0f0f0f"}
-                    fontFamily={orbitronFontFamily}
-                    fontWeight={"700"}
-                    letterSpacing={1.5}
-                  >
-                    {category ? category.name : "Unknown Category"}
-                  </Heading>
-
-                  {/* <SimpleGrid
-                      bgColor={"gray.900"}
-                      p={"30px"}
-                      columns={columns}
-                      gap={{ base: 8, sm: 8, md: 0, "2xl": 10 }}
-                      w={"100%"}
-                    >
-                      {categoryEvents.map((event) => (
-                        <Link to={`/event/${event.id}`} key={event.id}>
-                          <EventsCard event={event} categories={categories} />
-                        </Link>
-                      ))}
-                    </SimpleGrid> */}
-                  {categoryEvents && categoryEvents.length > 0 && (
-                    <EventsCarousel categoryEvents={categoryEvents} />
-                  )}
-                </Box>
-              );
-            })}
-          </Box>
-        </Flex>
+          </Flex>
+        </Box>
       </Box>
     </>
   );

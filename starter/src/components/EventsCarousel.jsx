@@ -40,7 +40,7 @@ export const EventsCarousel = ({ categoryEvents }) => {
   useEffect(() => {
     const scrollInterval = setInterval(() => {
       setScrollPosition((prevPosition) => (prevPosition + 0.2) % totalWidth);
-    }, 50);
+    }, 120);
 
     return () => clearInterval(scrollInterval);
   }, [totalWidth, isAutoScrolling]);
@@ -77,7 +77,7 @@ export const EventsCarousel = ({ categoryEvents }) => {
         w={containerWidth}
         overflow={"hidden"}
         bgColor={"#0f0f0f"}
-        borderRadius={"14px"}
+        borderRadius={"12px"}
         margin="0 auto"
         paddingY={"2rem"}
         display={"flex"}
@@ -90,7 +90,7 @@ export const EventsCarousel = ({ categoryEvents }) => {
           zIndex="10"
           cursor="pointer"
           transform="translateY(-50%)"
-          color={"#c50d34"}
+          color={"#FFE054"}
           fontSize={"42px"}
           fontWeight={600}
           onClick={goToPrev}
@@ -126,7 +126,7 @@ export const EventsCarousel = ({ categoryEvents }) => {
           zIndex="10"
           cursor="pointer"
           transform="translateY(-50%)"
-          color={"#c50d34"}
+          color={"#FFE054"}
           fontSize={"42px"}
           fontWeight={600}
           onClick={goToNext}

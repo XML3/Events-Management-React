@@ -6,7 +6,6 @@ export const TextInput = ({ changeFn, ...props }) => {
       <Input
         ml={3}
         variant="outline"
-        // borderColor="rgba(213, 209, 191, 0.8)"
         borderColor={"#0f0f0f"}
         focusBorderColor="#c50d34"
         w={"23rem"}

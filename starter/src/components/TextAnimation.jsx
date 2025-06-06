@@ -2,12 +2,12 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { InView, useInView } from "react-intersection-observer";
-import { Text, Flex, Center } from "@chakra-ui/react";
+import { Text, Flex, Center, useBreakpointValue } from "@chakra-ui/react";
 
 const TextAnimation = () => {
-  //FONT ORBITRON
-  const orbitronFontFamily = "Orbitron, sans-serif";
-  const orbitronWeight = {
+  //FONT WorkSans
+  const workSansFontFamily = "Work Sans, sans-serif";
+  const workSansWeight = {
     fontWeights: {
       normal: 400,
       medium: 600,
@@ -19,10 +19,18 @@ const TextAnimation = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
+  const xOffset = useBreakpointValue({
+    base: 0,
+    sm: 0,
+    md: 5,
+    lg: 30,
+    "2xl": 30,
+  });
+
   useEffect(() => {
     if (inView) {
       controls.start({
-        x: 30,
+        x: xOffset,
         transition: {
           duration: 2,
           delay: 1,
@@ -32,23 +40,20 @@ const TextAnimation = () => {
   }, [controls, inView]);
 
   const textStyle = {
-    fontFamily: orbitronFontFamily,
-    fontWeight: orbitronWeight.semibold,
+    fontFamily: workSansFontFamily,
+    fontWeight: workSansWeight.semibold,
     color: "#051622",
   };
 
   return (
-    <Center minH="20vh" mt={{ base: "3rem", md: "-10rem" }}>
-      <Flex
-        direction="column"
-        align="center"
-        justify="center"
-        minH="20vh"
-        wrap="wrap"
-      >
+    <Center
+      minH="2vh"
+      mt={{ base: "0", sm: "0", md: "2rem", lg: "0", "2xl": "-5rem" }}
+    >
+      <Flex direction="column" align="center" justify="center" wrap="wrap">
         <motion.div
           initial={{ x: -3000 }}
-          animate={{ x: 30 }}
+          animate={{ x: xOffset }}
           transition={{
             duration: "2",
             delay: "0.3",
@@ -60,11 +65,11 @@ const TextAnimation = () => {
               base: "20px",
               sm: "25px",
               md: "32px",
-              "2xl": "38px",
+              "2xl": "32px",
             }}
             textAlign="center"
-            paddingBottom={2.5}
-            color={"#0f0f0f"}
+            paddingBottom={1}
+            color={"#D9D9D9"}
           >
             Add, manage, and customize
           </Text>
@@ -72,7 +77,7 @@ const TextAnimation = () => {
 
         <motion.div
           initial={{ x: -3000 }}
-          animate={{ x: 30 }}
+          animate={{ x: xOffset }}
           transition={{
             duration: "2",
             delay: "1",
@@ -84,10 +89,10 @@ const TextAnimation = () => {
               base: "20px",
               sm: "25px",
               md: "32px",
-              "2xl": "38px",
+              "2xl": "32px",
             }}
             textAlign="center"
-            color={"#0f0f0f"}
+            color={"#D9D9D9"}
           >
             your events with ease.
           </Text>

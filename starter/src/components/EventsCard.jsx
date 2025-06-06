@@ -17,9 +17,9 @@ export const EventsCard = ({ event }) => {
   const { categories } = useContext(DataContext);
   const { image, title, description, startTime, endTime, categoryIds } = event;
 
-  //FONT ORBITRON
-  const orbitronFontFamily = "Orbitron, sans-serif";
-  const orbitronWeight = {
+  //FONT BEBAS
+  const bebasNeueFontFamily = "Bebas Neue, sans-serif";
+  const bebasNeuenWeight = {
     fontWeights: {
       normal: 400,
       medium: 600,
@@ -28,15 +28,14 @@ export const EventsCard = ({ event }) => {
     },
   };
 
-  //FONT ROBOTO SLAB
-  const robotoSlabFont = "Roboto Slab, serif";
-  const robotoSlabWeight = {
-    fontWeight: {
-      thin: 100,
-      extraLight: 200,
-      light: 300,
-      regular: 400,
-      medium: 500,
+  //FONT WORK SANS
+  const workSansFontFamily = "Work Sans, sans-serif";
+  const workSansWeight = {
+    fontWeights: {
+      normal: 400,
+      medium: 600,
+      semibold: 700,
+      bold: 900,
     },
   };
 
@@ -60,7 +59,7 @@ export const EventsCard = ({ event }) => {
         as={Link}
         to={`/event/${event.id}`}
         borderRadius="md"
-        border={"1px solid rgba(213, 209, 191, 0.8)"}
+        border={"1px solid #D9D9D9"}
         p={2}
         bgColor={"#0f0f0f"}
         w="100%"
@@ -68,7 +67,7 @@ export const EventsCard = ({ event }) => {
         _hover={{ transform: "scale(1.08)" }}
       >
         <Box
-          bgColor={"rgba(213, 209, 191, 1)"}
+          bgColor={"#D9D9D9"}
           borderRadius="md"
           h={{ base: "25rem", sm: "100%", md: "100%" }}
         >
@@ -79,12 +78,13 @@ export const EventsCard = ({ event }) => {
                 size={{ base: "16px", sm: "sm", md: "sm" }}
                 color={"#0f0f0f"}
                 mb={"1rem"}
-                fontFamily={orbitronFontFamily}
-                fontWeight={orbitronWeight.medium}
+                fontFamily={bebasNeueFontFamily}
+                fontWeight={400}
                 letterSpacing={{
                   base: "0.07rem",
                   sm: "0.05rem",
                   md: "0.09rem",
+                  lg: "0.1rem",
                 }}
               >
                 {title || "untitled Event"}
@@ -117,38 +117,52 @@ export const EventsCard = ({ event }) => {
             </Box>
 
             <Text
-              fontSize={{ base: "14px", sm: "12px", md: "12px" }}
+              fontSize={{ base: "14px", sm: "12px", md: "12px", lg: "16px" }}
               letterSpacing={{
                 base: "0.07rem",
                 sm: "0.05rem",
                 md: "0.07rem",
+                lg: "0.1rem",
               }}
               color={"#0f0f0f"}
               mb={"1rem"}
-              fontFamily={orbitronFontFamily}
-              fontWeight={orbitronWeight.normal}
+              fontFamily={bebasNeueFontFamily}
+              fontWeight={400}
+              textAlign={"center"}
             >
               {description || "No description available."}
             </Text>
 
             <Text
               color={"#0f0f0f"}
-              fontSize={{ base: "11px", sm: "11px", md: "10px" }}
-              letterSpacing={{ base: "0.1rem", sm: "0.05rem", md: "0.05rem" }}
-              fontFamily={robotoSlabFont}
-              fontWeight={robotoSlabWeight.thin}
+              fontSize={{ base: "11px", sm: "11px", md: "10px", lg: "12px" }}
+              letterSpacing={{
+                base: "0.1rem",
+                sm: "0.05rem",
+                md: "0.05rem",
+                lg: "0.09rem",
+              }}
+              fontFamily={workSansFontFamily}
+              fontWeight={workSansWeight.thin}
               mt={{ base: "30px", md: "20px" }}
+              textAlign={"center"}
             >
               {" "}
               Start Time: {startTime || "No Start Time"}
             </Text>
             <Text
               color={"#0f0f0f"}
-              fontSize={{ base: "11px", sm: "11px", md: "10px" }}
-              letterSpacing={{ base: "0.1rem", sm: "0.05rem", md: "0.05rem" }}
+              fontSize={{ base: "11px", sm: "11px", md: "10px", lg: "12px" }}
+              letterSpacing={{
+                base: "0.1rem",
+                sm: "0.05rem",
+                md: "0.05rem",
+                lg: "0.09rem",
+              }}
               mb={"0.5rem"}
-              fontFamily={robotoSlabFont}
-              fontWeight={robotoSlabWeight.thin}
+              fontFamily={workSansFontFamily}
+              fontWeight={workSansWeight.thin}
+              textAlign={"center"}
             >
               End Time: {endTime || "No End Time"}
             </Text>
@@ -173,13 +187,14 @@ export const EventsCard = ({ event }) => {
                           base: "0.7rem",
                           sm: "0.6rem",
                           md: "0.6rem",
+                          lg: "0.8rem",
                         }}
                         letterSpacing={{
                           base: "0.05rem",
                           sm: "0.07rem",
                           md: "0.15rem",
                         }}
-                        fontFamily={orbitronFontFamily}
+                        fontFamily={bebasNeueFontFamily}
                         fontWeight={600}
                       >
                         {category.name}
