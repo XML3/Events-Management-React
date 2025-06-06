@@ -71,8 +71,6 @@ If you're working on both front-end and back-end (as part of a full-stack projec
 
 The front-end app is configured to make API requests to the back-end server to interact with event data.
 
-Note: The app is deployed with some features disabled (edit, delete, contact) to prevent unwanted changes. 
 
-Copyright
-© [2023] [Xagly Montilva]. All rights reserved.
-All visual elements, including video, multimedia, sound, and layout, are copyrighted and owned by the author, with the exception of the images used in the Events' (card) headers.
+
+
