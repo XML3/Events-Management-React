@@ -1,9 +1,14 @@
 # Events Management with React.js
 This is a front-end application designed to simulate an event management system. Users can search for events by location, name, or category and connect with event organizers via a contact form. Additionally, event organizers have access to an intuitive set of tools to manage their events, including functionality to create, edit, and delete events.
 
-Note: All visual elements, including video, multimedia, sound, and layout, are copyrighted and owned by the author, with the exception of the images used in the Events' (card) headers.
+Note: The UX/UI design and developement of this app were created and implemented by me as an integral part of this project. 
 
-![Image](https://github.com/user-attachments/assets/0168be7b-3bd1-46eb-98b3-b61eb1429749)
+## Important: 
+Only creating and editing events are enabled here.  Deleting events requires authorization tokens and is handled solely on the back-end, not the front-end, to keep the project easily accessible for viewing.
+
+
+![Events](https://github.com/user-attachments/assets/1740c651-3fbb-4693-9d9e-360933ffc606)
+
 
 ## Technologies & Tools
 Front-end:
@@ -36,8 +41,8 @@ Event Management Tools: Event organizers can manage their events (create, edit, 
 
 User Authentication: Secured access to certain features via Auth0 authentication tokens.
 
-## NOTE:
-This app has been deployed for portfolio viewing purposes. To prevent spam and unintentional changes, the features to edit, delete, and contact have been disabled. These features are intended to be used with an authorization token for proper access control. However, the ability to create new events remains active.
+## Design Tools
+Figma
 
 ## Getting Started
 Prerequisites
@@ -66,8 +71,6 @@ If you're working on both front-end and back-end (as part of a full-stack projec
 
 The front-end app is configured to make API requests to the back-end server to interact with event data.
 
-Note: The app is deployed with some features disabled (edit, delete, contact) to prevent unwanted changes. 
 
-Copyright
-© [2023] [Xagly Montilva]. All rights reserved.
-All visual elements, including video, multimedia, sound, and layout, are copyrighted and owned by the author, with the exception of the images used in the Events' (card) headers.
+
+
