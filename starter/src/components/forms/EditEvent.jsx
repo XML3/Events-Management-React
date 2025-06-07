@@ -253,39 +253,6 @@ export const EditEvent = ({
         </ModalBody>
 
         <ModalFooter>
-          {/* Additional modal footer actions go here  */}
-          {/* <Button
-            colorScheme="blue"
-            mr={3}
-            onClick={async () => {
-              //Form data object ... apend updated data
-              const updatedData = new FormData();
-
-              updatedData.append("title", formData.title);
-              updatedData.append("image", formData.image);
-              updatedData.append("lineup", formData.lineup);
-              updatedData.append("description", formData.description);
-              updatedData.append("categoryIds", formData.categoryId);
-              updatedData.append("location", formData.location);
-              updatedData.append("startTime", formData.startTime);
-              updatedData.append("endTime", formData.endTime);
-              updatedData.append("userName", formData.userName);
-              updatedData.append("userImage", formData.userImage);
-
-              const result = await processAction({ request: formData });
-              console.log("PUT request result:", result);
-              //200=succeful save
-              if (result.status === 200) {
-                console.log("Event edited successful");
-                onClose();
-              } else {
-                console.error("An error occurred:", result.json.error);
-              }
-            }}
-          >
-            Save
-          </Button> */}
-
           <Button
             colorScheme="blue"
             mr={3}

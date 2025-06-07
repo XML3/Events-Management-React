@@ -17,13 +17,6 @@ import {
   Grid,
   Button,
   useToast,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
 } from "@chakra-ui/react";
 import DataContext from "../components/Root";
 
@@ -733,8 +726,7 @@ export const EventPage = () => {
                   }}
                 >
                   {" "}
-                  Want to make delete to your event? <br></br>Use the Delete
-                  button
+                  Want to delete to your event? <br></br>Use the Delete button
                 </Text>
                 <Button
                   onClick={() => handleDeleteClick(event.id)}
