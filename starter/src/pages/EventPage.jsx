@@ -238,7 +238,7 @@ export const EventPage = () => {
         </Flex>
 
         {/* Block section under Hero */}
-        <Box width={"100%"} height={"215px"} borderBottom="1px solid #0f0f0f">
+        <Box width={"100%"} borderBottom="1px solid #0f0f0f">
           <Flex
             align={{ base: "center", sm: "flex-start", md: "center" }}
             justify={{ base: "center", sm: "flex-start", md: "space-between" }}
