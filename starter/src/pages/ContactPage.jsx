@@ -206,7 +206,7 @@ const ContactForm = () => {
           </Box>
         </Flex>
         {/* Block section under Hero */}
-        <Box width={"100%"} height={"220px"}>
+        <Box width={"100%"} height={"215px"} borderBottom="1px solid #0f0f0f">
           <Flex
             align={{ base: "center", sm: "flex-start", md: "center" }}
             justify={{ base: "center", sm: "flex-start", md: "space-between" }}
@@ -270,21 +270,6 @@ const ContactForm = () => {
           },
         }}
       >
-        {/* Black Middle Line */}
-        <Box
-          position={"relative"}
-          bottom={{ base: 3, sm: 0, md: 0, lg: "1.2rem", "2xl": 1.5 }}
-          sx={{
-            "@media screen and (max-height: 550px)": {
-              bottom: "5.6rem",
-            },
-          }}
-          width={"100%"}
-          border="1px solid #0f0f0f"
-        >
-          {" "}
-        </Box>
-
         <Center>
           <Box
             w={{ base: "100%", sm: "90%", md: "80%", lg: "80%", "2xl": "70%" }}
